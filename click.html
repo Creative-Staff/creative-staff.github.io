@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>クリッカー</title>
+  <link rel="stylesheet" href="">
+  <script>
+    var text = "クリックした回数=";
+    var num = 0;
+    function add(){
+      num++;
+      document.getElementById("disp").innerHTML=text+num;
+    }
+  </script>
+</head>
+<body>
+  <h1>クリッカー</h1>
+  <p>
+    <input type="button" value="クリック！" onclick="add()"></br>
+  </p>
+  <div id="disp">
+    クリックした回数=0
+  </div>
+</body>
+</html>
