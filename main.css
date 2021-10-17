@@ -1,0 +1,43 @@
+html {
+    background: #222;
+}
+body {
+    margin: auto;
+    width: 1000px;
+    color: #f0f0f0;
+    font-style: "ヒラギノ角ゴ", "メイリオ", "Noto Sans CJK JP", "MS Pゴシック", "sans-serif"
+}
+body > div {
+    float: left;
+    margin-top: 2px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px;
+    border: outset 2px #4c9f8d;
+    background: #404040;
+}
+#header, #footer {
+    background: #369;
+    border: outset 2px #aaa;
+}
+#header > h4 {
+    float: right;
+    margin: 0;
+}
+#content-main {
+    width: 800px;
+    margin-right: 2px;
+}
+#sidebar {
+    width: 198px;
+}
+a {
+    color: #9cf;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+p > img {
+    max-height: 250px;
+}
