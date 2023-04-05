@@ -1,43 +1,180 @@
+@import url("slick.css");
 html {
-    background: #222;
+    background-color: white;
 }
 body {
-    margin: auto;
-    width: 1000px;
-    color: #f0f0f0;
-    font-style: "ヒラギノ角ゴ", "メイリオ", "Noto Sans CJK JP", "MS Pゴシック", "sans-serif"
+    margin: 0px;
+    padding: 0px;
+    color: #F0F0F0;
+    font-style: "ヒラギノ角ゴ", "メイリオ", "Noto Sans CJK JP", "MS Pゴシック", "sans-serif";
 }
-body > div {
-    float: left;
-    margin-top: 2px;
+/* ロゴのフェードイン */
+.fadeOut {
+    background: #FFF;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
     width: 100%;
-    box-sizing: border-box;
-    padding: 5px;
-    border: outset 2px #4c9f8d;
-    background: #404040;
+    z-index: 9000;
 }
+.fadeOut p {
+    position: fixed;
+    left: 45%;
+    top: 48%;
+    display: none;
+    z-index: 9999;
+    width: 280px;
+}
+/* 各ブロックの設定 */
 #header, #footer {
-    background: #369;
-    border: outset 2px #aaa;
+    background: #154261;
+    border: none;
 }
-#header > h4 {
-    float: right;
-    margin: 0;
+#header{
+    z-index: 1; /* z-indexの値を扱う際は、マイナスで指定しても良いが、hoverはz-indexが負の値に対して働かない為、ヘッダーのz-indexを1とする */
+    top: 0px;
+    position: fixed;
+    width: 100%;
 }
-#content-main {
-    width: 800px;
-    margin-right: 2px;
+#content-main{
+    margin: 3%;
+    position: relative;
+    top: 60px;
 }
-#sidebar {
-    width: 198px;
+#footer{
+    text-align: right;
+    font-size: 20px;
 }
-a {
-    color: #9cf;
-    text-decoration: none;
+/* ボタンの装飾 */
+.default_button button{
+    font-size: 20px;
+    width: 200px;
+    background-color: #154261;
+    color: #F0F0F0;
+    border: none;
 }
-a:hover {
+.default_button button:hover{
+    background-color: #57A897;
+}
+.header_select {
+    display: flex;
+}
+.blue_button, .home_button{
+    margin-right: 10%;
+}
+.home_button button{
+    background-color: #57A897;
+}
+.topic_button {
+    text-align: right;
+} 
+/* メインコンテンツ内の設定 */
+h1{
+    color: black;
+    font-size: 20px;
     text-decoration: underline;
+    text-decoration-color: #57A897;
 }
-p > img {
-    max-height: 250px;
+p{
+    color: black;
+}
+/*==================================================
+スライダーのためのcss
+===================================*/
+.slider {/*横幅94%で左右に余白を持たせて中央寄せ*/
+    width:94%; 
+    left: 1%;
+}
+ 
+.slider img {
+    width:100%;/*スライダー内の画像を横幅100%に*/
+    height:auto;
+}
+ 
+ /*slickのJSで書かれるタグ内、スライド左右の余白調整*/
+ 
+.slider .slick-slide {
+    margin:0 10px;
+}
+ 
+ /*矢印の設定*/
+ 
+ /*戻る、次へ矢印の位置*/
+.slick-prev, 
+.slick-next {
+    position: absolute;/*絶対配置にする*/
+    top: 42%;
+    cursor: pointer;/*マウスカーソルを指マークに*/
+    outline: none;/*クリックをしたら出てくる枠線を消す*/
+    border-top: 2px solid #666;/*矢印の色*/
+    border-right: 2px solid #666;/*矢印の色*/
+    height: 15px;
+    width: 15px;
+}
+ 
+ .slick-prev {/*戻る矢印の位置と形状*/
+    left: 2.2%;
+    transform: rotate(-135deg);
+}
+ 
+.slick-next {/*次へ矢印の位置と形状*/
+    right: -1.5%;
+    transform: rotate(45deg);
+}
+ 
+ /*ドットナビゲーションの設定*/
+ 
+.slick-dots {
+    text-align:center;
+    margin:20px 0 0 0;
+}
+ 
+.slick-dots li {
+    display:inline-block;
+    margin:0 5px;
+}
+ 
+.slick-dots button {
+    color: transparent;
+    outline: none;
+    width:8px;/*ドットボタンのサイズ*/
+    height:16px;/*ドットボタンのサイズ*/
+    display:block;
+    border-radius:50%;
+    background:#ccc;/*ドットボタンの色*/
+}
+ 
+.slick-dots .slick-active button{
+    background:#333;/*ドットボタンの現在地表示の色*/
+}
+
+.news-list{
+    list-style: none outside;
+    width: 95%;
+    height: 60vh;
+    overflow-y: scroll;
+}
+.item{
+    border-bottom: 5px solid #999999;
+    max-width: 90%;
+}
+.all_topic_mode{
+    display: none;
+    z-index: 3;
+    background-color: #154261;
+    position: fixed;
+    top: 8%;
+    width: 90%;
+    height: 75%;
+    margin: 5%;
+    overflow-y: scroll;
+}
+.atm_img{
+    display: none;
+    width: 24.5%;
+}
+#closed_atm{
+    display: none;
+    
 }
