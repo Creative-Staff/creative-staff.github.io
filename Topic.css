@@ -1,0 +1,115 @@
+html {
+    background-color: white;
+}
+body {
+    margin: 0px;
+    padding: 0px;
+    color: #F0F0F0;
+    font-style: "ヒラギノ角ゴ", "メイリオ", "Noto Sans CJK JP", "MS Pゴシック", "sans-serif";
+}
+/* ロゴのフェードイン */
+.fadeOut {
+    display: none;
+    background: #FFF;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 9000;
+}
+.fadeOut p {
+    position: fixed;
+    left: 45%;
+    top: 48%;
+    display: none;
+    z-index: 9999;
+    width: 280px;
+}
+/* 各ブロックの設定 */
+#header, #footer {
+    background: #154261;
+    border: none;
+}
+#header{
+    z-index: 1; /* z-indexの値を扱う際は、マイナスで指定しても良いが、hoverはz-indexが負の値に対して働かない為、ヘッダーのz-indexを1とする */
+    top: 0px;
+    position: fixed;
+    width: 100%;
+}
+#content-main{
+    margin: 3%;
+    position: relative;
+    top: 60px;
+}
+#footer{
+    text-align: right;
+    font-size: 20px;
+}
+/* ボタンの装飾 */
+.default_button button{
+    font-size: 20px;
+    width: 200px;
+    background-color: #154261;
+    color: #F0F0F0;
+    border: none;
+}
+.default_button button:hover{
+    background-color: #57A897;
+}
+.header_select {
+    display: flex;
+}
+.blue_button, .About_button{
+    margin-right: 10%;
+}
+.About_button button{
+    background-color: #57A897;
+}
+/* メインコンテンツ内の設定 */
+h1{
+    color: black;
+    font-size: 30px;
+    text-decoration: underline;
+    text-decoration-color: #57A897;
+    float: left;
+}
+
+h4{
+    text-align: right;
+}
+
+p{
+    color: black;
+}
+
+.Midashi{
+    color: black;
+}
+
+.Honbun{
+    float: left; 
+    color: black;
+    font-size: 130%;
+    margin-left: auto;
+}
+
+.Honbun>img{
+    float: right;
+}
+
+img.imgOpt{
+    height: 35%;
+    width: 35%;
+    margin-left: 3%;
+}
+
+red{
+    color: red;
+}
+
+bold{
+    font-weight: bold;
+}
+
+/* これは記事を書く際のテンプレのcssです。 適宜変更を加えてください*/
