@@ -1,30 +1,15 @@
 html {
     background-color: white;
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 300px;
+    box-sizing: border-box;
 }
 body {
     margin: 0px;
     padding: 0px;
     color: #F0F0F0;
     font-style: "ヒラギノ角ゴ", "メイリオ", "Noto Sans CJK JP", "MS Pゴシック", "sans-serif";
-}
-/* ロゴのフェードイン */
-.fadeOut {
-    display: none;
-    background: #FFF;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: 9000;
-}
-.fadeOut p {
-    position: fixed;
-    left: 45%;
-    top: 48%;
-    display: none;
-    z-index: 9999;
-    width: 280px;
 }
 /* 各ブロックの設定 */
 #header, #footer {
@@ -45,6 +30,10 @@ body {
 #footer{
     text-align: right;
     font-size: 20px;
+    width: 100%;
+    padding: 30px 0;
+    position: absolute;
+    bottom: 0;
 }
 /* ボタンの装飾 */
 .default_button button{
@@ -79,10 +68,6 @@ h4{
     text-align: right;
 }
 
-p{
-    color: black;
-}
-
 .Midashi{
     color: black;
 }
@@ -99,8 +84,8 @@ p{
 }
 
 img.imgOpt{
-    height: 35%;
-    width: 35%;
+    height: 40%;
+    width: 40%;
     margin-left: 3%;
 }
 
@@ -112,4 +97,4 @@ bold{
     font-weight: bold;
 }
 
-/* これは記事を書く際のテンプレのcssです。 適宜変更を加えてください*/
+/* これは記事を書く際のテンプレのcssです。 適宜変更、コピーして使用してください*/
