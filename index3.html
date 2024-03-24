@@ -1,74 +1,425 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>CreativeStaff</title>
-        <link rel="icon" href="cgls/favicon.ico" />
-        <link rel="stylesheet" href="main3.css" />
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
-    </head>
-    <body>
-        <div id="header">
-            <img src="cgls/cs_logo01.png" alt="CreativeStaff" />
-            <div class="header_select">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>CreativeStaff</title>
+    <link rel="icon" href="cgls/favicon.ico" />
+    <link rel="stylesheet" href="main3.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+</head>
+
+<body>
+    <div id="header">
+        <img src="cgls/cs_logo01.png" alt="CreativeStaff" />
+        <div class="header_select">
+            <div class="default_button blue_button"><button onclick="location.href='index.html'">ホームへ</button></div>
+            <div class="default_button blue_button"><button onclick="location.href='index2.html'">サークルについて</button></div>
+            <div class="default_button GameList_button"><button onclick="location.href='index3.html'">ゲーム一覧</button></div>
+            <div class="default_button blue_button"><button
+                    onclick="location.href='https://forms.gle/RhHWwJq9oyyaNeAy7'">お問い合わせ</button></div>
+        </div>
+        <div class="ham_select">
+            <input type="checkbox" id="ham_btn_check">
+            <label for="ham_btn_check" class="ham_btn"><span></span></label>
+
+            <div class="menu_content">
                 <div class="default_button blue_button"><button onclick="location.href='index.html'">ホームへ</button></div>
                 <div class="default_button blue_button"><button onclick="location.href='index2.html'">サークルについて</button></div>
-                <div class="default_button home_button"><button onclick="location.href='index3.html'">ゲーム一覧</button></div>
-                <div class="default_button blue_button"><button onclick="location.href='https://forms.gle/RhHWwJq9oyyaNeAy7'">お問い合わせ</button></div>
+                <div class="default_button GameList_button"><button onclick="location.href='index3.html'">ゲーム一覧</button></div>
+                <div class="default_button blue_button"><button
+                        onclick="location.href='https://forms.gle/RhHWwJq9oyyaNeAy7'">お問い合わせ</button></div>
             </div>
         </div>
-        <div>
-            <div class="pop_mode">
-                <a href=""><img src="cgls/alexandknight.png" alt="" class="pop_img pi0"></a>
-                <div class="pop_txt pt0"><p>このゲームは二人のプレイヤーを切り替えながらステージを進み、ステージの最後にいるボスを倒すとクリアとなる横スクロール型2Dアクションゲームです。<br>このゲームの最大の特徴はプレイヤーを常時切り替えられることです。<br>このことにより、攻略の幅が広がりより楽しめるものとなっています。またサウンドやイラスト一つ一つに拘ったので没入感を得られます。道中にはたくさんの敵や仕掛けがありますが、臆さずステージクリアを目指しましょう。</p></div>
-            </div>
-            <div class="pop_mode">
-                <a href=""><img src="cgls/GrapeMagic.png" alt="" class="pop_img pi1"></a>
-                <div class="pop_txt pt1"><p>このゲームは「葡萄」と「呪術」をテーマとして作られたクリッカーゲームです。<br>基本的に、ひたすら葡萄を集めるゲームとなっています。<br>手動で集めることも、半自動で集めることもできます。収集していると様々なアクシデントが発生しますが、慌てることなく適切に対処しましょう。<br>プレイ時間の目安は、"ゲーム内5倍速で" 5分～10分です。</p></div>
-            </div>
-            <div class="pop_mode">
-                <a href=""><img src="cgls/salmon.png" alt="" class="pop_img pi2"></a>
-                <div class="pop_txt pt2"><p>あなたは産卵するために故郷に戻る途中の鮭ですうまく障害物を乗り越え回避して、故郷に戻ろう！</p></div>
-            </div>
-            <div class="pop_mode">
-                <a href=""><img src="cgls/taf.png" alt="" class="pop_img pi3"></a>
-                <div class="pop_txt pt3"><p>様々な武器を取って戦う、横スクロール2Dアクションゲームです。</p></div>
-            </div>
-            <div class="pop_mode">
-                <a href=""><img src="cgls/tamasiregain.png" alt="" class="pop_img pi4"></a>
-                <div class="pop_txt pt4"><p>目を覚ますと知らない部屋に閉じ込められていた主人公、ぬいぐるみのボタンと共に謎を解き明かしストーリーを進めます。学校を舞台にした謎解き2D脱出ゲームです。</p></div>
-            </div>
-            <div class="pop_mode">
-                <a href=""><img src="cgls/US.png" alt="" class="pop_img pi5"></a>
-                <div class="pop_txt pt5"><p>宵から覚めたサラリーマンが、知らぬ間に迷い込んでしまった駅地下から脱出を目指す。探索＆謎解きでヒューズを集め、エレベーターを起動しよう！</p></div>
-            </div>
-            <div class="pop_mode">
-                <a href=""><img src="cgls/vegedrone.png" alt="" class="pop_img pi6"></a>
-                <div class="pop_txt pt6"><p>舞台は今からちょっとした未来、人々はドローンにお使いを頼むようになっていた。<br>だが、運んでいる食料品を狙って鳥が襲ってくるという被害が後を絶たないらしい。<br>そこで思いついたのがこの「ベジドローン」。ガトリングガンで鳥に餌を与えて食料品を守り抜き、お家まで届けよう！</p></div>
-            </div>
-        </div>
-        <div class="fadeOut">
-            <p><img src="cgls/cs_logo01_fade_out.png" alt=""/></p>
-        </div>
-        <div id="content-main">
-            <h1>Games</h1>
-            <div class="Games">
-                <a href="" id="gi0"><img src="cgls/alexandknight.png" alt=""></a>
-                <a href="" id="gi1"><img src="cgls/GrapeMagic.png" alt=""></a>
-                <a href="" id="gi2"><img src="cgls/salmon.png" alt=""></a>
-                <a href="" id="gi3"><img src="cgls/taf.png" alt=""></a>
-                <a href="" id="gi4"><img src="cgls/tamasiregain.png" alt=""></a>
-                <a href="" id="gi5"><img src="cgls/US.png" alt=""></a>
-                <a href="" id="gi6"><img src="cgls/vegedrone.png" alt=""></a>
+    </div>
+    <div class="pop_mode">
+        <div class="pop_box pb10">
+            <ul class="slider">
+                <li><img src="cgls/Inherutance/1_Inheritance_title.png" alt="" class="pop_img pi10"></li>
+                <li><img src="cgls/Inherutance/2_Inheritance_base.png" alt="" class="pop_img pi10"></li>
+                <li><img src="cgls/Inherutance/3_Inheritance_quest.png" alt="" class="pop_img pi10"></li>
+                <li><img src="cgls/Inherutance/4_Inheritance_heal.png" alt="" class="pop_img pi10"></li>
+            </ul>
+            <div class="pop_txt pt10">
+                <h1>Inheritance</h1>
+                <p class="Gtag">
+                    <G2D></G2D>
+                    <Act></Act>
+                </p>
+                <br>
+                <p>
+                    ～世界観～<br>
+                    Inheritanceは2D見下ろし型アクションゲームです。 吸血鬼の主人公は身体を血状に変え、操る権能を持ちます。<br>
+                    血を操り、教会から斡旋される任務をこなして下さい。<br>
+                    <br>
+                    ～基本操作～<br>
+                    WASD:移動<br>
+                    スペースキー:攻撃<br>
+                    <br>
+                    左shift:ステップ<br>
+                    　身体を血に変え、敵をすり抜けたり攻撃から逃れることが出来る。<br>
+                    <br>
+                    Tキー長押し:回復<br>
+                    　左上のBP(blood point)ゲージを使用して回復する。<br>
+                    　敵を攻撃すると返り血を吸収し、BPが溜まる。<br>
+                    <br>
+                    escキー:メニュー画面<br>
+                    上下左右キー:選択<br>
+                    エンターキー:決定<br>
+                    <br>
+                </p>
             </div>
         </div>
-        <div id="footer">
-            <br><br><br>
-            @2023 Creative Staff
+        <div class="pop_box pb9">
+            <ul class="slider">
+                <li><img src="cgls/Cloring ash world/1.png" alt="" class="pop_img pi9"></li>
+                <li><img src="cgls/Cloring ash world/2.png" alt="" class="pop_img pi9"></li>
+                <li><img src="cgls/Cloring ash world/3.png" alt="" class="pop_img pi9"></li>
+                <li><img src="cgls/Cloring ash world/4.png" alt="" class="pop_img pi9"></li>
+            </ul>
+            <div class="pop_txt pt9">
+                <h1>色づく灰世界</h1>
+                <p class="Gtag">
+                    <G2D></G2D>
+                    <G3D></G3D>
+                    <RPG></RPG>
+                </p>
+                <br>
+                <p>
+                    このゲームはターン式の横長弾幕ゲームです。
+                    灰世界と呼ばれる世界に巻き込まれた主人公のストーリーがあります。<br>
+                    主人公は、灰精霊「カイナ」の意思のもと、灰に抵抗する力を得ました。
+                    敵の弾幕を潜り抜けて、敵の急所を攻撃し勝利しましょう。<br>
+                    <br>
+                </p>
+            </div>
         </div>
+        <div class="pop_box pb8">
+            <ul class="slider">
+                <li><img src="cgls/StageMixer/stageMixer_1.png" alt="" class="pop_img pi8"></li>
+                <li><img src="cgls/StageMixer/stageMixer_2.png" alt="" class="pop_img pi8"></li>
+                <li><img src="cgls/StageMixer/stageMixer_3.png" alt="" class="pop_img pi8"></li>
+            </ul>
+            <div class="pop_txt pt8">
+                <h1>StageMixer</h1>
+                <p class="Gtag">
+                    <G2D></G2D>
+                    <Puz></Puz>
+                </p>
+                <br>
+                <p>
+                    *~♪-*._*.,-♪-*.:._♪*,..^""*..:♪-*.:._♪*,..^""*..:♪-*._*.,<br>
+                    ここは音楽と連動する世界、<br>
+                    離ればなれになったハチちゃんとキュウくんは再び出会えるのか<br>
+                    運命はあなたのマウスに託されたー<br>
+                    *~♪-*._*.,-♪-*,..^"":._♪*,..*.:♪-*.:._♪*,..^""*..:♪_:*.,""_<br><br>
+                    ◎ゲームの内容<br>
+                    【音楽を聞きながらのプレイを推奨します】<br>
+                    【マウスホイールが押しこめるマウスが必要です】<br>
+                    ＜キーボード操作＞<br>
+                    　[A]･･･左移動<br>
+                    　[D]･･･右移動<br>
+                    ＜マウス操作＞<br>
+                    　※フェーダーは画面左上にあります※<br>
+                    　[右クリック]･･･選択中のフェーダーを右に移動<br>
+                    　[左クリック]･･･選択中のフェーダーを左に移動<br>
+                    　[マウスホイールを押しながら上下移動]<br>
+                    　　･･･フェーダーを上下に操作"<br>
+                    <br>
+                </p>
+            </div>
+        </div>
+        <div class="pop_box pb7">
+            <ul class="slider">
+                <li><img src="cgls/Don't Stop Rogue-kun!/Don't Stop Rogue-kun! (1).png" alt="" class="pop_img pi7"></li>
+                <li><img src="cgls/Don't Stop Rogue-kun!/Don't Stop Rogue-kun! (2).png" alt="" class="pop_img pi7"></li>
+                <li><img src="cgls/Don't Stop Rogue-kun!/Don't Stop Rogue-kun! (3).png" alt="" class="pop_img pi7"></li>
+                <li><img src="cgls/Don't Stop Rogue-kun!/Don't Stop Rogue-kun! (4).png" alt="" class="pop_img pi7"></li>
+            </ul>
+            <div class="pop_txt pt7">
+                <h1>止まるなローグくん！</h1>
+                <p class="Gtag">
+                    <G3D></G3D>
+                    <Rog></Rog>
+                    <Act></Act>
+                </p>
+                <br>
+                <p>
 
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-        <script src="main3.js" charset="utf-8"></script>
-    </body>
+                    <br><br>
+                </p>
+            </div>
+        </div>
+        <!-- ここから -->
+        <div class="pop_box pb6">
+            <ul class="slider">
+                <li><img src="cgls/AlexandKnight/alexandknight.png" alt="" class="pop_img pi6"></li>
+                <li><img src="cgls/AlexandKnight/AlexandKnight_2.png" alt="" class="pop_img pi6"></li>
+                <li><img src="cgls/AlexandKnight/AlexandKnight_3.png" alt="" class="pop_img pi6"></li>
+                <li><img src="cgls/AlexandKnight/AlexandKnight_4.png" alt="" class="pop_img pi6"></li>
+            </ul>
+            <div class="pop_txt pt6">
+                <h1>AlexandKnight</h1>
+                <p class="Gtag">
+                    <G2D></G2D>
+                    <Act></Act>
+                </p>
+                <br>
+                <p>
+                    このゲームは二人のプレイヤーを切り替えながらステージを進み、ステージの最後にいるボスを倒すとクリアとなる横スクロール型2Dアクションゲームです。<br>
+                    このゲームの最大の特徴はプレイヤーを常時切り替えられることです。このことにより、攻略の幅が広がりより楽しめるものとなっています。
+                    またサウンドやイラスト一つ一つに拘ったので没入感を得られます。道中にはたくさんの敵や仕掛けがありますが、臆さずステージクリアを目指しましょう。
+                    <br><br>
+                </p>
+            </div>
+        </div>
+        <!-- ここまでが一つのゲームのポップアップ表示 -->
+        <div class="pop_box pb5">
+            <ul class="slider">
+                <li><img src="cgls/GrapeMagic/GrapeMagic1.png" alt="" class="pop_img pi5"></li>
+                <li><img src="cgls/GrapeMagic/GrapeMagic2.png" alt="" class="pop_img pi5"></li>
+                <li><img src="cgls/GrapeMagic/GrapeMagic3.png" alt="" class="pop_img pi5"></li>
+                <li><img src="cgls/GrapeMagic/GrapeMagic4.png" alt="" class="pop_img pi5"></li>
+            </ul>
+            <div class="pop_txt pt5">
+                <h1>GrapeMagic</h1>
+                <p class="Gtag">
+                    <G2D></G2D>
+                    <Oth></Oth>
+                </p>
+                <br>
+                <p>
+                    このゲームは「葡萄」と「呪術」をテーマとして作られたクリッカーゲームです。
+                    基本的に、ひたすら葡萄を集めるゲームとなっています。<br>
+                    手動で集めることも、半自動で集めることもできます。収集していると様々なアクシデントが発生しますが、慌てることなく適切に対処しましょう。<br>
+                    プレイ時間の目安は、"ゲーム内5倍速で" 5分～10分です。
+                    <br><br>
+                </p>
+            </div>
+        </div>
+        <div class="pop_box pb4">
+            <ul class="slider">
+                <li><img src="cgls/Underworld Station/US_01.png" alt="" class="pop_img pi4"></li>
+                <li><img src="cgls/Underworld Station/US_02.png" alt="" class="pop_img pi4"></li>
+                <li><img src="cgls/Underworld Station/US_03.png" alt="" class="pop_img pi4"></li>
+                <li><img src="cgls/Underworld Station/US_04.png" alt="" class="pop_img pi4"></li>
+            </ul>
+            <div class="pop_txt pt4">
+                <h1>Underworld Station</h1>
+                <p class="Gtag">
+                    <G3D></G3D>
+                    <Act></Act>
+                    <Adv></Adv>
+                </p>
+                <br>
+                <p>
+                    宵から覚めたサラリーマンが、知らぬ間に迷い込んでしまった駅地下から脱出を目指す。<br>
+                    探索＆謎解きでヒューズを集め、エレベーターを起動しよう！
+                    <br><br>
+                </p>
+            </div>
+        </div>
+        <div class="pop_box pb3">
+            <ul class="slider">
+                <li><img src="cgls/Go Back Salmon/GBS (1).png" alt="" class="pop_img pi3"></li>
+                <li><img src="cgls/Go Back Salmon/GBS (2).png" alt="" class="pop_img pi3"></li>
+                <li><img src="cgls/Go Back Salmon/GBS (3).png" alt="" class="pop_img pi3"></li>
+                <li><img src="cgls/Go Back Salmon/GBS (4).png" alt="" class="pop_img pi3"></li>
+            </ul>
+            <div class="pop_txt pt3">
+                <h1>Go Back Salmon</h1>
+                <p class="Gtag">
+                    <G3D></G3D>
+                    <Rac></Rac>
+                </p>
+                <br>
+                <p>
+                    あなたは産卵するために故郷に戻る途中の鮭ですうまく障害物を乗り越え回避して、故郷に戻ろう！
+                    <br><br>
+                </p>
+            </div>
+        </div>
+        <div class="pop_box pb2">
+            <ul class="slider">
+                <li><img src="cgls/TAMASHI Regain/TAMASI_Regain (1).png" alt="" class="pop_img pi2"></li>
+                <li><img src="cgls/TAMASHI Regain/TAMASI_Regain (2).png" alt="" class="pop_img pi2"></li>
+                <li><img src="cgls/TAMASHI Regain/TAMASI_Regain (3).png" alt="" class="pop_img pi2"></li>
+                <li><img src="cgls/TAMASHI Regain/TAMASI_Regain (4).png" alt="" class="pop_img pi2"></li>
+            </ul>
+            <div class="pop_txt pt2">
+                <h1>タマシイリゲイン</h1>
+                <p class="Gtag">
+                    <G2D></G2D>
+                    <Adv></Adv>
+                </p>
+                <br>
+                <p>
+                    目を覚ますと知らない部屋に閉じ込められていた主人公、ぬいぐるみのボタンと共に謎を解き明かしストーリーを進めます。<br>
+                    学校を舞台にした謎解き2D脱出ゲームです。
+                    <br><br>
+                </p>
+            </div>
+        </div>
+        <div class="pop_box pb1">
+            <ul class="slider">
+                <li><img src="cgls/VEGE-drone/VEGE-drone (1).png" alt="" class="pop_img pi1"></li>
+                <li><img src="cgls/VEGE-drone/VEGE-drone (2).png" alt="" class="pop_img pi1"></li>
+                <li><img src="cgls/VEGE-drone/VEGE-drone (3).png" alt="" class="pop_img pi1"></li>
+            </ul>
+            <div class="pop_txt pt1">
+                <h1>ベジドローン</h1>
+                <p class="Gtag">
+                    <G3D></G3D>
+                    <Sht></Sht>
+                </p>
+                <br>
+                <p>
+                    舞台は今からちょっとした未来、人々はドローンにお使いを頼むようになっていた。<br>
+                    だが、運んでいる食料品を狙って鳥が襲ってくるという被害が後を絶たないらしい。<br>
+                    そこで思いついたのがこの「ベジドローン」。
+                    ガトリングガンで鳥に餌を与えて食料品を守り抜き、お家まで届けよう！
+                    <br><br>
+                </p>
+            </div>
+        </div>
+        <div class="pop_box pb0">
+            <ul class="slider">
+                <li><img src="cgls/taf/taf_1.png" alt="" class="pop_img pi0"></li>
+                <li><img src="cgls/taf/taf_2.png" alt="" class="pop_img pi0"></li>
+                <li><img src="cgls/taf/taf_3.png" alt="" class="pop_img pi0"></li>
+                <li><img src="cgls/taf/taf_4.png" alt="" class="pop_img pi0"></li>
+                <li><img src="cgls/taf/taf_5.png" alt="" class="pop_img pi0"></li>
+            </ul>
+            <div class="pop_txt pt0">
+                <h1>Take And Fight</h1>
+                <p class="Gtag">
+                    <G2D></G2D>
+                    <Act></Act>
+                </p>
+                <br>
+                <p>
+                    様々な武器を取って戦う、横スクロール2Dアクションゲームです。
+                    <br><br>
+                </p>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="fadeOut">
+        <p><img src="cgls/cs_logo01_fade_out.png" alt="" /></p>
+    </div>
+    <div id="content-main">
+        <h1>Games</h1>
+        <div class="Games">
+            <div class="GameCard">
+                <h2>Inheritance</h2>
+                <p class="Gtag">
+                    <G2D></G2D>
+                    <Act></Act>
+                </p>
+                <a href="" id="gi10"><img src="cgls/Inherutance/1_Inheritance_title.png" alt=""></a>
+            </div>
+            <div class="GameCard">
+                <h2>色づく灰世界</h2>
+                <p class="Gtag">
+                    <G2D></G2D>
+                    <G3D></G3D>
+                    <RPG></RPG>
+                </p>
+                <a href="" id="gi9"><img src="cgls/Cloring ash world/1.png" alt=""></a>
+            </div>
+            <div class="GameCard">
+                <h2>StageMixer</h2>
+                <p class="Gtag">
+                    <G2D></G2D>
+                    <Puz></Puz>
+                </p>
+                <a href="" id="gi8"><img src="cgls/StageMixer/stageMixer_1.png" alt=""></a>
+            </div>
+            <div class="GameCard">
+                <h2>止まるなローグくん！</h2>
+                <p class="Gtag">
+                    <G3D></G3D>
+                    <Rog></Rog>
+                    <Act></Act>
+                </p>
+                <a href="" id="gi7"><img src="cgls/Don't Stop Rogue-kun!/Don't Stop Rogue-kun! (1).png" alt=""></a>
+            </div>
+            <div class="GameCard">
+                <h2>AlexandKnight</h2>
+                <p class="Gtag">
+                    <G2D></G2D>
+                    <Act></Act>
+                </p>
+                <a href="" id="gi6"><img src="cgls/AlexandKnight/alexandknight.png" alt=""></a>
+            </div>
+            <div class="GameCard">
+                <h2>GrapeMagic</h2>
+                <p class="Gtag">
+                    <G2D></G2D>
+                    <Oth></Oth>
+                </p>
+                <a href="" id="gi5"><img src="cgls/GrapeMagic/GrapeMagic1.png" alt=""></a>
+            </div>
+            <div class="GameCard">
+                <h2>Underworld Station</h2>
+                <p class="Gtag">
+                    <G3D></G3D>
+                    <Act></Act>
+                    <Adv></Adv>
+                </p>
+                <a href="" id="gi4"><img src="cgls/Underworld Station/US_01.png" alt=""></a>
+            </div>
+            <div class="GameCard">
+                <h2>Go Back Salmon</h2>
+                <p class="Gtag">
+                    <G3D></G3D>
+                    <Rac></Rac>
+                </p>
+                <a href="" id="gi3"><img src="cgls/Go Back Salmon/GBS (1).png" alt=""></a>
+            </div>
+            <div class="GameCard">
+                <h2>タマシイリゲイン</h2>
+                <p class="Gtag">
+                    <G2D></G2D>
+                    <Adv></Adv>
+                </p>
+                <a href="" id="gi2"><img src="cgls/TAMASHI Regain/TAMASI_Regain (1).png" alt=""></a>
+            </div>
+            <div class="GameCard">
+                <h2>VEGEdrone</h2>
+                <p class="Gtag">
+                    <G3D></G3D>
+                    <Sht></Sht>
+                </p>
+                <a href="" id="gi1"><img src="cgls/VEGE-drone/VEGE-drone (1).png" alt=""></a>
+            </div>
+            <div class="GameCard">
+                <h2>Take And Fight</h2>
+                <p class="Gtag">
+                    <G2D></G2D>
+                    <Act></Act>
+                </p>
+                <a href="" id="gi0"><img src="cgls/taf/taf_1.png" alt=""></a>
+            </div>
+            <div class="GameCard">
+                <h2></h2>
+                <p class="Gtag">
+
+                </p>
+                
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <br><br><br>
+        @2023 Creative Staff
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="main3.js" charset="utf-8"></script>
+</body>
+
 </html>

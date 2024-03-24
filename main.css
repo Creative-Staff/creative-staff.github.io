@@ -38,18 +38,23 @@ body {
     width: 100%;
 }
 #content-main{
-    margin: 3%;
+    padding: 3%;
     position: relative;
     top: 60px;
+    min-height: calc(100vh - 50px);
 }
 #footer{
     text-align: right;
     font-size: 20px;
+    padding: 30px 0;
+    margin-top: 5%;
+    width: 100%;
 }
 /* ボタンの装飾 */
 .default_button button{
     font-size: 20px;
     width: 200px;
+    height: 60px;
     background-color: #154261;
     color: #F0F0F0;
     border: none;
@@ -57,11 +62,11 @@ body {
 .default_button button:hover{
     background-color: #57A897;
 }
+
+/* メニュー */
+/* 通常メニュー */
 .header_select {
     display: flex;
-}
-.blue_button, .home_button{
-    margin-right: 10%;
 }
 .home_button button{
     background-color: #57A897;
@@ -69,6 +74,77 @@ body {
 .topic_button {
     text-align: right;
 } 
+/* ここまで */
+
+/* ハンバーガーメニュー */
+.ham_select{
+    float: right;
+    display: none;
+}
+.ham_btn{
+    height: 60px;
+    width: 60px;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    display: flex;
+}
+.ham_btn span,
+.ham_btn span::before,
+.ham_btn span::after{
+    content: '';
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background-color: white;
+    position: absolute;
+    transition: 0.5s;
+}
+.ham_btn span::before{
+    bottom: 8px;
+}
+.ham_btn span::after{
+    top: 8px;
+}
+#ham_btn_check:checked ~ .ham_btn span{
+    background-color: rgba(255, 255, 255, 0);
+}
+#ham_btn_check:checked ~ .ham_btn span::before{
+    bottom: 0;
+    transform: rotate(45deg);
+}
+#ham_btn_check:checked ~ .ham_btn span::after{
+    top: 0;
+    transform: rotate(-45deg);
+}
+#ham_btn_check{
+    display: none;
+}
+.menu_content {
+    width: 200px;
+    height: 240px;
+    position: fixed;
+    top: 60px;
+    right: -200px;
+    z-index: 1;
+    background-color: #154261;
+    transition: all 0.5s;
+}
+#ham_btn_check:checked ~ .menu_content{
+    right: 0px;
+}
+/* ここまで */
+
+#header img{
+    float: left;
+    margin-top: 5px;
+}
+/* ここまでメニューについて */
+
 /* メインコンテンツ内の設定 */
 h1{
     color: black;
@@ -88,6 +164,7 @@ p{
 }
  
 .slider img {
+    border: 1px solid #154261;
     width:100%;/*スライダー内の画像を横幅100%に*/
     height:auto;
 }
@@ -114,12 +191,12 @@ p{
 }
  
  .slick-prev {/*戻る矢印の位置と形状*/
-    left: 2.2%;
+    left: -1%;
     transform: rotate(-135deg);
 }
  
 .slick-next {/*次へ矢印の位置と形状*/
-    right: -1.5%;
+    right: -3%;
     transform: rotate(45deg);
 }
  
@@ -138,15 +215,16 @@ p{
 .slick-dots button {
     color: transparent;
     outline: none;
-    width:8px;/*ドットボタンのサイズ*/
+    width:16px;/*ドットボタンのサイズ*/
     height:16px;/*ドットボタンのサイズ*/
     display:block;
     border-radius:50%;
-    background:#ccc;/*ドットボタンの色*/
+    border: none;
+    background:#154261;/*ドットボタンの色*/
 }
  
 .slick-dots .slick-active button{
-    background:#333;/*ドットボタンの現在地表示の色*/
+    background:#57A897;/*ドットボタンの現在地表示の色*/
 }
 
 .news-list{
@@ -160,21 +238,46 @@ p{
     max-width: 90%;
 }
 .all_topic_mode{
-    display: none;
+    width: 85vw;
+    height: 85vh;
+    max-height: 1000px;
     z-index: 3;
+    display: none;
     background-color: #154261;
+    box-shadow: 4px 4px 4px black;
     position: fixed;
-    top: 8%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+}
+.all_topic_box{ 
     width: 90%;
-    height: 75%;
-    margin: 5%;
-    overflow-y: scroll;
+    height: calc(100% - 80px);
+    overflow-y: auto;
+    margin-bottom: 1%;
+    margin-left: 5%;
+}
+.all_topic_box::-webkit-scrollbar{
+    width: 0.5vw;
+    background-color: #154261;
+}
+.all_topic_box::-webkit-scrollbar-thumb{
+    border-radius: 2vw;
+    background-color:#57A897;
 }
 .atm_img{
     display: none;
-    width: 24.5%;
+    height: 30%;
+    max-height: 200px;
+    width: 340px;
+    margin-top: 0.6%;
+    margin-left: 1.4%;
+    overflow: hidden;
+    object-fit: cover;
 }
 #closed_atm{
+    float: right;
+    font-weight: bold;
     display: none;
-    
 }

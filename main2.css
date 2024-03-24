@@ -41,15 +41,20 @@ body {
     margin: 3%;
     position: relative;
     top: 60px;
+    min-height: calc(100vh - 50px);
 }
 #footer{
     text-align: right;
     font-size: 20px;
+    width: 100%;
+    padding: 30px 0;
+    margin-top: 5%;
 }
 /* ボタンの装飾 */
 .default_button button{
     font-size: 20px;
     width: 200px;
+    height: 60px;
     background-color: #154261;
     color: #F0F0F0;
     border: none;
@@ -57,15 +62,86 @@ body {
 .default_button button:hover{
     background-color: #57A897;
 }
+
+/* メニュー */
+/* 通常メニュー */
 .header_select {
     display: flex;
-}
-.blue_button, .About_button{
-    margin-right: 10%;
 }
 .About_button button{
     background-color: #57A897;
 }
+/* ここまで */
+
+/* ハンバーガーメニュー */
+.ham_select{
+    float: right;
+    display: none;
+}
+.ham_btn{
+    height: 60px;
+    width: 60px;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    display: flex;
+}
+.ham_btn span,
+.ham_btn span::before,
+.ham_btn span::after{
+    content: '';
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background-color: white;
+    position: absolute;
+    transition: 0.5s;
+}
+.ham_btn span::before{
+    bottom: 8px;
+}
+.ham_btn span::after{
+    top: 8px;
+}
+#ham_btn_check:checked ~ .ham_btn span{
+    background-color: rgba(255, 255, 255, 0);
+}
+#ham_btn_check:checked ~ .ham_btn span::before{
+    bottom: 0;
+    transform: rotate(45deg);
+}
+#ham_btn_check:checked ~ .ham_btn span::after{
+    top: 0;
+    transform: rotate(-45deg);
+}
+#ham_btn_check{
+    display: none;
+}
+.menu_content {
+    width: 200px;
+    height: 240px;
+    position: fixed;
+    top: 60px;
+    right: -200px;
+    z-index: 1;
+    background-color: #154261;
+    transition: all 0.5s;
+}
+#ham_btn_check:checked ~ .menu_content{
+    right: 0px;
+}
+/* ここまで */
+
+#header img{
+    float: left;
+    margin-top: 5px;
+}
+/* ここまでメニューについて */
+
 /* メインコンテンツ内の設定 */
 h1{
     color: black;
