@@ -1,3 +1,4 @@
+@import url("slick.css");
 html {
     background-color: white;
 }
@@ -35,20 +36,26 @@ body {
     top: 0px;
     position: fixed;
     width: 100%;
+    height: 60px;
 }
 #content-main{
-    margin: 3%;
+    padding: 3%;
     position: relative;
     top: 60px;
+    min-height: calc(100vh - 50px);
 }
 #footer{
     text-align: right;
     font-size: 20px;
+    padding: 30px 0;
+    margin-top: 5%;
+    width: 100%;
 }
 /* ボタンの装飾 */
 .default_button button{
     font-size: 20px;
     width: 200px;
+    height: 60px;
     background-color: #154261;
     color: #F0F0F0;
     border: none;
@@ -56,55 +63,346 @@ body {
 .default_button button:hover{
     background-color: #57A897;
 }
+
+/* メニュー */
+/* 通常メニュー */
 .header_select {
     display: flex;
 }
-.blue_button, .home_button{
-    margin-right: 10%;
-}
-.home_button button{
+.GameList_button button{
     background-color: #57A897;
 }
-.topic_button {
-    text-align: right;
+/* ここまで */
+
+/* ハンバーガーメニュー */
+.ham_select{
+    float: right;
+    display: none;
 }
+.ham_btn{
+    height: 60px;
+    width: 60px;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    display: flex;
+}
+.ham_btn span,
+.ham_btn span::before,
+.ham_btn span::after{
+    content: '';
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background-color: white;
+    position: absolute;
+    transition: 0.5s;
+}
+.ham_btn span::before{
+    bottom: 8px;
+}
+.ham_btn span::after{
+    top: 8px;
+}
+#ham_btn_check:checked ~ .ham_btn span{
+    background-color: rgba(255, 255, 255, 0);
+}
+#ham_btn_check:checked ~ .ham_btn span::before{
+    bottom: 0;
+    transform: rotate(45deg);
+}
+#ham_btn_check:checked ~ .ham_btn span::after{
+    top: 0;
+    transform: rotate(-45deg);
+}
+#ham_btn_check{
+    display: none;
+}
+.menu_content {
+    width: 200px;
+    height: 240px;
+    position: fixed;
+    top: 60px;
+    right: -200px;
+    z-index: 1;
+    background-color: #154261;
+    transition: all 0.5s;
+}
+#ham_btn_check:checked ~ .menu_content{
+    right: 0px;
+}
+/* ここまで */
+
+#header img{
+    float: left;
+    margin-top: 5px;
+}
+/* ここまでメニューについて */
+
 /* メインコンテンツ内の設定 */
 h1{
+    font-size: 200%;
     color: black;
-    font-size: 20px;
     text-decoration: underline;
     text-decoration-color: #57A897;
 }
+h2{
+    color: black;
+    float: left;
+    padding-top: 1%;
+}
 p{
+    font-size: 160%;
     color: black;
 }
+
 .Games {
-    display: flexbox;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 .Games img{
-    width: 27%;
+    width: 100%;
     height: auto;
-    padding: 3%;
+    border: 2px solid #154261;
 }
+
+.GameCard{
+    width: 480px;
+    height: auto;
+    margin: 3%;
+}
+
+.GameCard img{
+    transition: 0.4s;
+}
+.GameCard img:hover{
+    transform: scale(1.1, 1.1);
+}
+
 .hide_mode{
     visibility: hidden;
 }
 .pop_mode{
-    position: fixed;
-    top: 30%;
-    left: 5%;
     z-index: 3;
+    position: fixed;
+    /* 画面の中心に表示 */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* ここまで */
+    display: none;
+}
+.pop_box{
+    width: 95vw;
+    height: 20vh;
+    background-color: #154261;
+    box-shadow: 4px 4px 4px black;
+    overflow: hidden;
 }
 .pop_img{
-    width: 47%;
-    display: none;
+    max-width: 100%;
+    max-height: 100%;
 }
 .pop_txt{
-    background-color:#154261;
-    display: none;
-    float: right;
-    width: 50%;
+    float: left;
+    width: 45%;
+    height: 100%;
+    margin-left: 1%;
+    padding-right: 1%;
+    overflow: auto;
 }
-.pop_txt p{
+.pop_txt::-webkit-scrollbar{
+    width: 0.5vw;
+    background-color: #154261;
+}
+.pop_txt::-webkit-scrollbar-thumb{
+    border-radius: 2vw;
+    background-color:#57A897;
+}
+.pop_txt p, .pop_txt h1{
     color: #FFF;
 }
+
+.pop_txt h1{
+    padding-top: 1%;
+    float: left;
+}
+
+
+.slider{
+    width: 50%;
+    height: auto;
+    float: left;
+    margin: 2%;
+    transition: 0.4s;
+}
+.slider:hover{
+    transform: scale(1.03, 1.03);
+}
+.slick-prev, .slick-next{
+    position: absolute;
+    top: 43%;
+    cursor: pointer;/*マウスカーソルを指マークに*/
+    outline: none;/*クリックをしたら出てくる枠線を消す*/
+    border-top: 2px solid white;/*矢印の色*/
+    border-right: 2px solid white;/*矢印の色*/
+    height: 2vw;
+    width: 2vw;
+}
+
+.slick-prev{
+    left: 0%;
+    transform: rotate(-135deg);
+}
+
+.slick-next{
+    left: 100%;
+    transform: rotate(45deg);
+}
+
+.slick-dots {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    left: -3%;
+}
+
+.slick-dots li {
+    display:inline-block;
+    margin: 1%;
+    margin-top: 2%;
+}
+
+.slick-dots button {
+    color: transparent;
+    outline: none;
+    width: 1vw;/*ドットボタンのサイズ*/
+    height: 1vw;/*ドットボタンのサイズ*/
+    display:block;
+    border-radius:100%;
+    background:white;/*ドットボタンの色*/
+    border: none;
+}
+
+.slick-dots .slick-active button{
+    background:#57A897;/*ドットボタンの現在地表示の色*/
+}
+
+
+.Gtag{
+    font-size: 100%;
+    color: #F0F0F0;
+    padding: 1%;
+    padding-top: 2%;
+    -webkit-text-stroke: 1% black;
+    font-weight: bold;
+}
+
+.Gtag::before{
+    content: "　";
+}
+
+
+
+.Gtag G3D::after{
+    padding-left: 1%;
+    padding-right: 1%;
+    background-color: black;
+    border: 1px solid #00CCCC;
+    content: "3D";
+}
+
+.Gtag G2D::after{
+    padding-left: 1%;
+    padding-right: 1%;
+    background-color: black;
+    border: 1px solid red;
+    content: "2D";
+}
+
+.Gtag Act::after{
+    padding-left: 1%;
+    padding-right: 1%;
+    background-color: red;
+    content: "Action";
+}
+
+.Gtag RPG::after{
+    padding-left: 1%;
+    padding-right: 1%;
+    background-color: rgb(190, 117, 48);
+    content: "RPG";
+}
+
+.Gtag Sht::after{
+    padding-left: 1%;
+    padding-right: 1%;
+    background-color: #00CCCC;
+    content: "Shooting";
+}
+
+.Gtag Sim::after{
+    padding-left: 1%;
+    padding-right: 1%;
+    background-color: green;
+    content: "Simulation";
+}
+
+.Gtag Puz::after{
+    padding-left: 1%;
+    padding-right: 1%;
+    background-color: #00CC00;
+    content: "Puzzle";
+}
+
+.Gtag Adv::after{
+    padding-left: 1%;
+    padding-right: 1%;
+    background-color: purple;
+    content: "Adventure";
+}
+
+.Gtag Rac::after{
+    padding-left: 1%;
+    padding-right: 1%;
+    background-color: orangered;
+    content: "Racing";
+}
+
+.Gtag Oth::after{
+    padding-left: 1%;
+    padding-right: 1%;
+    background-color: gray;
+    content: "Ohter";
+}
+
+.Gtag Hor::after{
+    padding-left: 1%;
+    padding-right: 1%;
+    background-color: blue;
+    content: "Horror";
+}
+
+.Gtag Rog::after{
+    padding-left: 1%;
+    padding-right: 1%;
+    background-color: rgb(255, 153, 0);
+    border: 0.15vw solid red;
+    content: "Roguelike";
+}
+
+.Gtag Nov::after{
+    padding-left: 1%;
+    padding-right: 1%;
+    background-color: palevioletred;
+    content: "Novel";
+}
+
+
