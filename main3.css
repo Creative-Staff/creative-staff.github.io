@@ -235,6 +235,9 @@ p{
     float: left;
 }
 
+.pop_dlbutton{
+    float: right;
+}
 
 .slider{
     width: 50%;
