@@ -314,6 +314,20 @@ $(function(){
 	});
 });
 $(function(){
+	$("#gi11").click(function(){
+		$(".pop_box").hide();
+		$(".pop_img").hide();
+		$(".pop_txt").hide();
+		$(".pop_mode").fadeIn();
+		$(".pb11").fadeIn();
+		$(".pi11").fadeIn();		
+		$(".pt11").fadeIn();
+		$(".slider").slick('slickGoTo', 0, false);
+		$(".slider").slick('setPosition');
+		return false;
+	});
+});
+$(function(){
 	$("#content-main").click(function(){
 		const pm = $(".pop_mode").css("display");
 		if(pm != "none"){
