@@ -246,17 +246,22 @@ p{
     background-color: #154261;
     box-shadow: 4px 4px 4px black;
     position: fixed;
-    top: 50%;
+    top: 53%;
     left: 50%;
     transform: translate(-50%, -50%);
     overflow: hidden;
 }
 .all_topic_box{ 
-    width: 90%;
+    width: 100%;
     height: calc(100% - 80px);
     overflow-y: auto;
+    margin-top: 1%;
     margin-bottom: 1%;
-    margin-left: 5%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 .all_topic_box::-webkit-scrollbar{
     width: 0.5vw;
@@ -266,13 +271,14 @@ p{
     border-radius: 2vw;
     background-color:#57A897;
 }
+.all_topic_box a {
+    margin: 1%;
+}
 .atm_img{
     display: none;
-    height: 30%;
-    max-height: 200px;
-    width: 340px;
-    margin-top: 0.6%;
-    margin-left: 1.4%;
+    height: 40%;
+    max-height: 300px;
+    width: 380px;
     overflow: hidden;
     object-fit: cover;
 }
