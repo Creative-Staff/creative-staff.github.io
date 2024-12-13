@@ -154,3 +154,35 @@ window.addEventListener("resize", () => {
 	}
 	$(".slider").slick('slickNext');
 }, false);
+
+// 絞り込み検索機能
+document.addEventListener("DOMContentLoaded", function () {
+    const checkboxes = document.querySelectorAll(".filter-checkbox");
+    const items = document.querySelectorAll(".GameCard");
+  
+    // チェックボックスの状態に応じて表示を更新する関数
+    function updateDisplay() {
+      // チェックされたカテゴリを配列で取得
+      const activeCategories = Array.from(checkboxes)
+        .filter(checkbox => checkbox.checked)
+        .map(checkbox => checkbox.value);
+  
+      items.forEach(item => {
+        // 各項目のカテゴリ（クラス）を取得
+        const itemCategories = item.className.split(" ");
+        // activeCategories内のすべてのカテゴリがitemCategoriesに含まれているかを判定
+        const shouldDisplay = activeCategories.every(category => itemCategories.includes(category));
+  
+        // 絞り込み条件がない（すべてのチェックボックスがオフ）の場合はすべて表示
+        item.style.display = activeCategories.length === 0 || shouldDisplay ? "block" : "none";
+      });
+    }
+  
+    // チェックボックスの変更イベントを監視
+    checkboxes.forEach(checkbox => {
+      checkbox.addEventListener("change", updateDisplay);
+    });
+  
+    // 初期状態の表示更新
+    updateDisplay();
+  });
