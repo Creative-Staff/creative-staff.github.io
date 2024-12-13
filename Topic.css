@@ -18,6 +18,7 @@ body {
     top: 0px;
     position: fixed;
     width: 100%;
+    height: 80px;
 }
 #content-main{
     margin: 3%;
@@ -35,9 +36,9 @@ body {
 }
 /* ボタンの装飾 */
 .default_button button{
-    font-size: 20px;
     width: 200px;
-    height: 60px;
+    height: 80px;
+    font-size: 20px;
     background-color: #154261;
     color: #F0F0F0;
     border: none;
@@ -65,8 +66,8 @@ body {
     display: none;
 }
 .ham_btn{
-    height: 60px;
-    width: 60px;
+    height: 80px;
+    width: 80px;
     top: 10px;
     right: 10px;
     z-index: 2;
@@ -123,8 +124,9 @@ body {
 /* ここまで */
 
 #header img{
+    margin-top: 15px;
     float: left;
-    margin-top: 5px;
+    
 }
 /* ここまでメニューについて */
 
