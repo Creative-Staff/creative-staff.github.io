@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>検索機能の例</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .search-container {
+      width: 250px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      overflow: hidden;
+      background-color: #fff;
+      padding: 10px;
+    }
+
+    .search-box {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      outline: none;
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .search-button {
+      width: 100%;
+      padding: 8px;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .search-button:hover {
+      background-color: #0056b3;
+    }
+
+    .history-container {
+      background-color: #f9f9f9;
+      border-top: 2px solid #ccc;
+      padding: 8px;
+      text-align: center;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .history-list {
+      max-height: 150px;
+      overflow-y: auto;
+      background-color: #fff;
+      padding-left: 15px;
+      display: none; /* 初期状態で履歴は非表示 */
+    }
+
+    .history-list li {
+      padding: 5px 0;
+      list-style: none;
+      border-bottom: 1px solid #ddd;
+      cursor: pointer;
+    }
+
+    .history-list li:last-child {
+      border-bottom: none;
+    }
+
+    .history-list li:hover {
+      background-color: #f0f0f0;
+    }
+
+    .clear-button {
+      display: block;
+      width: 100%;
+      padding: 5px;
+      border: none;
+      background-color: #ff4d4d;
+      color: white;
+      cursor: pointer;
+      font-size: 14px;
+      margin-top: 8px;
+    }
+
+    .clear-button:hover {
+      background-color: #cc0000;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>検索機能</h1>
+
+  <div class="search-container">
+    <input type="text" id="searchBox" class="search-box" placeholder="検索ワードを入力" oninput="filterSearch()">
+    <button class="search-button" onclick="search()">検索</button>
+    
+    <div class="history-container" onclick="toggleHistory()">検索履歴</div>
+    <ul id="history" class="history-list">
+      <li onclick="useHistory('2020')">2020</li>
+      <li onclick="useHistory('2021')">2021</li>
+      <li onclick="useHistory('2022')">2022</li>
+      <li onclick="useHistory('2023')">2023</li>
+      <li onclick="useHistory('2024')">2024</li>
+      <li onclick="useHistory('2025')">2025</li>
+    </ul>
+    <button class="clear-button" onclick="clearHistory()">履歴をクリア</button>
+  </div>
+
+  <h2>検索結果</h2>
+  <ul id="content">
+    <li>2020</li>
+    <li>2021</li>
+    <li>2022</li>
+    <li>2023</li>
+    <li>2024</li>
+    <li>2025</li>
+  </ul>
+
+  <script>
+    function search() {
+      const input = document.getElementById("searchBox").value.trim().toLowerCase();
+      if (!input) return;
+
+      const items = document.querySelectorAll("#content li");
+      items.forEach(item => {
+        if (item.textContent.toLowerCase().includes(input)) {
+          item.classList.remove("hidden");
+        } else {
+          item.classList.add("hidden");
+        }
+      });
+
+      addToHistory(input);
+    }
+
+    function addToHistory(keyword) {
+      const historyList = document.getElementById("history");
+
+      // 既存の履歴を取得
+      const existingItems = historyList.querySelectorAll("li");
+      for (let item of existingItems) {
+        if (item.textContent === keyword) return;
+      }
+
+      const newItem = document.createElement("li");
+      newItem.textContent = keyword;
+      newItem.onclick = () => {
+        useHistory(keyword);
+      };
+      historyList.appendChild(newItem);
+    }
+
+    function filterSearch() {
+      const input = document.getElementById("searchBox").value.trim().toLowerCase();
+
+      // 検索結果のフィルタリング
+      const items = document.querySelectorAll("#content li");
+      items.forEach(item => {
+        if (item.textContent.toLowerCase().includes(input)) {
+          item.classList.remove("hidden");
+        } else {
+          item.classList.add("hidden");
+        }
+      });
+
+      // 履歴のフィルタリング
+      const historyItems = document.querySelectorAll("#history li");
+      if (historyItems.length > 0) {
+        historyItems.forEach(item => {
+          if (item.textContent.toLowerCase().includes(input)) {
+            item.classList.remove("hidden");
+          } else {
+            item.classList.add("hidden");
+          }
+        });
+      }
+    }
+
+    function clearHistory() {
+      const historyList = document.getElementById("history");
+
+      // 履歴リストを空にする
+      while (historyList.firstChild) {
+        historyList.removeChild(historyList.firstChild);
+      }
+    }
+
+    // 履歴アイテムをクリックしたときにその検索を実行
+    function useHistory(keyword) {
+      document.getElementById("searchBox").value = keyword;
+      filterSearch(); // 再検索を実行
+
+      // クリックした履歴に関連するページに飛ぶ（例えば「2020」ならindex6.htmlに遷移）
+      if (keyword === '2020') {
+        window.location.href = 'index6.html';  // 2020のページ
+      } else if (keyword === '2021') {
+        window.location.href = 'index6.html';  // 2021のページ
+      } else if (keyword === '2022') {
+        window.location.href = 'index6.html';  // 2022のページ
+      } else if (keyword === '2023') {
+        window.location.href = 'index6.html';  // 2023のページ
+      } else if (keyword === '2024') {
+        window.location.href = 'index6.html';  // 2024のページ
+      } else if (keyword === '2025') {
+        window.location.href = 'index6.html';  // 2025のページ
+      }
+    }
+
+    // 履歴の表示/非表示を切り替え
+    function toggleHistory() {
+      const historyList = document.getElementById("history");
+      if (historyList.style.display === "none" || historyList.style.display === "") {
+        historyList.style.display = "block";
+      } else {
+        historyList.style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+</html>
