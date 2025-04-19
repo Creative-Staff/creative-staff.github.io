@@ -1,0 +1,73 @@
+/* 本全体の外観 */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+#book {
+    width: 400px;  /* 縦長本の幅 */
+    height: 600px; /* 縦長本の高さ */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    perspective: 1500px;  /* 3D視覚効果 */
+    transform-style: preserve-3d; /* 3Dエフェクトを有効化 */
+}
+
+/* 本のページのデザイン */
+.page {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    display: inline-block;
+    padding: 30px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    transition: transform 1s ease-in-out;
+    transform-style: preserve-3d;
+    background-image: linear-gradient(135deg, #f4f4f4 0%, #fff 100%);
+}
+
+.page h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.page p {
+    font-size: 1.4em;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* ページめくり効果 */
+.page:nth-child(odd) {
+    z-index: 2;  /* 奇数ページを前面に */
+}
+
+/* 表紙のデザイン */
+#book::before {
+    content: "縦長本のタイトル";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #fff;
+    background-color: #2c3e50;
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    z-index: 3;
+}
