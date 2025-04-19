@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>縦長本のページめくり</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      padding: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    #book {
+      width: 400px;
+      height: 600px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      position: relative;
+      perspective: 1500px;
+      transform-style: preserve-3d;
+    }
+
+    .page {
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+      display: inline-block;
+      padding: 30px;
+      box-sizing: border-box;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      position: absolute;
+      transition: transform 1s ease-in-out;
+      transform-style: preserve-3d;
+      background-image: linear-gradient(135deg, #f4f4f4 0%, #fff 100%);
+      cursor: pointer;
+    }
+
+    .page h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .page p {
+      font-size: 1.4em;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .page:nth-child(odd) {
+      z-index: 2;
+    }
+  </style>
+
+  <!-- jQuery & turn.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/4.1.0/turn.min.js"></script>
+</head>
+<body>
+  <div id="book">
+    <div class="page">
+      <h2>縦長本のタイトル</h2>
+      <p>これは縦長本の最初のページです。</p>
+    </div>
+    <div class="page">
+      <h2>ページ 2</h2>
+      <p>本の2ページ目です。縦長レイアウトで内容が続きます。</p>
+    </div>
+    <div class="page">
+      <h2>ページ 3</h2>
+      <p>ページめくりが進むと、次の内容が表示されます。</p>
+    </div>
+    <div class="page">
+      <h2>ページ 4</h2>
+      <p>縦長の本の4ページ目、内容が続きます。</p>
+    </div>
+    <div class="page">
+        <h2>ページ 5</h2>
+        <p>本の冒険は続きます。物語はさらに深く、次の章へと進みます。</p>
+      </div>
+      <div class="page">
+        <h2>ページ 6</h2>
+        <p>古びた地図が登場しました。そこには誰も知らない秘宝の在りかが…。</p>
+      </div>
+      <div class="page">
+        <h2>ページ 7</h2>
+        <p>嵐の夜、主人公は灯りのない山小屋へとたどり着きました。</p>
+      </div>
+      <div class="page">
+        <h2>ページ 8</h2>
+        <p>そして物語はクライマックスへ。すべての謎が今、明かされようとしています。</p>
+      </div>      
+  </div>
+
+  <script>
+    $(document).ready(function () {
+      const $book = $("#book");
+
+      $book.turn({
+        width: 400,
+        height: 600,
+        autoCenter: true,
+        display: 'single',
+        acceleration: true,
+        when: {
+          turning: function (event, page, view) {
+            console.log("ページ " + page + " をめくっています。");
+          },
+          turned: function (event, page, view) {
+            console.log("ページ " + page + " がめくられました。");
+          }
+        }
+      });
+
+      // マウス押した時のめくり処理
+      $book.on("mousedown", function (e) {
+        const currentPage = $book.turn("page");
+        const totalPages = $book.turn("pages");
+
+        const bookOffset = $book.offset().left;
+        const clickX = e.pageX;
+
+        // クリックした位置で判定（右半分 → 次へ、左半分 → 前へ）
+        if (clickX > bookOffset + $book.width() / 2) {
+          if (currentPage < totalPages) {
+            $book.turn("next");
+          }
+        } else {
+          if (currentPage > 1) {
+            $book.turn("previous");
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
