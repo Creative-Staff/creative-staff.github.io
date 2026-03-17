@@ -1,0 +1,76 @@
+@import url(header.css);
+@import url(footer.css);
+
+
+
+
+html {
+    background-color: white;
+}
+body {
+    margin: 0px;
+    padding: 0px;
+    color: #F0F0F0;
+	font-family: Avenir, "Open Sans", "Helvetica Neue", Helvetica, "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif !important;
+	font-size: 15px;
+	min-height: 100%;
+}
+
+h1{font-size: 32px; line-height: 40px;}
+h2{font-size: 28px; line-height: 36px;}
+h3{font-size: 24px;}
+h4{font-size: 20px;}
+h5{font-size: 18px;}
+h6{font-size: 16px;}
+
+@media screen and (max-width: 544px){
+
+	h1{font-size: 28px; line-height: 40px;}
+	h2{font-size: 24px; line-height: 28px;}
+	h3{font-size: 20px;}
+	h4{font-size: 16px;}
+	h5{font-size: 14px;}
+	h6{font-size: 12px;}
+}
+
+p{
+	font-size: 15px;
+	margin-bottom: 1em;
+}
+
+ul, ol{font-size: 15px;}
+
+img{
+	width: 100%;
+}
+
+a{
+	color: #ff4081;
+	text-decoration: none;
+	line-height: 1.2em;
+}
+
+a:hover{
+	color: #ff4081;
+	text-decoration: underline;
+}
+
+.cre-container{
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 5%;
+}
+
+
+
+
+/* 各ブロックの設定 */
+#content-main{
+    padding: 3%;
+    position: relative;
+    top: 60px;
+    min-height: calc(100vh - 50px);
+	height: auto;
+ 	margin: 30px 0 100px 0;
+}

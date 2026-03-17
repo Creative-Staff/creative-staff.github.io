@@ -1,0 +1,50 @@
+
+/* メインコンテンツ内の設定 */
+
+.date{
+    text-align: right;
+}
+
+
+.Midashi{
+    color: black;
+	padding: 5%;
+}
+
+.Honbun{
+	
+	box-sizing: border-box;
+    color: black;
+    font-size: 130%;
+    margin-left: auto;
+    height: 100%;
+    width: 100%;
+	padding: 5%;
+	border-radius: 50px;
+	background-color : #eee;
+}
+
+.Honbun>img{
+    float: right;
+    margin-left: 3%;
+    margin-top: 0%;
+}
+
+img.imgOpt{
+    width: 35vw;
+    height: auto;
+}
+
+red{
+    color: red;
+}
+
+bold{
+    font-weight: bold;
+}
+
+big-font{
+    font-size: 200%;
+}
+
+/* これは記事を書く際のテンプレのcssです。 適宜変更、コピーして使用してください*/

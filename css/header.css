@@ -1,0 +1,520 @@
+
+
+/*-----bootstrap original xss-----*/
+@media screen and (max-width: 544px){
+	main h2{
+		padding-left: 0.3em;
+	}
+
+	main .cre-container{
+		padding-left: 0.5em;
+		padding-right: 0.5em;
+	}
+}
+
+
+
+/*-----------------------------------------
+----------------- header ------------------
+-----------------------------------------*/
+
+#header{
+    z-index: 1; /* z-indexの値を扱う際は、マイナスで指定しても良いが、hoverはz-indexが負の値に対して働かない為、ヘッダーのz-indexを1とする */
+    top: 0px;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    
+    box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
+}
+
+header div{
+	position: relative;
+}
+
+header .drawer-button-open{
+	display: inline-block;
+	position: absolute;
+	top: 11px;
+	left: 11px;
+	width: 48px;
+	height: 48px;
+    color:#fff;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+	text-align: center;
+	-webkit-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+
+.drawer-button-open:hover{
+	cursor: pointer;
+    color:#154261;
+	background-color: #fff;
+}
+
+.drawer-button-open > i{
+	padding: 0;
+	margin-top: 3px;
+}
+
+.drawer-button-open > span{
+	font-size: 10px;
+	display: block;
+}
+
+.header-logo-link{
+    display: table-cell;
+    margin: auto 0;
+    vertical-align: middle;
+}
+
+.header-logo-link > a{
+	display: block;
+}
+
+.header-logo-link > a > img.header-logo{
+	height: auto;
+	width: auto;
+	padding: 5px 0;
+	max-width: 100%;
+}
+
+.header-logo-link > a > img.header-logo-xss{
+	display: block;
+	margin: 10px auto 0;
+	width: 100%;
+	height: auto;
+	max-width: 200px;
+}
+
+
+
+
+/*-----------------------------------------
+------------ main navigation --------------
+-----------------------------------------*/
+#main-navigation{
+    min-height: 70px; 
+	width: 100%;
+	height: auto;
+	margin: 0 auto;
+	position: relative;
+	background-color: #154261;
+	z-index: 800;
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+}
+
+#main-navigation > div > ul{
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+#main-navigation > div > ul > li{
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+	position: relative;
+	z-index: 802;
+}
+
+#main-navigation > div > ul > li > a{
+	color: #fff;
+	position: relative;
+	text-decoration: none;
+	height: 100%;
+	padding: 1.5em 0.5em;
+	display: block;
+	cursor: pointer;
+	transition: all 0.5s ease;
+	z-index: 803;
+	overflow: hidden;
+}
+
+#main-navigation > div > ul > li > a:hover{
+	color: #154261;
+}
+
+#main-navigation > div > ul > li > a:before{
+	content: "";
+	top: 50%;
+	left: 50%;
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	margin-left: -5px;
+	margin-top: -5px;
+	background-color: #fff;
+	opacity: 0;
+	border-radius: 0.5px;
+	-webkit-transform: rotate(-180deg) scale(1.0);
+	transform: rotate(-0deg) scale(1.0);
+	transition: all 0.4s ease;
+	z-index: 801;
+}
+
+#main-navigation > div > ul > li > a:hover:before{
+	border-radius: 0.5px;
+	-webkit-transform: rotate(-45deg) scale(30.0);
+	transform: rotate(-45deg) scale(30.0);
+	opacity: 1;
+}
+
+#main-navigation > div > ul > li > a > i{
+	position: relative;
+	vertical-align: middle;
+	font-size: 1.4em;
+	margin-right: 0.3em;
+	z-index: 803;
+}
+
+#main-navigation > div > ul > li > a > span{
+	position: relative;
+	vertical-align: middle;
+	font-size: 14px;
+	z-index: 803;
+}
+
+#main-navigation .is-visible,
+#main-navigation .is-visible:hover{
+	background: #fff !important;
+	color: #154261 !important;
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,.1) inset, 0 3px 1px -2px rgba(0,0,0,.1) inset, 0 1px 2px 0 rgba(0,0,0,.1) inset;
+}
+
+/*----------bootstrap xs----------*/
+@media screen and (min-width: 545px) and (max-width: 767px){
+
+	#main-navigation > div > ul > li > a,
+	#main-navigation > div > ul > li > a:hover{
+		padding: 0.5em;
+	}
+
+	#main-navigation > div > ul > li > a{
+		padding: 0.5em;
+	}
+
+	#main-navigation > div > ul > li > a > i{
+		display: block;
+		font-size: 25px;
+		margin: 5px auto;
+	}
+
+	#main-navigation > div > ul > li > a > span{
+		display: block;
+		line-height: 20px;
+		font-size: 13px;
+	}
+}
+
+
+
+/*-----------------------------------------
+------------ mega navigation --------------
+-----------------------------------------*/
+#mega-navigation{
+	padding: 0 5% 1em;
+	background-color: #154261;
+	margin: 0 auto;
+	width: 100%;
+}
+
+#mega-navigation .row{
+	margin: 0 auto;
+}
+
+#mega-navigation > div > ul{
+	list-style-type: none;
+	padding: 0;
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+#mega-navigation > div > ul > li{
+	background-color: #fff;
+	padding: 1em;
+	box-shadow:0 2px 2px 0 rgba(0,0,0,.06), 0 3px 1px -2px rgba(0,0,0,.1), 0 1px 5px 0 rgba(0,0,0,.08);
+}
+
+#mega-navigation .mega-navigation-items{
+    display:none;
+}
+
+#mega-navigation .mega-navigation-items > ul{
+	list-style-type: none;
+	padding: 0;
+	width: 100%;
+}
+
+#mega-navigation .mega-navigation-items > ul > li{
+	display: inline-block;
+	text-align: center;
+	padding: 0;
+}
+
+
+#mega-navigation .mega-navigation-items > ul > li > a{
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#mega-navigation .mega-navigation-items > ul > li > ul{
+	display: block;
+	list-style-type: none;
+	padding: 0;
+	width: 100%;
+}
+
+#mega-navigation .mega-navigation-items > ul > li > ul > li{
+	display: inline-block;
+	text-align: center;
+	padding: 0;
+}
+
+#mega-navigation .mega-navigation-items > ul > li > ul > li > a{
+	width: 100%;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#mega-navigation .mega-navigation-items a{
+	color: #4e8ca0;
+	text-decoration: none;
+	border-radius: 3px;
+	border: 1px solid transparent;
+	transition: all 0.5s ease;
+}
+
+#mega-navigation .mega-navigation-items a:hover{
+	background-color: rgba(240, 240, 240, 0.6);
+	border: 1px solid #ddd;
+}
+
+#mega-navigation .mega-navigation-items .material-icons,
+#mega-navigation .mega-navigation-items img{
+	font-size: 4em;
+	border-radius: 3px;
+	margin: 0.3em auto;
+	vertical-align: middle;
+}
+
+#mega-navigation .mega-navigation-items span{
+	font-size: 1.3em;
+	padding-left: 1em;
+	vertical-align: middle;
+}
+
+
+#mega-navigation .mega-navigation-items img{
+	margin: 0.3em auto;
+	height: 1em;
+	width: auto;
+}
+
+/*----------bootstrap xs----------*/
+@media screen and (min-width: 545px) and (max-width: 767px){
+
+	#mega-navigation .mega-navigation-items span{
+		font-size: 1em;
+		padding-left: 0.5em;
+	}
+
+	#mega-navigation .mega-navigation-items .material-icons,
+	#mega-navigation .mega-navigation-items img{
+		font-size: 2em;
+		border-radius: 3px;
+		margin: 0.5em auto;
+	}
+
+	#mega-navigation .mega-navigation-items:first-child > ul > li:first-child i{
+		margin: 1.52em 0;
+	}
+
+}
+
+
+
+
+/*-----------------------------------------
+------------ drawer navigation ------------
+-----------------------------------------*/
+#drawer-navigation{
+	width: 220px;
+	height: 100%;
+	max-height: 100%;
+	padding: 0 20px;
+	background-color: #fff;
+	position: fixed;
+	top: 0;
+	left: 0;
+	-webkit-transform: translate(-240px, 0px);
+	transform: translate(-240px, 0px);
+	z-index: 999;
+	-webkit-transition: all 0.7s ease;
+	transition: all 0.7s ease;
+	border-right: 1px solid #777;
+}
+
+#drawer-navigation.is-active{
+	-webkit-transform: translate(0px, 0px);
+	transform: translate(0px, 0px);
+}
+
+#drawer-navigation > div > a > img{
+	width: 150px;
+	padding: 1em;
+}
+
+#drawer-navigation > ul{
+	list-style-type: none;
+	padding-left: 0;
+	margin-bottom: 1em;
+}
+
+#drawer-navigation > ul > li > a{
+	display: inline-block;
+	padding: 1em;
+	width: 100%;
+	height: 100%;
+	color: #777;
+	border: 1px solid transparent;
+}
+
+#drawer-navigation > ul > li > a:hover{
+	text-decoration: none;
+	background-color: rgba(240, 240, 240, 0.4);
+	border: 1px solid #ddd;
+}
+
+#drawer-navigation > ul > li > a > i{
+	vertical-align: middle;
+	margin-top: -2px;
+	padding-right: 10px;
+}
+
+#drawer-navigation > ul#sns-navigation{
+	border-top: 1px solid #ccc;
+	padding-top: 1em;
+}
+
+#drawer-navigation > ul#sns-navigation > li > a > img{
+	width: 24px;
+	border-radius: 2px;
+	margin-right: 10px;
+}
+
+#drawer-navigation-bg{
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	min-height: 100%;
+	z-index: 998;
+	background-color: rgba(0, 0, 0, 0);
+	-webkit-transition: all 0.7s ease;
+	transition: all 0.7s ease;
+}
+
+#drawer-navigation-bg.is-active{
+	display: block;
+	background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+}
+
+#drawer-navigation-bg.is-active:before{
+	cursor: pointer;
+	content: "";
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	width: 50px;
+	height: 50px;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+
+
+
+
+
+/*---------- Original CSS Class ----------*/
+
+/* hidden-xss and visible-xss */
+@media screen and (min-width: 545px){
+	.visible-xss{display: none!important;}
+}
+@media screen and (max-width: 544px){
+	.hidden-xss{display: none!important;}
+}
+
+
+#classroom-info > div{
+	text-align: center;
+	padding: 1em;
+	background-color: #4e8ca0;
+}
+#classroom-info > div > div{
+	padding: 1em 0.5em 0.5em;
+	border-radius: 3px;
+	background-color: #fff;
+}
+#classroom-info > div > div > p:nth-child(1){
+
+}
+#classroom-info > div > div > p:nth-child(2){
+	font-size: 20px;
+	margin-bottom: 14px;
+}
+#classroom-info > div > div > p:nth-child(3) > span{
+	font-size: 30px;
+}
+
+
+/*----------bootstrap lg----------*/
+@media screen and (min-width: 1200px){
+}
+
+/*----------bootstrap md----------*/
+@media screen and (min-width: 992px) and (max-width: 1199px){
+}
+
+/*----------bootstrap sm----------*/
+@media screen and (min-width: 768px) and (max-width: 991px){
+}
+
+/*----------bootstrap xs----------*/
+@media screen and (min-width: 545px) and (max-width: 767px){
+	#sub-contents{
+		margin-top: 0;
+		padding-bottom: 2em;
+	}
+}
+
+/*-----bootstrap original xss-----*/
+@media screen and (max-width: 544px){
+	.row > .col-xs-12, .row > .col-xss-12{
+
+	}
+
+	.col-xss-12{
+		width: 100%;
+	}
+	#sub-contents{
+		margin-top: 0;
+		padding-bottom: 2em;
+	}
+}
+
+
+
+

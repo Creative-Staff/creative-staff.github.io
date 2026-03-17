@@ -1,0 +1,88 @@
+
+/* ボタンの装飾 */
+.default_button button{
+    width: 200px;
+    height: 80px;
+    font-size: 20px;
+    background-color: #154261;
+    color: #F0F0F0;
+    border: none;
+}
+.default_button button:hover{
+    background-color: #57A897;
+}
+
+/* メインコンテンツ内の設定 */
+#content-main > div > h1{
+    color: black;
+    text-decoration: underline;
+    text-decoration-color: #57A897;
+}
+#content-main > div > p{
+    color: black;
+	
+	box-sizing: border-box;
+    font-size: 20px;
+    margin-left: auto;
+    height: 100%;
+    width: 100%;
+	padding: 5%;
+	border-radius: 50px;
+	background-color : #eee;
+}
+
+#content-main > ul{
+	display:flex;
+	justify-content: space-between;
+	padding-bottom:50px;
+}
+
+#content-main > ul > li{
+	flex:auto;
+	min-width:200px;
+	list-style: none;
+	margin-right: 20px;
+}
+
+#content-main > ul > li > h1{
+	
+    color: black;
+    text-decoration: underline;
+    text-decoration-color: #57A897;
+}
+#content-main > ul > li > p{
+	
+	box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+	padding: 5%;
+    font-size: 20px;
+	border-radius: 50px;
+	background-color : #eee;
+}
+
+#content-main > ul > li > div > h1{
+	
+    color: black;
+    text-decoration: underline;
+    text-decoration-color: #57A897;
+}
+#content-main > ul > li > div > p{
+	
+	box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+	padding: 5%;
+    font-size: 20px;
+	border-radius: 50px;
+	background-color : #eee;
+}
+
+
+.twitter{
+    max-width: 50%;
+    max-height: 500px;
+    border: 10px #154261;
+    padding: 10px;
+    overflow: scroll;
+}

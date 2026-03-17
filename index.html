@@ -4,68 +4,51 @@
         <meta charset="UTF-8" />
         <title>CreativeStaff</title>
         <link rel="icon" href="cgls/favicon.ico" />
-        <link rel="stylesheet" href="main.css" />
+        
+		
+        <link rel="stylesheet" href="css/main.css" />
+        <link rel="stylesheet" href="css/toppage.css" />
+        
+        <!-- googleのフォントを使う -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        
+        <!-- bootstrapのアイコンを使う -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        
+        <!-- jQueryのインクルード -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+		
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- なんかわからんけどスライダーに必要 -->
+        <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+        
+        
     </head>
     <body>
-        <div id="header">
-            <img src="cgls/cs_logo01.png" alt="CreativeStaff"/>
-            <div class="header_select">
-                <div class="default_button home_button"><button onclick="location.href='index.html'">ホームへ</button></div>
-                <div class="default_button blue_button"><button onclick="location.href='index2.html'">サークルについて</button></div>
-                <div class="default_button blue_button"><button onclick="location.href='index3.html'">ゲーム一覧</button></div>
-                <div class="default_button blue_button"><button onclick="location.href='https://forms.gle/RhHWwJq9oyyaNeAy7'">お問い合わせ</button></div>
-            </div>
-            <div class="ham_select">
-                <input type="checkbox" id="ham_btn_check">
-                <label for="ham_btn_check" class="ham_btn"><span></span></label>
-    
-                <div class="menu_content">
-                    <div class="default_button home_button"><button onclick="location.href='index.html'">ホームへ</button></div>
-                    <div class="default_button blue_button"><button onclick="location.href='index2.html'">サークルについて</button></div>
-                    <div class="default_button blue_button"><button onclick="location.href='index3.html'">ゲーム一覧</button></div>
-                    <div class="default_button blue_button"><button
-                            onclick="location.href='https://forms.gle/RhHWwJq9oyyaNeAy7'">お問い合わせ</button></div>
-                </div>
-            </div>
-        </div>
+        <!-- ヘッダー -->
+        <div id="header"></div>
+        
+        <!-- フェードイン、アウト -->
         <div class="fadeOut">
-            <p><img src="cgls/cs_logo01_fade_out.png" alt=""/></p>
+            <p>
+                <img src="cgls/cs_logo01.png" alt=""/>
+            </p>
         </div>
-        <div class="all_topic_mode">
-            <div class="all_topic_box">
-                <a href="Topic - 2024 notice BUIN TOROKUKAI.html"><img src="cgls/Topic_notice_2024BUINTOROKUKAI.png" alt="" class="atm_img"></a>
-                <a href="Topic - 2024 notice SETUMEIKAI.html"><img src="cgls/Topic_notice_2024SETUMEIKAI.png" alt="" class="atm_img"></a>
-                <a href="Topic - 2024 notice SHINKAN.html"><img src="cgls/Topic_notice_2024SHINKAN.png" alt="" class="atm_img"></a>
-                <a href="index3.html"><img src="cgls/Inherutance/1_Inheritance_title.png" alt="" class="atm_img"></a>
-                <a href="index3.html"><img src="cgls/Cloring ash world/1.png" alt="" class="atm_img"></a>
-                <a href="index3.html"><img src="cgls/StageMixer/stageMixer_1.png" alt="" class="atm_img"></a>
-                <a href="index3.html"><img src="cgls/Don't Stop Rogue-kun!/Don't Stop Rogue-kun! (1).png" alt="" class="atm_img"></a>
-                <a href="Topic - 2023NOKISEKI.html"><img src="cgls/Topic_2023NOKISEKI.png" alt="" class="atm_img"></a>
-                <a href="Topic - comike101.html"><img src="cgls/comike101.jpg" alt="" class="atm_img"></a>
-                <a href="index3.html"><img src="cgls/taf/taf_1.png" alt="" class="atm_img"></a>
-                <a href="index3.html"><img src="cgls/TAMASHI Regain/TAMASI_Regain (1).png" alt="" class="atm_img"></a>
-                <a href="index3.html"><img src="cgls/Underworld Station/US_01.png" alt="" class="atm_img"></a>
-            </div>
-            <div class="default_button" id="closed_atm"><button>閉じる</button></div>
-        </div>
+        
+        <!-- 本文 -->
         <div id="content-main">
             <div class="topic">
                 <h1>Topics</h1>
                 <ul class="slider">
-                    <li><a href="Topic - 2024 notice BUIN TOROKUKAI.html"><img src="cgls/Topic_notice_2024BUINTOROKUKAI.png" alt=""></a></li>
-                    <li><a href="Topic - 2024 notice SETUMEIKAI.html"><img src="cgls/Topic_notice_2024SETUMEIKAI.png" alt=""></a></li>
-                    <li><a href="Topic - 2024 notice SHINKAN.html"><img src="cgls/Topic_notice_2024SHINKAN.png" alt=""></a></li>
-                    <li><a href="index3.html"><img src="cgls/Inherutance/1_Inheritance_title.png" alt=""></a></li>
-                    <li><a href="index3.html"><img src="cgls/Cloring ash world/1.png" alt=""></a></li>
-                    <li><a href="index3.html"><img src="cgls/StageMixer/stageMixer_1.png" alt=""></a></li>
-                    <li><a href="index3.html"><img src="cgls/Don't Stop Rogue-kun!/Don't Stop Rogue-kun! (1).png" alt=""></a></li>
-                    <li><a href="Topic - 2023NOKISEKI.html"><img src="cgls/Topic_2023NOKISEKI.png" alt=""></a></li>
-                    <li><a href="Topic - comike101.html"><img src="cgls/comike101.jpg" alt=""></a></li>
-                    <li><a href="index3.html"><img src="cgls/taf/taf_1.png" alt=""></a></li>
-                    <li><a href="index3.html"><img src="cgls/TAMASHI Regain/TAMASI_Regain (1).png" alt=""></a></li>
-                    <li><a href="index3.html"><img src="cgls/Underworld Station/US_01.png" alt=""></a></li>
+                    <li><a href="games/games.html"><img src="games/cgls/Inherutance/1_Inheritance_title.png" alt=""></a></li>
+                    <li><a href="games/games.html"><img src="games/cgls/Cloring ash world/1.png" alt=""></a></li>
+                    <li><a href="games/games.html"><img src="games/cgls/StageMixer/stageMixer_1.png" alt=""></a></li>
+                    <li><a href="games/games.html"><img src="games/cgls/Don't Stop Rogue-kun!/Don't Stop Rogue-kun! (1).png" alt=""></a></li>
+                    <li><a href="games/games.html"><img src="games/cgls/taf/taf_1.png" alt=""></a></li>
+                    <li><a href="games/games.html"><img src="games/cgls/TAMASHI Regain/TAMASI_Regain (1).png" alt=""></a></li>
+                    <li><a href="games/games.html"><img src="games/cgls/Underworld Station/US_01.png" alt=""></a></li>
                 </ul>
-                <div class="default_button topic_button"><button id="all_topic">トピック一覧</button></div>
             </div>
             <div class="information">
                 <h1>お知らせ</h1>
@@ -88,73 +71,73 @@
                 <h1>更新情報</h1>
                 <ul class="news-list">
                     <li class="item">
-                        <a href="introduction_1205.html">
+                        <a href="articles/20251205_introduction/article.html">
                             <p class="date">2025/12/05</p>
                             <p class="title">web担当が変わりましたので自己紹介します！</p>
                         </a>
                     </li>
                     <li class="item">
-                        <a href="Topic 2024 BUIN TOROKUKAIGO.html">
+                        <a href="articles/20240519_24aftertourokukai/article.html">
                             <p class="date">2024/5/19</p>
                             <p class="title">2024年度 部員登録会後のお知らせ</p>
                         </a>
                     </li>
                     <li class="item">
-                        <a href="Topic - 2024 notice BUIN TOROKUKAI.html">
+                        <a href="articles/20240506_24tourokukai/article.html">
                             <p class="date">2024/5/6</p>
                             <p class="title">2024年度 部員登録会のお知らせ</p>
                         </a>
                     </li>
                     <li class="item">
-                        <a href="Topic - 2024 notice SETUMEIKAI.html">
+                        <a href="articles/20240412_24setsumeikai/article.html">
                             <p class="date">2024/4/12</p>
                             <p class="title">2024年度サークル説明会のお知らせ</p>
                         </a>
                     </li>
                     <li class="item">
-                        <a href="Topic - 2024 notice SHINKAN.html">
+                        <a href="articles/20240324_24shinkan/article.html">
                             <p class="date">2024/3/24</p>
                             <p class="title">2024年4月2日の新入生勧誘会のお知らせ</p>
                         </a>
                     </li>
                     <li class="item">
-                        <a href="Topic - 2023NOKISEKI.html">
+                        <a href="articles/20240324_23nokiseki/article.html">
                             <p class="date">2024/3/24</p>
                             <p class="title">お詫び、そしてCreativeStaff 2023年の軌跡</p>
                         </a>
                     </li>
                     <li class="item">
-                        <a href="Topic - aftertourokukai.html">
+                        <a href="articles/20230522_23tourokukai/article.html">
                             <p class="date">2023/5/22</p>
                             <p class="title">部員登録会後の入部について</p>
                         </a>
                     </li>
                     <li class="item">
-                        <a href="Topic - 2023 ann circle info2 .html">
+                        <a href="articles/20230509_circleinfo2/article.html">
                             <p class="date">2023/5/9</p>
                             <p class="title">部員登録会について</p>
                         </a>
                     </li>
                     <li class="item">
-                        <a href="Topic - 2023 ann circle info .html">
+                        <a href="articles/20230410_circleinfo/article.html">
                             <p class="date">2023/4/10</p>
                             <p class="title">サークル説明会について</p>
                         </a>
                     </li>
                     <li class="item">
-                        <a href="Topic - 2023 HP renewal.html">
+                        <a href="articles/20230405_newHP/article.html">
                             <p class="date">2023/4/5</p>
                             <p class="title">新HP開設のお知らせ</p>
                         </a>
                     </li>
                     <li class="item">
-                        <a href="Topic - Shinkan2023.html">
+                        <a href="articles/20230404_shinkanreport23/article.html">
                             <p class="date">2023/4/4</p>
                             <p class="title">23年新入生歓迎会の記録</p>
                         </a>
                     </li>
                     <li class="item">
-                        <a href="Topic - comike101.html">
+                        <a href="articles/20221231_c101/article.html">
                             <p class="date">2022/12/31</p>
                             <p class="title">C101（コミックマーケット101）の記録</p>
                         </a>
@@ -163,13 +146,14 @@
             </div>
             <br><br><br><br><br><br>
         </div>
-        <div id="footer">
-            <br><br><br>
-            @2023 Creative Staff
-        </div>
+        
+        <!-- フッター -->
+        <div id="footer"></div>
 
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-        <script src="main.js" charset="utf-8"></script>
+    
+        <script src="js/main.js" charset="utf-8"></script>
+        <script src="js/toppage.js" charset="utf-8"></script>
+        <script src="js/cre_navigation.js" charset="utf-8"></script>
+		<script src="https://apis.google.com/js/platform.js" async defer></script>
     </body>
 </html>
