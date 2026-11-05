@@ -3,7 +3,7 @@
 // ----------------------------------------------------------------------------
 
 // ゲームランチャーと同じ配信元(games.json と toppage.json と画像を置いている場所)
-const API_BASE = 'https://cs-launcher-api.akane-minori-cslauncher.workers.dev';
+const WEBPAGE_URL = 'https://cs-launcher-api.akane-minori-cslauncher.workers.dev';
 
 
 // ----------------------------------------------------------------------------
@@ -30,7 +30,7 @@ $(function() {
 /** ゲームIDと相対パスから、画像のURLを組み立てる(日本語・スペース対応) */
 function assetUrl(gameId, path) {
     const encodedPath = path.split('/').map(encodeURIComponent).join('/');
-    return `${API_BASE}/games/${encodeURIComponent(gameId)}/${encodedPath}`;
+    return `${WEBPAGE_URL}/games/${encodeURIComponent(gameId)}/${encodedPath}`;
 }
 
 /** toppage.json(ゲームIDの一覧)と games.json を読んで、スライダーに画像を並べる */
@@ -40,8 +40,8 @@ async function loadSliderGames() {
 
     try {
         const [idsRes, gamesRes] = await Promise.all([
-            fetch(`${API_BASE}/toppage.json`),
-            fetch(`${API_BASE}/games.json`),
+            fetch(`${WEBPAGE_URL}/toppage.json`),
+            fetch(`${WEBPAGE_URL}/games.json`),
         ]);
         if (!idsRes.ok) throw new Error(`toppage.json: HTTP ${idsRes.status}`);
         if (!gamesRes.ok) throw new Error(`games.json: HTTP ${gamesRes.status}`);
