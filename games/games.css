@@ -1,29 +1,8 @@
-@import url("slick.css");
-
-/* ボタンの装飾 */
-.default_button button{
-    width: 200px;
-    height: 80px;
-    font-size: 20px;
-    background-color: #154261;
-    color: #F0F0F0;
-    border: none;
-}
-.default_button button:hover{
-    background-color: #57A897;
-}
-
-/* メニュー */
-/* 通常メニュー */
-.GameList_button button{
-    background-color: #57A897;
-}
-/* ここまで */
+/* ----------------------------------------------------------------------------
+   games.html 専用のスタイル(色は #154261 / #57A897 を基調)
+---------------------------------------------------------------------------- */
 
 /*　ここから絞り込み選択 */
-.hide_item {
-    display: none;
-}
 .search_area {
     display: inline;
     text-align: center;
@@ -132,9 +111,43 @@ red{
     height: auto;
     margin-bottom: 20px;
 }
-.hide_mode{
-    visibility: hidden;
+
+/* カードは全体をクリックできる。長いタイトルは折り返す */
+.GameCard{
+    cursor: pointer;
 }
+.GameCard h2{
+    float: none;
+    margin: 0 0 6px 0;
+}
+.GameCard_title{
+    margin-bottom: 12px;
+}
+
+/* ----------------------------------------------------------------------------
+   タグの表示(games.json の tags をそのまま表示)
+---------------------------------------------------------------------------- */
+.Gtag{
+    margin: 0;
+    font-size: 100%;
+    color: #F0F0F0;
+    display: block;
+}
+.Gtag_chip{
+    display: inline-block;
+    margin: 0 4px 4px 0;
+    padding: 0 8px;
+    border-radius: 3px;
+    background-color: #154261;
+    color: #F0F0F0;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.6;
+}
+
+/* ----------------------------------------------------------------------------
+   詳細ポップアップ(横長の画面は左右に並べ、縦長の画面は上下に並べる)
+---------------------------------------------------------------------------- */
 .pop_mode{
     z-index: 3;
     position: fixed;
@@ -142,30 +155,63 @@ red{
     top: calc(50% + 30px);
     left: 50%;
     transform: translate(-50%, -50%);
-    /* ここまで */
     display: none;
+    animation: pop_fade 0.2s ease-out;
 }
-
-/* main3.jsで大きさなどを上書きしてる*/
+@keyframes pop_fade{
+    from{ opacity: 0; }
+    to{ opacity: 1; }
+}
 .pop_box{
+    position: relative;
+    display: flex;
     align-items: center;
+    width: 95vw;
+    height: 75vh;
     background-color: #154261;
     box-shadow: 4px 4px 4px black;
     overflow: hidden;
 }
+.pop_close{
+    position: absolute;
+    top: 6px;
+    right: 14px;
+    z-index: 5;
+    background: transparent;
+    border: none;
+    color: #FFF;
+    font-size: 32px;
+    line-height: 1;
+    cursor: pointer;
+}
+.pop_close:hover{
+    color: #57A897;
+}
+.pop_box .slider{
+    display: block;
+    width: 48%;
+    height: auto;
+    margin: 0 auto;
+    transition: 0.4s;
+}
+.pop_box .slider:hover{
+    transform: scale(1.03, 1.03);
+}
 .pop_txt{
     display: block;
+    width: 45%;
+    height: 100%;
+    margin-top: 1%;
+    margin-left: 1%;
+    padding-right: 1%;
 }
 .pop_img{
     display: block;
-    margin:0 auto;
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: 65vh;
+    object-fit: contain;
 }
-.pop_dlbutton{
-    text-align: center;
-    top: 100%;
-}
-/* ここまで */
-
 .pop_title{
     width: 100%;
     height: auto;
@@ -175,12 +221,19 @@ red{
 .pop_title h1{
     margin: 0;
 }
+.pop_txt p, .pop_title h1{
+    color: #FFF;
+}
+.pop_authors{
+    font-size: 100%;
+    margin: 0 0 8px 0;
+}
 .pop_p{
     display: block;
     height: 70%;
     overflow: auto;
-    margin: 0;
-    margin-bottom: 15px;
+    margin: 0 0 15px 0;
+    white-space: pre-line; /* 説明文の改行をそのまま表示 */
 }
 .pop_p::-webkit-scrollbar{
     width: 0.5vw;
@@ -188,10 +241,7 @@ red{
 }
 .pop_p::-webkit-scrollbar-thumb{
     border-radius: 2vw;
-    background-color:#57A897;
-}
-.pop_txt p, .pop_title h1{
-    color: #FFF;
+    background-color: #57A897;
 }
 .pop_dlbutton{
     text-align: center;
@@ -203,25 +253,42 @@ red{
     font-size: 20px;
     background-color: #154261;
     color: #F0F0F0;
-    border: none;
+    border: 1px solid #F0F0F0;
 }
 .pop_dlbutton button:hover{
     background-color: #57A897;
 }
 
-/* 以下はmain3.jsで上書きしてるためここを変更しても意味無し */
-.slider{
-    display: block;
-    margin: 0 auto;
-    margin-top: 2%;
-    transition: 0.4s;
+/* 縦長の画面(スマホなど): 上下に並べる。ダウンロード(exe)ボタンは隠す */
+@media (orientation: portrait){
+    .pop_box{
+        display: block;
+        width: 80vw;
+        height: 85vh;
+        max-height: 1100px;
+    }
+    .pop_box .slider{
+        width: 80%;
+        padding-top: 20px;
+    }
+    .pop_txt{
+        width: 95%;
+        height: 60%;
+        min-height: calc(95% - 200px);
+        margin: 5% auto 0 auto;
+        padding-right: 0;
+    }
+    .pop_img{
+        max-height: 250px;
+    }
+    .pop_dlbutton.is-download{
+        display: none;
+    }
 }
-/* ここまで */
 
-.slider:hover{
-    transform: scale(1.03, 1.03);
-}
-
+/* ----------------------------------------------------------------------------
+   スライダーの矢印とドット
+---------------------------------------------------------------------------- */
 .slick-prev, .slick-next{
     position: absolute;
     top: 43%;
@@ -270,115 +337,3 @@ red{
 .slick-dots .slick-active button{
     background:#57A897;/*ドットボタンの現在地表示の色*/
 }
-
-
-.Gtag{
-    margin-top: 0;
-    font-size: 100%;
-    color: #F0F0F0;
-    -webkit-text-stroke: 1% black;
-    font-weight: bold;
-    display: inline;
-}
-.Gtag G3D::after{
-    padding-left: 1%;
-    padding-right: 1%;
-    background-color: black;
-    border: 1px solid #00CCCC;
-    content: "3D";
-}
-
-.Gtag G2D::after{
-    padding-left: 1%;
-    padding-right: 1%;
-    background-color: black;
-    border: 1px solid red;
-    content: "2D";
-}
-
-.Gtag Act::after{
-    padding-left: 1%;
-    padding-right: 1%;
-    background-color: red;
-    content: "Action";
-}
-
-.Gtag RPG::after{
-    padding-left: 1%;
-    padding-right: 1%;
-    background-color: rgb(190, 117, 48);
-    content: "RPG";
-}
-
-.Gtag Sht::after{
-    padding-left: 1%;
-    padding-right: 1%;
-    background-color: blue;
-    content: "Shooting";
-}
-
-.Gtag Sim::after{
-    padding-left: 1%;
-    padding-right: 1%;
-    background-color: green;
-    content: "Simulation";
-}
-
-.Gtag Puz::after{
-    padding-left: 1%;
-    padding-right: 1%;
-    background-color: #00CC00;
-    content: "Puzzle";
-}
-
-.Gtag Adv::after{
-    padding-left: 1%;
-    padding-right: 1%;
-    background-color: purple;
-    content: "Adventure";
-}
-
-.Gtag Rac::after{
-    padding-left: 1%;
-    padding-right: 1%;
-    background-color: orangered;
-    content: "Racing";
-}
-
-.Gtag Oth::after{
-    padding-left: 1%;
-    padding-right: 1%;
-    background-color: gray;
-    content: "Ohter";
-}
-
-.Gtag Hor::after{
-    padding-left: 1%;
-    padding-right: 1%;
-    background-color: #1d0052;
-    content: "Horror";
-}
-
-.Gtag Rog::after{
-    padding-left: 1%;
-    padding-right: 1%;
-    background-color: rgb(255, 153, 0);
-    border: 0.15vw solid red;
-    content: "Roguelike";
-}
-
-.Gtag Nov::after{
-    padding-left: 1%;
-    padding-right: 1%;
-    background-color: palevioletred;
-    content: "Novel";
-}
-
-.Gtag Rhy::after{
-    padding-left: 1%;
-    padding-right: 1%;
-    background-color: mediumturquoise;
-    content: "Rhythm";
-}
-
-
