@@ -197,13 +197,17 @@ red{
 .pop_box .slider:hover{
     transform: scale(1.03, 1.03);
 }
+/* 右側(または下側)の文章エリア。タイトル→説明文→ボタンを縦に並べ、
+   説明文が余った高さを使ってスクロールすることで、ボタンが枠からはみ出さないようにする */
 .pop_txt{
-    display: block;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
     width: 45%;
     height: 100%;
-    margin-top: 1%;
     margin-left: 1%;
-    padding-right: 1%;
+    padding: 12px 1% 12px 0;
+    overflow-y: auto; /* 画面が極端に低いときの保険 */
 }
 .pop_img{
     display: block;
@@ -213,10 +217,12 @@ red{
     object-fit: contain;
 }
 .pop_title{
+    flex: none;
     width: 100%;
     height: auto;
-    margin-top: 10px;
     margin-bottom: 10px;
+    padding-right: 36px; /* ×ボタンと重ならないように */
+    box-sizing: border-box;
 }
 .pop_title h1{
     margin: 0;
@@ -225,12 +231,13 @@ red{
     color: #FFF;
 }
 .pop_authors{
+    flex: none;
     font-size: 100%;
     margin: 0 0 8px 0;
 }
 .pop_p{
-    display: block;
-    height: 70%;
+    flex: 1 1 auto; /* 余った高さを使い、はみ出す分はスクロール */
+    min-height: 4em;
     overflow: auto;
     margin: 0 0 15px 0;
     white-space: pre-line; /* 説明文の改行をそのまま表示 */
@@ -244,8 +251,8 @@ red{
     background-color: #57A897;
 }
 .pop_dlbutton{
+    flex: none;
     text-align: center;
-    top: 100%;
 }
 .pop_dlbutton button{
     width: 70%;
@@ -262,21 +269,24 @@ red{
 /* 縦長の画面(スマホなど): 上下に並べる。ダウンロード(exe)ボタンは隠す */
 @media (orientation: portrait){
     .pop_box{
-        display: block;
+        flex-direction: column;
+        align-items: stretch;
         width: 80vw;
         height: 85vh;
         max-height: 1100px;
     }
     .pop_box .slider{
+        flex: none;
         width: 80%;
         padding-top: 20px;
     }
     .pop_txt{
+        flex: 1 1 0; /* 画像の下の残りを全部使う */
+        min-height: 0;
         width: 95%;
-        height: 60%;
-        min-height: calc(95% - 200px);
-        margin: 5% auto 0 auto;
-        padding-right: 0;
+        height: auto;
+        margin: 3% auto 0 auto;
+        padding: 0 0 12px 0;
     }
     .pop_img{
         max-height: 250px;

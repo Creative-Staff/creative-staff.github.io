@@ -40,13 +40,6 @@
             <div class="topic">
                 <h1>Topics</h1>
                 <ul class="slider">
-                    <li><a href="games/games.html"><img src="games/cgls/Inherutance/1_Inheritance_title.webp" alt=""></a></li>
-                    <li><a href="games/games.html"><img src="games/cgls/Cloring ash world/1.webp" alt=""></a></li>
-                    <li><a href="games/games.html"><img src="games/cgls/StageMixer/stageMixer_1.webp" alt=""></a></li>
-                    <li><a href="games/games.html"><img src="games/cgls/Don't Stop Rogue-kun!/Don't Stop Rogue-kun! (1).webp" alt=""></a></li>
-                    <li><a href="games/games.html"><img src="games/cgls/taf/taf_1.webp" alt=""></a></li>
-                    <li><a href="games/games.html"><img src="games/cgls/TAMASHI Regain/TAMASI_Regain (1).webp" alt=""></a></li>
-                    <li><a href="games/games.html"><img src="games/cgls/Underworld Station/US_01.webp" alt=""></a></li>
                 </ul>
             </div>
             <div class="information">
@@ -69,81 +62,9 @@
             <div class="news">
                 <h1>更新情報</h1>
                 <ul class="news-list">
-                    <li class="item">
-                        <a href="articles/20251205_introduction/article.html">
-                            <p class="date">2025/12/05</p>
-                            <p class="title">web担当が変わりましたので自己紹介します！</p>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="articles/20240519_24aftertourokukai/article.html">
-                            <p class="date">2024/5/19</p>
-                            <p class="title">2024年度 部員登録会後のお知らせ</p>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="articles/20240506_24tourokukai/article.html">
-                            <p class="date">2024/5/6</p>
-                            <p class="title">2024年度 部員登録会のお知らせ</p>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="articles/20240412_24setsumeikai/article.html">
-                            <p class="date">2024/4/12</p>
-                            <p class="title">2024年度サークル説明会のお知らせ</p>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="articles/20240324_24shinkan/article.html">
-                            <p class="date">2024/3/24</p>
-                            <p class="title">2024年4月2日の新入生勧誘会のお知らせ</p>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="articles/20240324_23nokiseki/article.html">
-                            <p class="date">2024/3/24</p>
-                            <p class="title">お詫び、そしてCreativeStaff 2023年の軌跡</p>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="articles/20230522_23tourokukai/article.html">
-                            <p class="date">2023/5/22</p>
-                            <p class="title">部員登録会後の入部について</p>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="articles/20230509_circleinfo2/article.html">
-                            <p class="date">2023/5/9</p>
-                            <p class="title">部員登録会について</p>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="articles/20230410_circleinfo/article.html">
-                            <p class="date">2023/4/10</p>
-                            <p class="title">サークル説明会について</p>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="articles/20230405_newHP/article.html">
-                            <p class="date">2023/4/5</p>
-                            <p class="title">新HP開設のお知らせ</p>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="articles/20230404_shinkanreport23/article.html">
-                            <p class="date">2023/4/4</p>
-                            <p class="title">23年新入生歓迎会の記録</p>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="articles/20221231_c101/article.html">
-                            <p class="date">2022/12/31</p>
-                            <p class="title">C101（コミックマーケット101）の記録</p>
-                        </a>
-                    </li>
                 </ul>
             </div>
-            <br><br><br><br><br><br>
+            <br><br>
         </div>
         
         <!-- フッター -->
@@ -153,6 +74,7 @@
         <script src="js/main.js" charset="utf-8"></script>
         <script src="js/toppage.js" charset="utf-8"></script>
         <script src="js/cre_navigation.js" charset="utf-8"></script>
+        <script src="js/articles.js" charset="utf-8"></script>
 		<script src="https://apis.google.com/js/platform.js" async="" defer=""></script>
-    
-<script id="creative-articles-loader">fetch('articles/articles.json').then(r=>r.json()).then(items=>{const list=document.querySelector('.news-list');if(!list)return;list.replaceChildren(...items.sort((a,b)=>b.date.localeCompare(a.date)).map(a=>{const li=document.createElement('li');li.className='item';const link=document.createElement('a');link.href='articles/'+a.id+'/article.html';if(a.thumbnail){const img=document.createElement('img');img.src='articles/'+a.id+'/'+a.thumbnail;img.alt='';img.loading='lazy';img.style.cssText='width:100%;max-height:150px;object-fit:cover';link.append(img)}const date=document.createElement('p');date.className='date';date.textContent=a.date.replaceAll('-','/');const title=document.createElement('p');title.className='title';title.textContent=a.title;link.append(date,title);li.append(link);return li}))}).catch(console.error);</script></body></html>
+    </body>
+</html>
