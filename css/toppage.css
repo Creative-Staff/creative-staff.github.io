@@ -102,8 +102,7 @@
     width: 95%;
     height: 60vh;
     overflow-y: auto;
-    background: #eee;
-    border-radius: 10px;
+    border-top: 1px solid #ccc;
 }
 
 .item {
@@ -141,7 +140,7 @@
     grid-column: 2;
     margin: 0;
     font-size: 14px;
-    color: #666;
+    color: #555;
 }
 .item .title {
     grid-column: 2;
@@ -149,4 +148,19 @@
     font-size: 18px;
     font-weight: bold;
     color: #154261;
+}
+
+/* スマホ: 更新情報のサムネを小さくする */
+@media (max-width: 480px) {
+    .item > a:has(.thumb) {
+        grid-template-columns: 84px 1fr;
+        column-gap: 12px;
+    }
+    .item .thumb {
+        width: 84px;
+        height: 56px;
+    }
+    .item .title {
+        font-size: 16px;
+    }
 }

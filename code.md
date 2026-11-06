@@ -43,48 +43,8 @@ creative-staff.github.io
 │   │   └── article.html
 │   ├── 20251205_introduction
 │   │   └── article.html
-│   ├── article.css
-│   └── articles.json
-├── articles_backup
-│   ├── 20221231_c101
-│   │   ├── article.html
-│   │   └── cgls
-│   │       └── comike101.jpg
-│   ├── 20230404_shinkanreport23
-│   │   ├── article.html
-│   │   └── cgls
-│   │       └── shinkan2023.jpg
-│   ├── 20230405_newHP
-│   │   └── article.html
-│   ├── 20230410_circleinfo
-│   │   └── article.html
-│   ├── 20230509_circleinfo2
-│   │   └── article.html
-│   ├── 20230522_23tourokukai
-│   │   └── article.html
-│   ├── 20240324_23nokiseki
-│   │   ├── article.html
-│   │   └── cgls
-│   │       ├── 2023CC.jpg
-│   │       ├── Topic_2023NOKISEKI.webp
-│   │       ├── comike102.jpg
-│   │       └── koukasai2023.jpg
-│   ├── 20240324_24shinkan
-│   │   ├── article.html
-│   │   └── cgls
-│   │       ├── 2024SHINKAN_map.webp
-│   │       └── Topic_notice_2024SHINKAN.webp
-│   ├── 20240412_24setsumeikai
-│   │   ├── article.html
-│   │   └── cgls
-│   │       └── Topic_notice_2024SETUMEIKAI.webp
-│   ├── 20240506_24tourokukai
-│   │   ├── article.html
-│   │   └── cgls
-│   │       └── Topic_notice_2024BUINTOROKUKAI.webp
-│   ├── 20240519_24aftertourokukai
-│   │   └── article.html
-│   ├── 20251205_introduction
+│   ├── 20261105_6re1
+│   │   ├── 1.webp
 │   │   └── article.html
 │   ├── article.css
 │   └── articles.json
@@ -171,6 +131,7 @@ creative-staff.github.io
 ├── header.html
 ├── index.html
 ├── js
+│   ├── articles.js
 │   ├── cre_navigation.js
 │   ├── main.js
 │   └── toppage.js
@@ -1175,6 +1136,82 @@ htmlを編集したことがない分際でweb担当に立候補致しました�
 </html>
 
 ```
+`articles\20261105_6re1\article.html`:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>サイトを改修しました</title>
+<link rel="icon" href="../../cgls/favicon.ico" />
+<link rel="stylesheet" href="../article.css">
+<link rel="stylesheet" href="../../css/main.css" />
+<link rel="stylesheet" href="../../css/toppage.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+<div id="header"></div>
+
+<div id="content-main">
+    <article class="Article">
+        <img class="eyecatch" src="1.webp" alt="">
+        <h1>サイトを改修しました</h1>
+        <p class="date">2026年11月5日</p>
+
+        <div class="Honbun">
+<h1>あいさつ</h1>
+<p>　こんにちは、ついこの前27年度部長に就任しました、安部葉月です！<br>　挨拶ついでにさっきつくった記事エディターを紹介します</p>
+<figure><img src="1.webp" alt="サイト編集用に作った記事エディター"><figcaption>サイト編集用に作った記事エディター</figcaption></figure>
+<p>　この画面で新しい記事を追加できます<br>　上みたいな感じで画像も追加できるし、</p>
+<h2>見出し</h2>
+<p><strong>太字</strong><br><red>赤字</red><br><big-font>大きい文字</big-font></p>
+<ul>
+<li>リスト</li>
+</ul>
+<blockquote>
+<p>引用<br><a href="https://akane-minori.github.io/my_home_page/" target="_blank" rel="noopener">リンク文字</a></p>
+</blockquote>
+<hr>
+<p>という感じで要素を増やせます<br>ご期待ください！</p>
+
+        </div>
+    </article>
+</div>
+
+<div id="footer"></div>
+
+<script type="text/markdown" id="source-md"># あいさつ
+　こんにちは、ついこの前27年度部長に就任しました、安部葉月です！
+　挨拶ついでにさっきつくった記事エディターを紹介します
+
+![サイト編集用に作った記事エディター](1.webp)
+
+　この画面で新しい記事を追加できます
+　上みたいな感じで画像も追加できるし、
+## 見出し
+**太字**
+<red>赤字<\/red>
+<big-font>大きい文字<\/big-font>
+- リスト
+> 引用
+[リンク文字](https://akane-minori.github.io/my_home_page/)
+
+
+---
+
+
+という感じで要素を増やせます
+ご期待ください！</script>
+<script src="../../js/main.js" charset="utf-8"></script>
+<script src="../../js/cre_navigation.js" charset="utf-8"></script>
+</body>
+</html>
+
+```
 `articles\article.css`:
 
 ```css
@@ -1299,6 +1336,7 @@ htmlを編集したことがない分際でweb担当に立候補致しました�
     width: auto;
     max-width: 100%;
     height: auto;
+    max-height: 400px;
     margin: 0 auto;
     border-radius: 4px;
 }
@@ -1339,6 +1377,12 @@ big-font {
 
 ```json
 [
+  {
+    "id": "20261105_6re1",
+    "date": "2026-11-05",
+    "title": "サイトを改修しました",
+    "thumbnail": "20261105_6re1/1.webp"
+  },
   {
     "id": "20251205_introduction",
     "date": "2025-12-05",
@@ -1412,1154 +1456,6 @@ big-font {
     "thumbnail": "20221231_c101/1.webp"
   }
 ]
-```
-`articles_backup\20221231_c101\article.html`:
-
-```html
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>C101（コミックマーケット101）の記録</title>
-        <link rel="icon" href="../../cgls/favicon.ico" />
-        
-		
-        <link rel="stylesheet" href="../article.css">
-        <link rel="stylesheet" href="../../css/main.css" />
-        <link rel="stylesheet" href="../../css/toppage.css" />
-        
-        <!-- googleのフォントを使う -->
-		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-        
-        <!-- bootstrapのアイコンを使う -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        
-        <!-- jQueryのインクルード -->
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-		
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-        
-    </head>
-    <body>
-        <!-- ヘッダー -->
-        <div id="header"></div>
-        
-        <div id="content-main">
-            <div class="Midashi">
-                <br>
-                <h4 class="date">更新日： 2023年 4月 10日</h4>
-                <p><h1>C101（コミックマーケット101）の記録</h1></p>
-            </div>
-
-            <div class="Honbun">
-                <!-- 画像を入れる場合はsrcに画像のアドレスを入力 -->
-                <img src="cgls/comike101.jpg" alt="" class="imgOpt">
-                こんにちは、こんばんは、クリエイティブスタッフです。私達のサークルは去年行われたコミックマーケット101(以降C101)に参加及び、自作ゲームの無料配布を行いました。
-                その結果多くの方にゲームをお手にとっていただけました。ありがたい!!
-                訪れてくれた方々、本当にありがとうございました。
-                我々クリエイティブスタッフはこれからも日々精進いたしますので今後も何卒よろしくお願いします!
-                以上クリエイティブからのC101の事後報告でした。
-                <p>またね</p>
-            </div>
-
-        </div>
-        <!-- フッター -->
-        <div id="footer"></div>
-
-        <script src="../../js/main.js" charset="utf-8"></script>
-        <script src="../../js/cre_navigation.js" charset="utf-8"></script>
-		<script src="https://apis.google.com/js/platform.js" async defer></script>
-    </body>
-</html>
-
-```
-`articles_backup\20230404_shinkanreport23\article.html`:
-
-```html
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>23年新入生歓迎会の記録</title>
-        <link rel="icon" href="../../cgls/favicon.ico" />
-        
-		
-        <link rel="stylesheet" href="../article.css">
-        <link rel="stylesheet" href="../../css/main.css" />
-        <link rel="stylesheet" href="../../css/toppage.css" />
-        
-        <!-- googleのフォントを使う -->
-		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-        
-        <!-- bootstrapのアイコンを使う -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        
-        <!-- jQueryのインクルード -->
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-		
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-        
-    </head>
-    <body>
-        <!-- ヘッダー -->
-        <div id="header"></div>
-        
-        <div id="content-main">
-            <div class="Midashi">
-                <br>
-                <h4 class="date">更新日： 2023年 4月 10日</h4>
-                <p><h1>23年新入生歓迎会の記録</h1></p>
-            </div>
-
-            <div class="Honbun">
-                <!-- 画像を入れる場合はsrcに画像のアドレスを入力 -->
-                <img src="cgls/shinkan2023.jpg" alt="" class="imgOpt">
-                新入生の皆様、改めましてご入学おめでとうございます!!
-                こんにちは、こんばんは、クリエイティブスタッフです。
-                私達のサークルは本学で先日行われた新入生歓迎会にて、サークル説明及び質疑応答、ゲームの配布、ゲームの体験プレーを行いました。
-                大変多くの新入生の方々に興味を持っていただけとこと大変嬉しく思います。
-                訪れてくれた方々、本当にありがとうございました。
-
-                <h3>ここで一つお知らせです。</h3>
-                私達のサークルは今月の<big><bold><red>21日(金)、28日(金)</red></bold></big>にサークル独自の説明会を対面でのみ行います。
-                この説明会では実際にどのような活動をしているのかや、サークル内で行われる講習についてなどの詳しい話をいたします。
-                誰でも参加できる説明会ですので少しでも興味があるという方はぜひ気軽にご参加ください。
-                開催場所や時間は後日このサイトやツイッターで告知いたします。
-                以上クリエイティブからの新入生歓迎会2023の事後報告とサークル説明会のお知らせでした。
-                <p>またね</p>
-                
-
-            </div>
-
-        </div>
-        <!-- フッター -->
-        <div id="footer"></div>
-
-        <script src="../../js/main.js" charset="utf-8"></script>
-        <script src="../../js/cre_navigation.js" charset="utf-8"></script>
-		<script src="https://apis.google.com/js/platform.js" async defer></script>
-    </body>
-</html>
-
-<!-- これは記事を書く際のテンプレのhtmlです。使う場合はコピーして使ってください。
-cssは基本的にTopic.cssを使ってください。 -->
-```
-`articles_backup\20230405_newHP\article.html`:
-
-```html
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>新HP開設のお知らせ</title>
-        <link rel="icon" href="../../cgls/favicon.ico" />
-        
-		
-        <link rel="stylesheet" href="../article.css">
-        <link rel="stylesheet" href="../../css/main.css" />
-        <link rel="stylesheet" href="../../css/toppage.css" />
-        
-        <!-- googleのフォントを使う -->
-		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-        
-        <!-- bootstrapのアイコンを使う -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        
-        <!-- jQueryのインクルード -->
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-		
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-        
-    </head>
-    <body>
-        <!-- ヘッダー -->
-        <div id="header"></div>
-		
-        <div id="content-main">
-            <div class="Midashi">
-                <br>
-                <h4>更新日： 2023年 4月 5日</h4>
-                <p>
-                <h1>新HP開設のお知らせ</h1>
-                </p>
-            </div>
-
-            <div class="Honbun">
-                <!-- 画像を入れる場合はsrcに画像のアドレスを入力 -->
-                <!-- <img src="" alt="" class="imgOpt"> -->
-                こんにちは。サークルHP担当のねくすとです。<br>
-                本日をもちましてサークルHPを大幅改修致しました。<br>
-                今後もクリエイティブスタッフの活動を記録、更新していければと考えています。<br>
-                宜しくお願い致します。
-
-            </div>
-		</div>
-        <!-- フッター -->
-        <div id="footer"></div>
-
-        <script src="../../js/main.js" charset="utf-8"></script>
-        <script src="../../js/cre_navigation.js" charset="utf-8"></script>
-		<script src="https://apis.google.com/js/platform.js" async defer></script>
-    </body>
-</html>
-
-<!-- これは記事を書く際のテンプレのhtmlです。使う場合はコピーして使ってください。
-cssは基本的にTopic.cssを使ってください。 -->
-```
-`articles_backup\20230410_circleinfo\article.html`:
-
-```html
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>サークル説明会について</title>
-        <link rel="icon" href="../../cgls/favicon.ico" />
-        
-		
-        <link rel="stylesheet" href="../article.css">
-        <link rel="stylesheet" href="../../css/main.css" />
-        <link rel="stylesheet" href="../../css/toppage.css" />
-        
-        <!-- googleのフォントを使う -->
-		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-        
-        <!-- bootstrapのアイコンを使う -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        
-        <!-- jQueryのインクルード -->
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-		
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-        
-    </head>
-    <body>
-        <!-- ヘッダー -->
-        <div id="header"></div>
-        
-        <div id="content-main">
-            <div class="Midashi">
-                <br>
-                <h4 class="date">更新日： 2023年 4月 10日</h4>
-                <p><h1>サークル説明会について</h1></p>
-            </div>
-
-            <div class="Honbun">
-                <!-- 画像を入れる場合はsrcに画像のアドレスを入力 -->
-                <!-- <img src="" alt="" class="imgOpt"> -->
-                こんにちは、こんばんはクリエイティブスタッフです。<br>
-                近日行われるサークル説明会についてお知らせします。<br>
-                開催日等は以下の通りです。
-                <big>
-                <p>
-                ・開催日：4月 21日(金), 28日(金)
-                </p>
-                <p>
-                ・時間　：19:10 ~ 
-                </p>
-                <p>
-                ・場所　：講義実験棟401
-                </p>
-                </big>
-                
-                この説明会は対面参加のみとさせていただきます。<br>
-                <red>場所などは急遽変更する可能性があります</red>のでご注意ください。<br>
-                (変更した際はツイッターや当サイトでお知らせします)<br>
-                以上クリエイティブスタッフからサークル説明会のお知らせでした。
-                <p>またね</p>
-
-
-            </div>
-
-        </div>
-        <!-- フッター -->
-        <div id="footer"></div>
-
-        <script src="../../js/main.js" charset="utf-8"></script>
-        <script src="../../js/cre_navigation.js" charset="utf-8"></script>
-		<script src="https://apis.google.com/js/platform.js" async defer></script>
-    </body>
-</html>
-
-<!-- これは記事を書く際のテンプレのhtmlです。使う場合はコピーして使ってください。
-cssは基本的にTopic.cssを使ってください。 -->
-```
-`articles_backup\20230509_circleinfo2\article.html`:
-
-```html
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>部員登録会について</title>
-        <link rel="icon" href="../../cgls/favicon.ico" />
-        
-		
-        <link rel="stylesheet" href="../article.css">
-        <link rel="stylesheet" href="../../css/main.css" />
-        <link rel="stylesheet" href="../../css/toppage.css" />
-        
-        <!-- googleのフォントを使う -->
-		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-        
-        <!-- bootstrapのアイコンを使う -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        
-        <!-- jQueryのインクルード -->
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-		
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-        
-    </head>
-    <body>
-        <!-- ヘッダー -->
-        <div id="header"></div>
-        
-        <div id="content-main">
-            <div class="Midashi">
-                <br>
-                <h4 class="date">更新日： 2023年 5月 9日</h4>
-                <p>
-                <h1>部員登録会について</h1>
-                </p>
-            </div>
-
-            <div class="Honbun">
-                <!-- 画像を入れる場合はsrcに画像のアドレスを入力 -->
-                <!-- <img src="" alt="" class="imgOpt"> -->
-                こんにちは、こんばんはクリエイティブスタッフです。<br>
-                連絡が遅くなってしまいましたが、部員登録会の日時が確定しましたのでお知らせします。<br>
-                開催日等は以下の通りです。
-                <big>
-                <p>
-                ・開催日：5月 12日(金)
-                </p>
-                <p>
-                ・時間　：19:10 ~
-                </p>
-                <p>
-                ・場所　：講義実験棟401
-                </p>
-                </big>                
-
-                <h><b>必要要項</b></h>
-                <p>
-                    ・学籍番号<br>
-                    ・学部<br>
-                    ・学年<br>
-                    ・本名<br>
-                    ・希望ハンドルネーム<br>
-                    ・大学のメールアドレス<br>
-                    ・本人の携帯番号<br>
-                    ・部費1000円
-                    ・実家または保護者電話番号の情報<br><br>
-                    上記を用意してお待ちください。
-                </p>
-
-            </div>
-
-        </div>
-        <!-- フッター -->
-        <div id="footer"></div>
-
-        <script src="../../js/main.js" charset="utf-8"></script>
-        <script src="../../js/cre_navigation.js" charset="utf-8"></script>
-		<script src="https://apis.google.com/js/platform.js" async defer></script>
-    </body>
-</html>
-
-<!-- これは記事を書く際のテンプレのhtmlです。使う場合はコピーして使ってください。
-cssは基本的にTopic.cssを使ってください。 -->
-```
-`articles_backup\20230522_23tourokukai\article.html`:
-
-```html
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>登録会後の入部について</title>
-        <link rel="icon" href="../../cgls/favicon.ico" />
-        
-		
-        <link rel="stylesheet" href="../article.css">
-        <link rel="stylesheet" href="../../css/main.css" />
-        <link rel="stylesheet" href="../../css/toppage.css" />
-        
-        <!-- googleのフォントを使う -->
-		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-        
-        <!-- bootstrapのアイコンを使う -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        
-        <!-- jQueryのインクルード -->
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-		
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-        
-    </head>
-    <body>
-        <!-- ヘッダー -->
-        <div id="header"></div>
-        
-        <div id="content-main">
-            <div class="Midashi">
-                <br>
-                <h4 class="date">更新日： 2023年 5月 22日</h4>
-                <p>
-                <h1>登録会後の入部について</h1>
-                </p>
-            </div>
-
-            <div class="Honbun">
-                <!-- 画像を入れる場合はsrcに画像のアドレスを入力 -->
-                <!-- <img src="" alt="" class="imgOpt"> -->
-                登録会は終了してしまいましたが、入部希望生徒は歓迎しています。入部を希望する方はサークルHPお問い合わせフォーム又はサークルGmailにお声がけください。
-
-            </div>
-
-        </div>
-        <!-- フッター -->
-        <div id="footer"></div>
-
-        <script src="../../js/main.js" charset="utf-8"></script>
-        <script src="../../js/cre_navigation.js" charset="utf-8"></script>
-		<script src="https://apis.google.com/js/platform.js" async defer></script>
-    </body>
-</html>
-
-<!-- これは記事を書く際のテンプレのhtmlです。使う場合はコピーして使ってください。
-cssは基本的にTopic.cssを使ってください。 -->
-```
-`articles_backup\20240324_23nokiseki\article.html`:
-
-```html
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>お詫び、そしてCreativeStaff 2023年の軌跡</title>
-        <link rel="icon" href="../../cgls/favicon.ico" />
-        
-		
-        <link rel="stylesheet" href="../article.css">
-        <link rel="stylesheet" href="../../css/main.css" />
-        <link rel="stylesheet" href="../../css/toppage.css" />
-        
-        <!-- googleのフォントを使う -->
-		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-        
-        <!-- bootstrapのアイコンを使う -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        
-        <!-- jQueryのインクルード -->
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-		
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-        
-    </head>
-    <body>
-        <!-- ヘッダー -->
-        <div id="header"></div>
-        
-        <div id="content-main">
-            <div class="Midashi">
-                <br>
-                <h4 class="date">更新日： 2024年 3月 24日</h4>
-                <p>
-                <h1>お詫び、そしてCreativeStaff 2023年の軌跡</h1>
-                </p>
-            </div>
-
-            <div class="Honbun">
-                <!-- 画像を入れる場合はsrcに画像のアドレスを入力 -->
-                <!-- <img src="" alt="" class="imgOpt"> -->
-                こんにちは、こんばんは、クリエイティブスタッフです。まず最初に2023/5/22の「部員登録会後の入部について」から更新情報の更新が途切れてしまい誠に申し訳ありません。
-                更新が途切れた理由と致しましては、Web制作班の活動が勉学やメンバーの私生活の影響で極端に減ってしまったことがあると考えております。
-                今後このような事が無い様に担当の割り振りや、活動状況の随時把握など対策を致しますので、今後とも何卒クリエイティブスタッフWeb制作班をよろしくお願いします。<br><br>
-                さて、今回は2023年以来の久々の更新情報ということで、最後の更新以降の2023年にやってきた活動を一気に振り返っていこうと思います!!(別に一個一個ページ作るの面倒くさくなったわけじゃないよ?)<br>
-                <br>
-            </div>
-            <div class="Honbun H1">
-                <h1>C102の記録</h1>
-                <br><br><br>
-                <img src="cgls/comike102.jpg" alt="" class="imgOpt">
-                <img src="cgls/2023CC.jpg" alt="" height="auto" width="20%">
-                まず部員登録会の後の大きなイベントとしてコミックマーケット102への参加がありました。<br>
-                今回のコミケではなんと!!　新しいサークルカットでの参加になりました!!　
-                こちらはサークル内でサークルカット募集大会という大会を開催した結果、堂々の1位でサークルカットに選ばれた厳選されたイラストになっております。
-                この大会で集めたその他のイラストについても今後なにかに使用する可能性もあるのでお楽しみに。
-                <br><br><br><br><br><br><br><br><br><br><br><br>
-            </div>
-            <div class="Honbun H2">
-                <h1>第19回紅華祭の記録</h1>
-                <br><br><br>
-                <img src="cgls/koukasai2023.jpg" alt="" class="imgOpt">
-                コミケが終わり夏休みが終わると間もなく我らが東京工科大学の文化祭、通称「<red>紅華祭</red>」が2日間開催されます。
-                去年の紅華祭ではパピコを模擬店で <s>ボッタクリ価格で転売</s> <bold>良心価格で販売</bold>、そして研究棟Aの一室で自作ゲームの展示・試遊会を行いました。
-                展示は場所が悪く訪れる人が少なかったそう。またパピコも気温が低かったためになかなか売るのに苦労しました。<br><br>
-                今回の紅華祭では前回の反省を踏まえてリベンジ!! 模擬店で売るものは、如何にも売れそうな<bold>チョコマシュマロ</bold>でトッピングは、カラフルスプレーとアーモンドダイスの二種類を用意しました。<br><br>
-                そして展示の方は講義棟Aの一室で行われました。しかも今回は新たに結成された制作班のゲームが3本に、個人制作のゲームが1本追加で開催しました。
-                それぞれ制作班の物が「Inheritance」「色づく灰世界」「止まるなローグくん!」、個人制作の物が「Stage Mixer」になります。
-                「Inheritance」はダークファンタジーな世界観の<bold>見下ろし型2Dアクションゲーム</bold>です。
-                「色づく灰世界」は<bold>3Dと2Dが融合したターン制横長弾幕アクションゲーム</bold>です。
-                「止まるなローグくん!」は<bold>見下ろし型3Dアクションゲーム</bold>で今後ローグライク要素も追加する予定?な作品で、こちらはUnreal Engineで作られたゲームになっています。
-                「Stage Mixer」はオーディオミキサーからインスピレーションを受けた<bold>ステージクリア型のパズルアクションゲーム</bold>です。<br>
-                これらのゲームの詳細についてはゲーム一覧から御覧ください。<br><br>
-                そして結果ですが模擬店は前回に比べて大繁盛、ゲーム展示も多くの方々に訪れていただけました!!
-                模擬店に来てくれた方々、展示に訪れてくれた方々、どっちも行ったという方々、来てくださりそして、我々クリエイティブスタッフに興味を持ってくださり誠にありがとうございました。<br><br>
-                まあ私は当日、展示で温々と<bold>Go Back Salmon</bold>(先輩が作ったバカゲー)をずっとやってただけですけどね。ちなみにベストタイムは<red><bold>22.935</bold></red>秒です。<br><br><br>
-            </div>
-            <div class="Honbun H3">
-                <h1>C103の記録?</h1>
-                <br><br><br>
-                はい<br><br>
-                お気づきの方が居るか知らないですし「しらねぇよ」って方が大半かと思いますが（そもそもこんな記事を見てくれている人が居るか怪しいが）、<red><bold><big-font>C103に我々クリエイティブスタッフは抽選漏れにより参加しておりません。</big-font></bold></red>
-                ですから記録もクソも無いということです。
-                むしろ私が入部してからここまで一回も落ちてないことが奇跡みたいなものなんですよね。
-                私は今年新しい制作班でゲーム制作をしていて、このC103を目標に制作していただけあってこれを知らされた時は結構ショックでしたね...　
-                でもこれを受けて部長がサークル内で試遊会をやるって言ってたので、それに向けてまたゲーム制作頑張ろうと思います!! (4月には新歓もあるからね!)<br><br><br>
-            </div>
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-            <div class="Honbun H4">
-                <h1>最後に</h1>
-                <br><br><br>
-                ここまで長ったらしいクソみたいな私の文章を読んでいただきありがとうございます。
-                途中自分語りとか入ってしまって申し訳ありません。
-                まあ隙を見せたあなた達が悪いってことで(そんな事は無い)<br>
-                という事で今回は「CreativeStaff 2023年の軌跡」を読んでいただき本当にありがとうございます。
-                今後も私達クリエイティブスタッフは、皆様に楽しんでもらえる様なゲームを制作していきますので何卒よろしくお願いします。
-                それではまた次の更新情報でお会いしましょう。
-                ここまでの担当は<bold>モアイ</bold>でした。<br><br>
-                またね<br><br>
-            </div>
-        </div>
-        <!-- フッター -->
-        <div id="footer"></div>
-
-        <script src="../../js/main.js" charset="utf-8"></script>
-        <script src="../../js/cre_navigation.js" charset="utf-8"></script>
-		<script src="https://apis.google.com/js/platform.js" async defer></script>
-    </body>
-</html>
-
-<!-- これは記事を書く際のテンプレのhtmlです。使う場合はコピーして使ってください。
-cssは基本的にTopic.cssを使ってください。 -->
-```
-`articles_backup\20240324_24shinkan\article.html`:
-
-```html
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>2024年4月2日の新入生勧誘会のお知らせ</title>
-        <link rel="icon" href="../../cgls/favicon.ico" />
-        
-		
-        <link rel="stylesheet" href="../article.css">
-        <link rel="stylesheet" href="../../css/main.css" />
-        <link rel="stylesheet" href="../../css/toppage.css" />
-        
-        <!-- googleのフォントを使う -->
-		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-        
-        <!-- bootstrapのアイコンを使う -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        
-        <!-- jQueryのインクルード -->
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-		
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-        
-    </head>
-    <body>
-        <!-- ヘッダー -->
-        <div id="header"></div>
-        
-        <div id="content-main">
-            <div class="Midashi">
-                <br>
-                <h4 class="date">更新日： 2024年 3月 24日</h4>
-                <p>
-                <h1>2024年4月2日の新入生勧誘会のお知らせ</h1>
-                </p>
-            </div>
-
-            <div class="Honbun">
-                <!-- 画像を入れる場合はsrcに画像のアドレスを入力 -->
-                <img src="cgls/2024SHINKAN_map.webp" alt="" class="imgOpt">
-                こんにちは、こんばんは、クリエイティブスタッフです。まずは新入生の皆様ご入学おめでとうございます。
-                新入生の皆様はきっと憧れのキャンパスライフに思いを馳せて、胸を踊らせていることでしょう。<br><br>
-                さてそんな中、4月2日にはサークルの新入生勧誘会があります。そしてこの新入生勧誘会には我々クリエイティブスタッフも出展します。
-                ブースの場所に致しましては研究棟に向かって右側の図書館棟側手前（画像の赤線で囲まれた所）になります。<br>
-                また、ブースではビラ配りの他に、サークル説明と質疑応答、自作ゲームの試遊、サークル説明会の日程告知などを予定しております。
-                興味がある方は是非ブースまで足をお運びください。<br><br>
-                以上クリエイティブスタッフから2024年新入生勧誘会のお知らせでした。<br><br>
-                またね
-            </div>
-
-        </div>
-        <!-- フッター -->
-        <div id="footer"></div>
-
-        <script src="../../js/main.js" charset="utf-8"></script>
-        <script src="../../js/cre_navigation.js" charset="utf-8"></script>
-		<script src="https://apis.google.com/js/platform.js" async defer></script>
-    </body>
-</html>
-
-<!-- これは記事を書く際のテンプレのhtmlです。使う場合はコピーして使ってください。
-cssは基本的にTopic.cssを使ってください。 -->
-```
-`articles_backup\20240412_24setsumeikai\article.html`:
-
-```html
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>2024年度サークル説明会のお知らせ</title>
-        <link rel="icon" href="../../cgls/favicon.ico" />
-        
-		
-        <link rel="stylesheet" href="../article.css">
-        <link rel="stylesheet" href="../../css/main.css" />
-        <link rel="stylesheet" href="../../css/toppage.css" />
-        
-        <!-- googleのフォントを使う -->
-		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-        
-        <!-- bootstrapのアイコンを使う -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        
-        <!-- jQueryのインクルード -->
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-		
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-        
-    </head>
-    <body>
-        <!-- ヘッダー -->
-        <div id="header"></div>
-        
-        <div id="content-main">
-            <div class="Midashi">
-                <br>
-                <h4 class="date">更新日： 2024年 4月 12日</h4>
-                <p>
-                <h1>2024年度サークル説明会のお知らせ</h1>
-                </p>
-            </div>
-
-            <div class="Honbun">
-                <!-- 画像を入れる場合はsrcに画像のアドレスを入力 -->
-                <!-- <img src="" alt="" class="imgOpt"> -->
-                こんにちは、こんばんは、クリエイティブスタッフです。<br>
-                この春新たにクリエイティブスタッフに入部したいという方々に向けた、サークル説明会の日程が決まりましたのでお知らせします。<br>
-                <big>
-                <p>
-                ・開催日　：4月 26日(金)
-                </p>
-                <p>
-                ・開始時間：19:10 ~
-                </p>
-                <p>
-                ・会場　　：講義実験棟401 & オンライン
-                </p>
-                <p>
-                ・内容　　：サークルの活動について、各講習について
-                </p>
-                </big>
-
-               皆様のお越しを心よりお待ちいたしております。<br>
-               以上クリエイティブスタッフからサークル説明会のお知らせでした。<br>
-               またね。
-
-
-            </div>
-
-		</div>
-        <!-- フッター -->
-        <div id="footer"></div>
-
-        <script src="../../js/main.js" charset="utf-8"></script>
-        <script src="../../js/cre_navigation.js" charset="utf-8"></script>
-		<script src="https://apis.google.com/js/platform.js" async defer></script>
-    </body>
-</html>
-
-<!-- これは記事を書く際のテンプレのhtmlです。使う場合はコピーして使ってください。
-cssは基本的にTopic.cssを使ってください。 -->
-```
-`articles_backup\20240506_24tourokukai\article.html`:
-
-```html
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>2024年度 部員登録会のお知らせ</title>
-        <link rel="icon" href="../../cgls/favicon.ico" />
-        
-		
-        <link rel="stylesheet" href="../article.css">
-        <link rel="stylesheet" href="../../css/main.css" />
-        <link rel="stylesheet" href="../../css/toppage.css" />
-        
-        <!-- googleのフォントを使う -->
-		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-        
-        <!-- bootstrapのアイコンを使う -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        
-        <!-- jQueryのインクルード -->
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-		
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-        
-    </head>
-    <body>
-        <!-- ヘッダー -->
-        <div id="header"></div>
-        
-        <div id="content-main">
-            <div class="Midashi">
-                <br>
-                <h4 class="date">更新日： 2024年 5月 6日</h4>
-                <p>
-                <h1>2024年度 部員登録会のお知らせ</h1>
-                </p>
-            </div>
-
-            <div class="Honbun">
-                <!-- 画像を入れる場合はsrcに画像のアドレスを入力 -->
-                <!-- <img src="" alt="" class="imgOpt"> -->
-                <p>
-                    皆さん、こんにちは、こんばんは、クリエイティブスタッフです。
-                連絡が遅くなってしまいましたが、2024年度の部員登録会の日程についてお知らせします。
-                日程は以下の通りです。<br><br>
-
-                <bold>日程</bold><br>
-                ・開催日：5月 10日（金）<br>
-                ・時間　：19:10~<br>
-                ・会場　：講義実験棟401教室<br><br>
-                <bold>登録に必要なもの</bold><br>
-                ・学籍番号<br>
-                ・学部<br>
-                ・学年<br>
-                ・学校のメールアドレス<br>
-                ・本人の携帯番号<br>
-                ・実家か保護者の電話番号<br>
-                ・希望ハンドルネーム<br>
-                ・本名<br>
-                ・部費1500円<br><br>
-
-                <bold>部員登録について</bold><br>
-                部員登録会は入部希望者への対応を効率化するために、まとめて部員登録するためのイベントです。<br>
-                <red><bold>部員登録会以降に入部することも可能です</bold></red>が、<big-font>入部希望の方はなるべく部員登録会に参加していただけると助かります。</big-font>
-                登録会以降に入部する場合は、サークルのメールかXアカウントのDM、またはWebページのお問い合わせフォームまで連絡お願いします。
-                部員が連絡に気付き次第随時対応いたします。<br><br>
-                </p>
-            </div>
-
-        </div>
-        <!-- フッター -->
-        <div id="footer"></div>
-
-        <script src="../../js/main.js" charset="utf-8"></script>
-        <script src="../../js/cre_navigation.js" charset="utf-8"></script>
-		<script src="https://apis.google.com/js/platform.js" async defer></script>
-    </body>
-</html>
-
-<!-- これは記事を書く際のテンプレのhtmlです。使う場合はコピーして使ってください。
-cssは基本的にTopic.cssを使ってください。 -->
-```
-`articles_backup\20240519_24aftertourokukai\article.html`:
-
-```html
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>2024年度部員登録会後について</title>
-        <link rel="icon" href="../../cgls/favicon.ico" />
-        
-		
-        <link rel="stylesheet" href="../article.css">
-        <link rel="stylesheet" href="../../css/main.css" />
-        <link rel="stylesheet" href="../../css/toppage.css" />
-        
-        <!-- googleのフォントを使う -->
-		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-        
-        <!-- bootstrapのアイコンを使う -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        
-        <!-- jQueryのインクルード -->
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-		
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-        
-    </head>
-    <body>
-        <!-- ヘッダー -->
-        <div id="header"></div>
-        
-        </div>
-        <div id="content-main">
-            <div class="Midashi">
-                <br>
-                <h4 class="date">更新日： 2024年 5月 19日</h4>
-                <p>
-                <h1>2024年度部員登録会後について</h1>
-                </p>
-            </div>
-
-            <div class="Honbun">
-                <!-- 画像を入れる場合はsrcに画像のアドレスを入力 -->
-                <!-- <img src="" alt="" class="imgOpt"> -->
-                こんにちは、こんばんはクリエイティブスタッフです。<br>
-                先日、部員登録会を行いました。来てくださった方々、ありがとうございました。<br>
-                そして、前回都合などにより、参加できなかった方にお知らせします。<br>
-                参加したいと考えている方は、Gmailの問い合わせフォームや、XのDMなどで連絡して頂ければ、今からでも参加できます。<br>
-                少しでも興味があれば、ぜひご連絡ください。<br>
-                Gmailの問い合わせフォームのリンクと、Xのリンク、Eメールが以下になります。<br><br>
-                
-                お問い合わせ:<a href='https://forms.gle/RhHWwJq9oyyaNeAy7'>https://forms.gle/RhHWwJq9oyyaNeAy7</a><br>
-                X(Twitter):<a href="https://twitter.com/creative_staff">https://twitter.com/creative_staff</a><br>
-                Eメール:creative.staff.tut☆gmail.com  ☆を@に変えてください。
-
-            </div>
-
-        </div>
-        <!-- フッター -->
-        <div id="footer"></div>
-
-        <script src="../../js/main.js" charset="utf-8"></script>
-        <script src="../../js/cre_navigation.js" charset="utf-8"></script>
-		<script src="https://apis.google.com/js/platform.js" async defer></script>
-    </body>
-</html>
-
-<!-- これは記事を書く際のテンプレのhtmlです。使う場合はコピーして使ってください。
-cssは基本的にTopic.cssを使ってください。 -->
-```
-`articles_backup\20251205_introduction\article.html`:
-
-```html
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>web担当が変わりましたので自己紹介します！</title>
-        <link rel="icon" href="../../cgls/favicon.ico" />
-        
-		
-        <link rel="stylesheet" href="../article.css">
-        <link rel="stylesheet" href="../../css/main.css" />
-        <link rel="stylesheet" href="../../css/toppage.css" />
-        
-        <!-- googleのフォントを使う -->
-		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-        
-        <!-- bootstrapのアイコンを使う -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        
-        <!-- jQueryのインクルード -->
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-		
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-        
-    </head>
-    <body>
-        <!-- ヘッダー -->
-        <div id="header"></div>
-        
-        <div id="content-main">
-            <div class="Midashi">
-                <br>
-                <h4 class="date">更新日： 2026年 9月 5日</h4>
-                <p>
-                <h1>web担当が変わりましたので自己紹介します！</h1>
-                </p>
-            </div>
-
-            <div class="Honbun">
-                <!-- 画像を入れる場合はsrcに画像のアドレスを入力 -->
-                <!-- <img src="" alt="" class="imgOpt"> -->
-                はじめまして、クリエイティブスタッフ2026年度のweb担当のうけいと申します！<br><br>
-                htmlを編集したことがない分際でweb担当に立候補致しました、メディア学部２年生です！<br>
-				定期的に重大なやからしをかます阿呆の自覚はありますが精進して参りますので、<br>
-				なにとぞ！２０２６年もクリエイティブスタッフをよろしくおねがいします。
-
-            </div>
-
-        </div>
-        <!-- フッター -->
-        <div id="footer"></div>
-
-        <script src="../../js/main.js" charset="utf-8"></script>
-        <script src="../../js/cre_navigation.js" charset="utf-8"></script>
-		<script src="https://apis.google.com/js/platform.js" async defer></script>
-    </body>
-</html>
-
-<!-- これは記事を書く際のテンプレのhtmlです。使う場合はコピーして使ってください。
-cssは基本的にTopic.cssを使ってください。 -->
-
-```
-`articles_backup\article.css`:
-
-```css
-/* note風の記事レイアウト: 白背景・細い1列・広い行間 */
-
-#content-main {
-    background: #fff;
-}
-
-.Article {
-    box-sizing: border-box;
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 0 16px 80px;
-    color: #222;
-}
-
-/* ---------------- アイキャッチと見出し ---------------- */
-.Article .eyecatch {
-    display: block;
-    width: 100%;
-    max-height: 420px;
-    margin: 0 0 32px;
-    border-radius: 8px;
-    object-fit: cover;
-}
-
-.Article h1 {
-    margin: 0 0 12px;
-    font-size: 32px;
-    font-weight: 700;
-    line-height: 1.5;
-    color: #222;
-}
-
-.Article .date {
-    margin: 0 0 40px;
-    font-size: 14px;
-    color: #888;
-    text-align: left;
-}
-
-/* ---------------- 本文 ---------------- */
-.Honbun {
-    font-size: 17px;
-    line-height: 2;
-    color: #222;
-}
-
-/* main.css が p と ul を 15px に固定しているので、本文の大きさに合わせる */
-.Honbun p,
-.Honbun ul,
-.Honbun ol {
-    font-size: inherit;
-}
-
-.Honbun p {
-    margin: 0 0 1.6em;
-}
-
-.Honbun a {
-    color: #1a7f6b;
-    text-decoration: underline;
-}
-
-/* 見出し(エディターの「見出し」ボタン = ##) */
-.Honbun h2 {
-    margin: 2.6em 0 1em;
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 1.5;
-    color: #222;
-}
-
-.Honbun h3 {
-    margin: 2em 0 .8em;
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 1.5;
-    color: #222;
-}
-
-/* リスト */
-.Honbun ul,
-.Honbun ol {
-    margin: 0 0 1.6em;
-    padding-left: 1.6em;
-}
-
-.Honbun li {
-    margin-bottom: .3em;
-}
-
-/* 引用 */
-.Honbun blockquote {
-    margin: 1.8em 0;
-    padding: .2em 0 .2em 1.2em;
-    border-left: 3px solid #ccc;
-    color: #666;
-}
-
-.Honbun blockquote p {
-    margin: .6em 0;
-}
-
-/* 区切り線(短い中央線) */
-.Honbun hr {
-    width: 60px;
-    margin: 3em auto;
-    border: 0;
-    border-top: 2px solid #ccc;
-}
-
-/* 画像とキャプション(![キャプション](画像)) */
-.Honbun figure {
-    margin: 2em 0;
-    text-align: center;
-}
-
-.Honbun figure img {
-    display: block;
-    width: auto;
-    max-width: 100%;
-    height: auto;
-    margin: 0 auto;
-    border-radius: 4px;
-}
-
-.Honbun figcaption {
-    margin-top: .6em;
-    font-size: 13px;
-    line-height: 1.6;
-    color: #888;
-}
-
-/* ---------------- 独自タグ ---------------- */
-red {
-    color: #e0245e;
-}
-
-bold {
-    font-weight: 700;
-}
-
-big-font {
-    font-size: 200%;
-    line-height: 1.4;
-}
-
-@media screen and (max-width: 544px) {
-    .Article h1 {
-        font-size: 26px;
-    }
-
-    .Honbun {
-        font-size: 16px;
-    }
-}
-
-```
-`articles_backup\articles.json`:
-
-```json
-[
-    {
-        "id": "20251205_introduction",
-        "date": "2025-12-05",
-        "title": "web担当が変わりましたので自己紹介します！",
-        "thumbnail": ""
-    },
-    {
-        "id": "20240519_24aftertourokukai",
-        "date": "2024-05-19",
-        "title": "2024年度部員登録会後について",
-        "thumbnail": ""
-    },
-    {
-        "id": "20240506_24tourokukai",
-        "date": "2024-05-06",
-        "title": "2024年度 部員登録会のお知らせ",
-        "thumbnail": ""
-    },
-    {
-        "id": "20240412_24setsumeikai",
-        "date": "2024-04-12",
-        "title": "2024年度サークル説明会のお知らせ",
-        "thumbnail": ""
-    },
-    {
-        "id": "20240324_24shinkan",
-        "date": "2024-03-24",
-        "title": "2024年4月2日の新入生勧誘会のお知らせ",
-        "thumbnail": "20240324_24shinkan/1.webp"
-    },
-    {
-        "id": "20240324_23nokiseki",
-        "date": "2024-03-24",
-        "title": "お詫び、そしてCreativeStaff 2023年の軌跡",
-        "thumbnail": "20240324_23nokiseki/1.webp"
-    },
-    {
-        "id": "20230522_23tourokukai",
-        "date": "2023-05-22",
-        "title": "登録会後の入部について",
-        "thumbnail": ""
-    },
-    {
-        "id": "20230509_circleinfo2",
-        "date": "2023-05-09",
-        "title": "部員登録会について",
-        "thumbnail": ""
-    },
-    {
-        "id": "20230410_circleinfo",
-        "date": "2023-04-10",
-        "title": "サークル説明会について",
-        "thumbnail": ""
-    },
-    {
-        "id": "20230405_newHP",
-        "date": "2023-04-05",
-        "title": "新HP開設のお知らせ",
-        "thumbnail": ""
-    },
-    {
-        "id": "20230404_shinkanreport23",
-        "date": "2023-04-04",
-        "title": "23年新入生歓迎会の記録",
-        "thumbnail": "20230404_shinkanreport23/1.webp"
-    },
-    {
-        "id": "20221231_c101",
-        "date": "2022-12-31",
-        "title": "C101（コミックマーケット101）の記録",
-        "thumbnail": "20221231_c101/1.webp"
-    }
-]
-
 ```
 `cgls\discord-outline.svg`:
 
@@ -3552,8 +2448,10 @@ a:hover{
  
 .slider img {
     border: 1px solid #154261;
-    width:100%;/*スライダー内の画像を横幅100%に*/
-    height:auto;
+    width: 100%;
+    aspect-ratio: 16 / 9;   /* 高さを横幅に対して固定 */
+    object-fit: cover;      /* 比率が違う画像は、はみ出す分を切って埋める */
+    display: block;
 }
  
  /*slickのJSで書かれるタグ内、スライド左右の余白調整*/
@@ -3614,22 +2512,60 @@ a:hover{
     background:#57A897;/*ドットボタンの現在地表示の色*/
 }
 
-.news-list{
-    list-style: none outside;
+.news-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     width: 95%;
     height: 60vh;
-    overflow-y: scroll;
-	background: #eee;
-	border-radius: 10px;
-	
-}
-.item{
-    border-bottom: 5px solid #999999;
-    max-width: 90%;
+    overflow-y: auto;
+    background: #eee;
+    border-radius: 10px;
 }
 
-.item > a{
-	text-decoration:none;
+.item {
+    border-bottom: 1px solid #ccc;
+}
+.item:last-child {
+    border-bottom: none;
+}
+
+.item > a {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+}
+.item > a:hover {
+    background: #dcebe7;
+}
+
+/* サムネあり：左に画像、右に日付とタイトル */
+.item > a:has(.thumb) {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    column-gap: 16px;
+    align-items: center;
+}
+.item .thumb {
+    grid-row: 1 / span 2;
+    width: 120px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.item .date {
+    grid-column: 2;
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+}
+.item .title {
+    grid-column: 2;
+    margin: 4px 0 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #154261;
 }
 ```
 `footer.html`:
@@ -4497,13 +3433,6 @@ document.addEventListener('DOMContentLoaded', loadGames);
             <div class="topic">
                 <h1>Topics</h1>
                 <ul class="slider">
-                    <li><a href="games/games.html"><img src="games/cgls/Inherutance/1_Inheritance_title.webp" alt=""></a></li>
-                    <li><a href="games/games.html"><img src="games/cgls/Cloring ash world/1.webp" alt=""></a></li>
-                    <li><a href="games/games.html"><img src="games/cgls/StageMixer/stageMixer_1.webp" alt=""></a></li>
-                    <li><a href="games/games.html"><img src="games/cgls/Don't Stop Rogue-kun!/Don't Stop Rogue-kun! (1).webp" alt=""></a></li>
-                    <li><a href="games/games.html"><img src="games/cgls/taf/taf_1.webp" alt=""></a></li>
-                    <li><a href="games/games.html"><img src="games/cgls/TAMASHI Regain/TAMASI_Regain (1).webp" alt=""></a></li>
-                    <li><a href="games/games.html"><img src="games/cgls/Underworld Station/US_01.webp" alt=""></a></li>
                 </ul>
             </div>
             <div class="information">
@@ -4526,81 +3455,9 @@ document.addEventListener('DOMContentLoaded', loadGames);
             <div class="news">
                 <h1>更新情報</h1>
                 <ul class="news-list">
-                    <li class="item">
-                        <a href="articles/20251205_introduction/article.html">
-                            <p class="date">2025/12/05</p>
-                            <p class="title">web担当が変わりましたので自己紹介します！</p>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="articles/20240519_24aftertourokukai/article.html">
-                            <p class="date">2024/5/19</p>
-                            <p class="title">2024年度 部員登録会後のお知らせ</p>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="articles/20240506_24tourokukai/article.html">
-                            <p class="date">2024/5/6</p>
-                            <p class="title">2024年度 部員登録会のお知らせ</p>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="articles/20240412_24setsumeikai/article.html">
-                            <p class="date">2024/4/12</p>
-                            <p class="title">2024年度サークル説明会のお知らせ</p>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="articles/20240324_24shinkan/article.html">
-                            <p class="date">2024/3/24</p>
-                            <p class="title">2024年4月2日の新入生勧誘会のお知らせ</p>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="articles/20240324_23nokiseki/article.html">
-                            <p class="date">2024/3/24</p>
-                            <p class="title">お詫び、そしてCreativeStaff 2023年の軌跡</p>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="articles/20230522_23tourokukai/article.html">
-                            <p class="date">2023/5/22</p>
-                            <p class="title">部員登録会後の入部について</p>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="articles/20230509_circleinfo2/article.html">
-                            <p class="date">2023/5/9</p>
-                            <p class="title">部員登録会について</p>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="articles/20230410_circleinfo/article.html">
-                            <p class="date">2023/4/10</p>
-                            <p class="title">サークル説明会について</p>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="articles/20230405_newHP/article.html">
-                            <p class="date">2023/4/5</p>
-                            <p class="title">新HP開設のお知らせ</p>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="articles/20230404_shinkanreport23/article.html">
-                            <p class="date">2023/4/4</p>
-                            <p class="title">23年新入生歓迎会の記録</p>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="articles/20221231_c101/article.html">
-                            <p class="date">2022/12/31</p>
-                            <p class="title">C101（コミックマーケット101）の記録</p>
-                        </a>
-                    </li>
                 </ul>
             </div>
-            <br><br><br><br><br><br>
+            <br><br>
         </div>
         
         <!-- フッター -->
@@ -4610,9 +3467,55 @@ document.addEventListener('DOMContentLoaded', loadGames);
         <script src="js/main.js" charset="utf-8"></script>
         <script src="js/toppage.js" charset="utf-8"></script>
         <script src="js/cre_navigation.js" charset="utf-8"></script>
+        <script src="js/articles.js" charset="utf-8"></script>
 		<script src="https://apis.google.com/js/platform.js" async="" defer=""></script>
-    
-<script id="creative-articles-loader">fetch('articles/articles.json').then(r=>r.json()).then(items=>{const list=document.querySelector('.news-list');if(!list)return;list.replaceChildren(...items.sort((a,b)=>b.date.localeCompare(a.date)).map(a=>{const li=document.createElement('li');li.className='item';const link=document.createElement('a');link.href='articles/'+a.id+'/article.html';if(a.thumbnail){const img=document.createElement('img');img.src='articles/'+a.id+'/'+a.thumbnail;img.alt='';img.loading='lazy';img.style.cssText='width:100%;max-height:150px;object-fit:cover';link.append(img)}const date=document.createElement('p');date.className='date';date.textContent=a.date.replaceAll('-','/');const title=document.createElement('p');title.className='title';title.textContent=a.title;link.append(date,title);li.append(link);return li}))}).catch(console.error);</script></body></html>
+    </body>
+</html>
+
+```
+`js\articles.js`:
+
+```js
+// js/articles.js
+fetch('articles/articles.json')
+  .then(r => r.json())
+  .then(items => {
+    const list = document.querySelector('.news-list');
+    if (!list) return;
+
+    items.sort((a, b) => b.date.localeCompare(a.date));
+
+    list.replaceChildren(...items.map(a => {
+      const li = document.createElement('li');
+      li.className = 'item';
+
+      const link = document.createElement('a');
+      link.href = 'articles/' + a.id + '/article.html';
+
+      if (a.thumbnail) {
+        const img = document.createElement('img');
+        img.src = 'articles/' + a.thumbnail;
+        img.alt = '';
+        img.loading = 'lazy';
+        img.className = 'thumb';
+        link.append(img);
+      }
+
+      const date = document.createElement('p');
+      date.className = 'date';
+      date.textContent = a.date.replaceAll('-', '/');
+
+      const title = document.createElement('p');
+      title.className = 'title';
+      title.textContent = a.title;
+
+      link.append(date, title);
+      li.append(link);
+      return li;
+    }));
+  })
+  .catch(console.error);
+
 ```
 `js\cre_navigation.js`:
 
@@ -4684,91 +3587,112 @@ fetch("/footer.html")
 `js\toppage.js`:
 
 ```js
-// ロゴフェードの処理
+// ----------------------------------------------------------------------------
+// 設定
+// ----------------------------------------------------------------------------
+
+// ゲームランチャーと同じ配信元(games.json と toppage.json と画像を置いている場所)
+const WEBPAGE_URL = 'https://cs-launcher-api.akane-minori-cslauncher.workers.dev';
+
+
+// ----------------------------------------------------------------------------
+// ロゴフェード
+// ----------------------------------------------------------------------------
+
 $(function() {
-    //0.1秒後にロゴをフェードイン
-	setTimeout(function(){
-		$('.fadeOut p').fadeIn(1600);
-	},100);
-    
-    //0.9秒後にロゴ含め真っ白背景をフェードアウト
-	setTimeout(function(){
-		$('.fadeOut').fadeOut(500);
-	},900);
+    // 0.1秒後にロゴをフェードイン
+    setTimeout(function() {
+        $('.fadeOut p').fadeIn(1600);
+    }, 100);
+
+    // 0.9秒後にロゴ含め真っ白背景をフェードアウト
+    setTimeout(function() {
+        $('.fadeOut').fadeOut(500);
+    }, 900);
 });
 
 
-// 以降スライダー処理
-$(function()
-{
+// ----------------------------------------------------------------------------
+// ゲームサムネ
+// ----------------------------------------------------------------------------
+
+/** ゲームIDと相対パスから、画像のURLを組み立てる(日本語・スペース対応) */
+function assetUrl(gameId, path) {
+    const encodedPath = path.split('/').map(encodeURIComponent).join('/');
+    return `${WEBPAGE_URL}/games/${encodeURIComponent(gameId)}/${encodedPath}`;
+}
+
+/** toppage.json(ゲームIDの一覧)と games.json を読んで、スライダーに画像を並べる */
+async function loadSliderGames() {
+    const slider = document.querySelector('.slider');
+    if (!slider) return;
+
+    try {
+        const [idsRes, gamesRes] = await Promise.all([
+            fetch(`${WEBPAGE_URL}/toppage.json`),
+            fetch(`${WEBPAGE_URL}/games.json`),
+        ]);
+        if (!idsRes.ok) throw new Error(`toppage.json: HTTP ${idsRes.status}`);
+        if (!gamesRes.ok) throw new Error(`games.json: HTTP ${gamesRes.status}`);
+
+        const ids = await idsRes.json();
+        const games = await gamesRes.json();
+
+        // IDで games.json を引く(見つからないIDは飛ばす)
+        const gameById = new Map(games.map((g) => [g.id, g]));
+        const items = ids.map((id) => gameById.get(id)).filter(Boolean);
+
+        slider.replaceChildren(...items.map((game) => {
+            const li = document.createElement('li');
+
+            const link = document.createElement('a');
+            link.href = 'games/games.html';
+
+            const img = document.createElement('img');
+            img.src = assetUrl(game.id, game.thumbnail_path);
+            img.alt = game.title;
+
+            link.append(img);
+            li.append(link);
+            return li;
+        }));
+    } catch (err) {
+        console.error('スライダーの読み込みに失敗しました', err);
+        return;
+    }
+
+    initSlider();
+}
+
+
+// ----------------------------------------------------------------------------
+// スライダー
+// ----------------------------------------------------------------------------
+
+/** 画像を並べ終わったあとに呼ぶ(先に呼ぶと空のまま固まる) */
+function initSlider() {
     $('.slider').slick({
-        autoplay: true,//自動的に動き出すか。初期値はfalse。
-	   infinite: true,//スライドをループさせるかどうか。初期値はtrue。
-        slidesToShow: 3,//スライドを画面に3枚見せる
-	   slidesToScroll: 3,//1回のスクロールで3枚の写真を移動して見せる
-        prevArrow: '<div class="slick-prev"></div>',//矢印部分PreviewのHTMLを変更
-	   nextArrow: '<div class="slick-next"></div>',//矢印部分NextのHTMLを変更
-        dots: true,//下部ドットナビゲーションの表示
-	   autoplaySpeed: 7000,
+        autoplay: true,                 // 自動的に動き出すか
+        infinite: true,                 // スライドをループさせるか
+        slidesToShow: 3,                // 画面に3枚見せる
+        slidesToScroll: 3,              // 1回で3枚移動する
+        prevArrow: '<div class="slick-prev"></div>',
+        nextArrow: '<div class="slick-next"></div>',
+        dots: true,                     // 下部ドットナビゲーション
+        autoplaySpeed: 7000,            // 1枚目だけ長めに見せる
+        responsive: [
+            { breakpoint: 990, settings: { slidesToShow: 2, slidesToScroll: 2 } },
+            { breakpoint: 750, settings: { slidesToShow: 1, slidesToScroll: 1 } },
+        ],
     });
 
-    $(".slider").on('beforeChange',function(event, slick, currentSlide, nextSlide){
-	   if(nextSlide > 0)
-        {
-            //スライド1枚目以外
-            $(".slider").slick('slickSetOption', 'autoplaySpeed', 5000, true);
-	   }
-        else
-        {
-            //2周目以降のスライド1枚目
-            $(".slider").slick('slickSetOption', 'autoplaySpeed', 5000, true);
-	   }
+    // 最初のスライド送りのあとは、間隔を5秒にする
+    $('.slider').one('beforeChange', function() {
+        $('.slider').slick('slickSetOption', 'autoplaySpeed', 5000, true);
     });
-});
+}
 
-window.addEventListener("load", () => {
-	var winSize_w = window.innerWidth;
-	if(winSize_w < 750){
-		$(".slider").slick("slickSetOption", {
-			slidesToShow: 1,
-			slidesToScroll: 1
-		}, true);
-	}
-	else if(winSize_w < 990){
-		$(".slider").slick("slickSetOption", {
-			slidesToShow: 2,
-			slidesToScroll: 2
-		}, true);
-	}
-	else{
-		$(".slider").slick("slickSetOption", {
-			slidesToShow: 3,
-			slidesToScroll: 3
-		}, true);
-	}
-}, false)
-
-window.addEventListener("resize", () => {
-	var winSize_w = window.innerWidth;
-	if(winSize_w < 750){
-		$(".slider").slick("slickSetOption", {
-			slidesToShow: 1,
-			slidesToScroll: 1
-		}, true);
-	}
-	else if(winSize_w < 990){
-		$(".slider").slick("slickSetOption", {
-			slidesToShow: 2,
-			slidesToScroll: 2
-		}, true);
-	}
-	else{
-		$(".slider").slick("slickSetOption", {
-			slidesToShow: 3,
-			slidesToScroll: 3
-		}, true);
-	}
-}, false)
+$(loadSliderGames);
 
 ```
 `readme.md`:
