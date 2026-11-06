@@ -1,5 +1,3 @@
-
-
 /*-----bootstrap original xss-----*/
 @media screen and (max-width: 544px){
 	main h2{
@@ -519,6 +517,39 @@ header .drawer-button-open{
 	}
 }
 
+/*-----------------------------------------
+---- ヘッダーの自動非表示（下スクロールで隠す） ----
+-----------------------------------------*/
+#header{
+    transition: transform 0.3s ease;
+}
+#header.header-hidden{
+    transform: translateY(-100%);
+    box-shadow: none;
+}
 
+/*-----------------------------------------
+---- 詳細メニューの2列表示（Bootstrapの代わり） ----
+-----------------------------------------*/
+#mega-navigation .row{
+    display: flex;
+    flex-wrap: wrap;
+}
+#mega-navigation .row > li{
+    flex: 0 0 50%;
+    max-width: 50%;
+}
 
-
+/*-----------------------------------------
+---- スマホ: ロゴが小さくなる問題の修正 ----
+ PC用のメニュー項目(li)は中身が非表示でも表を作る「列」として残り、
+ ロゴの列が幅の4分の1になっていた。スマホでは列ごと消す。
+-----------------------------------------*/
+@media screen and (max-width: 544px){
+	#main-navigation > div > ul > li{
+		display: none;
+	}
+	.header-logo-link > a > img.header-logo-xss{
+		max-width: 220px;
+	}
+}

@@ -77,28 +77,39 @@ red{
     color: red;
 }
 
+/* ゲーム一覧: 幅に応じて自動で何列にも並べる(スマホは1〜2列) */
 .Games {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 3%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    column-gap: 24px;
+    row-gap: 0;
+    align-items: start;
+}
+.Games > p{
+    grid-column: 1 / -1;
 }
 .Games img{
     width: 100%;
     height: auto;
 }
 
+/* 1枚のカードを「タイトル」「サムネ」の2段にして、同じ行のカード同士で段をそろえる。
+   タイトルが長いカードがあっても、サムネの位置がずれない */
 .GameCard{
-    width: 460px;
-    height: 400px;
+    display: grid;
+    grid-row: span 2;
+    grid-template-rows: subgrid;
+    row-gap: 0;
+    width: 100%;
+    height: auto;
+    padding-bottom: 24px;
 }
 .GameCard img{
     display: block;
     transition: 0.4s;
-    max-height: 250px;
-    width: auto;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
     cursor:pointer;
     margin: 0 auto;
     border: 2px solid #154261;
@@ -116,9 +127,22 @@ red{
 .GameCard{
     cursor: pointer;
 }
-.GameCard h2{
+#content-main.page .GameCard h2{
     float: none;
+    width: auto;
     margin: 0 0 6px 0;
+    padding: 0;
+    text-align: left;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #222;
+    border-bottom: 0;
+}
+#content-main.page .GameCard p{
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
 }
 .GameCard_title{
     margin-bottom: 12px;

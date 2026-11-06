@@ -12,77 +12,36 @@
     background-color: #57A897;
 }
 
-/* メインコンテンツ内の設定 */
-#content-main > div > h1{
-    color: black;
-    text-decoration: underline;
-    text-decoration-color: #57A897;
-}
-#content-main > div > p{
-    color: black;
-	
-	box-sizing: border-box;
-    font-size: 20px;
-    margin-left: auto;
-    height: 100%;
-    width: 100%;
-	padding: 5%;
-	border-radius: 50px;
-	background-color : #eee;
-}
-
-#content-main > ul{
-	display:flex;
-	justify-content: space-between;
-	padding-bottom:50px;
-}
-
-#content-main > ul > li{
-	flex:auto;
-	min-width:200px;
-	list-style: none;
-	margin-right: 20px;
-}
-
-#content-main > ul > li > h1{
-	
-    color: black;
-    text-decoration: underline;
-    text-decoration-color: #57A897;
-}
-#content-main > ul > li > p{
-	
-	box-sizing: border-box;
-    height: 100%;
-    width: 100%;
-	padding: 5%;
-    font-size: 20px;
-	border-radius: 50px;
-	background-color : #eee;
-}
-
-#content-main > ul > li > div > h1{
-	
-    color: black;
-    text-decoration: underline;
-    text-decoration-color: #57A897;
-}
+/* メインコンテンツ内の設定（見出しは css/main.css 側で指定） */
+#content-main > div > p,
+#content-main > ul > li > p,
 #content-main > ul > li > div > p{
-	
-	box-sizing: border-box;
-    height: 100%;
+    box-sizing: border-box;
     width: 100%;
-	padding: 5%;
-    font-size: 20px;
-	border-radius: 50px;
-	background-color : #eee;
+    height: 100%;
+    padding: 0;
+    font-size: 16px;
+    color: #222;
 }
 
+/* カードを並べる（幅が足りなければ自動で折り返す） */
+#content-main > ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 0;
+    padding: 0 0 50px;
+    list-style: none;
+}
+#content-main > ul > li{
+    flex: 1 1 280px;
+    margin: 0;
+    list-style: none;
+}
 
 .twitter{
-    max-width: 50%;
+    max-width: 100%;
     max-height: 500px;
-    border: 10px #154261;
     padding: 10px;
-    overflow: scroll;
+    overflow: auto;
 }
