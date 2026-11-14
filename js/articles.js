@@ -14,14 +14,15 @@ fetch('articles/articles.json')
       const link = document.createElement('a');
       link.href = 'articles/' + a.id + '/article.html';
 
-      if (a.thumbnail) {
-        const img = document.createElement('img');
-        img.src = 'articles/' + a.thumbnail;
-        img.alt = '';
-        img.loading = 'lazy';
-        img.className = 'thumb';
-        link.append(img);
-      }
+      // サムネイルが無い記事(または画像が読めない記事)は、サイト共通の画像を入れて高さをそろえる
+      const DEFAULT_THUMB = 'cgls/ogp.png';
+      const img = document.createElement('img');
+      img.src = a.thumbnail ? 'articles/' + a.thumbnail : DEFAULT_THUMB;
+      img.alt = '';
+      img.loading = 'lazy';
+      img.className = 'thumb';
+      img.onerror = () => { img.onerror = null; img.src = DEFAULT_THUMB; };
+      link.append(img);
 
       const date = document.createElement('p');
       date.className = 'date';

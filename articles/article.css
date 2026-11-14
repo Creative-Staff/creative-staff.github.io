@@ -16,7 +16,8 @@
 .Article .eyecatch {
     display: block;
     width: 100%;
-    max-height: 420px;
+    height: auto;
+    aspect-ratio: 16 / 9;   /* 画像の縦横比によらず、どの記事も同じ高さにそろえる */
     margin: 0 0 32px;
     border-radius: 8px;
     object-fit: cover;

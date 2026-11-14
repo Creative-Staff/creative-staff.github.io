@@ -1,0 +1,130 @@
+/* 記事一覧ページ専用 */
+
+.ls-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 20px;
+    margin: 0 0 20px;
+    font-size: 14px;
+    color: #333;
+}
+.ls-controls label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.ls-controls select {
+    height: 34px;
+    padding: 0 12px;
+    border: 2px solid #e1e5e9;
+    border-radius: 17px;
+    background: #fff;
+    color: #333;
+    font-size: 14px;
+}
+.ls-controls select:focus {
+    outline: none;
+    border-color: #19c8ff;
+}
+.ls-count {
+    margin-left: auto;
+    color: #6b6b6b;
+    font-weight: 700;
+}
+
+/* 作者別のときの見出し */
+.ls-group {
+    margin: 28px 0 12px;
+    padding-bottom: 4px;
+    border-bottom: 4px solid #1aff1a;
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+}
+.ls-group:first-child {
+    margin-top: 0;
+}
+
+/* カード一覧 */
+.ls-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
+    gap: 20px;
+}
+.ls-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+.ls-card:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.16);
+    transform: translateY(-2px);
+}
+.ls-thumb {
+    position: relative;
+    display: block;
+    aspect-ratio: 16 / 9;   /* どの画像でも枠は同じ高さ */
+    overflow: hidden;
+    background: #e9edf0;
+}
+.ls-thumb img {
+    position: absolute;   /* 画像の大きさが枠を押し広げないようにする */
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.ls-body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 4px;
+    padding: 10px 12px 12px;
+}
+.ls-date {
+    color: #6b6b6b;
+    font-size: 12px;
+}
+.ls-title {
+    color: #333;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.5;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
+.ls-title:hover {
+    text-decoration: underline;
+}
+.ls-author {
+    align-self: flex-start;
+    margin-top: auto;
+    padding: 1px 10px;
+    border: 2px solid #a855ff;
+    border-radius: 10px;
+    background: #fff;
+    color: #333;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.ls-author:hover {
+    background: #f5ecff;
+}
+.ls-author.none {
+    border-color: #e1e5e9;
+    color: #6b6b6b;
+    cursor: default;
+}
+.ls-empty {
+    padding: 24px 0;
+    color: #6b6b6b;
+    text-align: center;
+}
