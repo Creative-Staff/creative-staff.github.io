@@ -1,373 +1,498 @@
 /* ----------------------------------------------------------------------------
-   games.html 専用のスタイル(色は #154261 / #57A897 を基調)
+   games.html 専用のスタイル
+   ゲームランチャー(cs-launcher)の見た目に合わせています。
+   ※ このCSSは main.css / toppage.css より先に読み込まれるため、
+      同じ強さのルールは後ろの2つに負けます。必要な所は詳細度を上げてあります。
 ---------------------------------------------------------------------------- */
 
-/*　ここから絞り込み選択 */
+:root {
+    --g-bg: #f5f7f9;
+    --g-card: #ffffff;
+    --g-text: #333333;
+    --g-muted: #6b6b6b;
+    --g-border: #e1e5e9;
+    --g-green: #1aff1a;
+    --g-yellow: #ffd400;
+    --g-blue: #19c8ff;
+    --g-radius: 16px;
+    --g-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --g-shadow-hover: 0 6px 16px rgba(0, 0, 0, 0.16);
+}
+
+red {
+    color: #d9002f;
+}
+
+/* ----------------------------------------------------------------------------
+   絞り込み(タグのチップ)
+---------------------------------------------------------------------------- */
 .search_area {
-    display: inline;
+    display: block;
     text-align: center;
 }
-.search_area div {
+.search_area .search_ui {
+    margin: 0;
+}
+.search_area #sizeBox {
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 10px;
-}
-.search_area span{
-    display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    gap: 8px 6px;
 }
-/* チェックボックスの装飾 */
+.search_area label {
+    position: relative;
+    margin: 0;
+}
+
+/* 本物のチェックボックスは見えなくして、キーボード操作は残す */
 .filter-checkbox {
-    display: none;
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    pointer-events: none;
 }
 .checkbox_parts {
-    padding-left: 25px;
-    position: relative;
-    margin-right: 25px;
-    color: black;
+    display: inline-block;
+    padding: 4px 14px;
+    border: 1px solid var(--g-border);
+    border-radius: 14px;
+    background: #fff;
+    color: var(--g-text);
+    font-size: 13px;
+    line-height: 1.4;
     cursor: pointer;
+    transition: border-color 0.15s ease;
+}
+.checkbox_parts:hover {
+    border-color: var(--g-blue);
+}
+.filter-checkbox:checked + .checkbox_parts {
+    font-weight: 700;
+    box-shadow: inset 0 -3px 0 var(--g-yellow);
+}
+.filter-checkbox:focus-visible + .checkbox_parts {
+    outline: 2px solid var(--g-blue);
+    outline-offset: 2px;
 }
 
-.checkbox_parts::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 18px;
-    height: 18px;
-    border: 1px solid #999;
-}
-
-.filter-checkbox:checked+.checkbox_parts::after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: -5px;
-    left: 5px;
-    width: 7px;
-    height: 14px;
-    transform: rotate(40deg);
-    border-bottom: 3px solid #0050c1;
-    border-right: 3px solid #0050c1;
-}
-
-/* ここまで絞り込み検索 */
-
-/* メインコンテンツ内の設定 */
-h1{
-    font-size: 200%;
-    color: black;
-    text-decoration: underline;
-    text-decoration-color: #57A897;
-    margin: 0;
-}
-h2{
-    font-size: 180%;
-    color: black;
-    float: left;
-    margin: 0;
-}
-p{
-    font-size: 160%;
-    color: black;
-}
-red{
-    color: red;
-}
-
-/* ゲーム一覧: 幅に応じて自動で何列にも並べる(スマホは1〜2列) */
+/* ----------------------------------------------------------------------------
+   ゲーム一覧: 縦型カードを自動でグリッドに並べる
+---------------------------------------------------------------------------- */
 .Games {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    column-gap: 24px;
-    row-gap: 0;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+    gap: 20px;
     align-items: start;
-}
-.Games > p{
-    grid-column: 1 / -1;
-}
-.Games img{
-    width: 100%;
-    height: auto;
+    padding: 8px 0 24px;
 }
 
-/* 1枚のカードを「タイトル」「サムネ」の2段にして、同じ行のカード同士で段をそろえる。
-   タイトルが長いカードがあっても、サムネの位置がずれない */
-.GameCard{
-    display: grid;
-    grid-row: span 2;
-    grid-template-rows: subgrid;
-    row-gap: 0;
-    width: 100%;
-    height: auto;
-    padding-bottom: 24px;
+/* 「読み込み中」「失敗しました」のメッセージは全列を使う */
+#content-main.page .Games > p,
+#content-main.page #games-empty {
+    grid-column: 1 / -1;
+    max-width: none;
+    margin: 0;
+    padding: 24px 0;
+    color: var(--g-muted);
+    text-align: center;
 }
-.GameCard img{
+
+/* カード: 上にサムネイル、下に文字(HTMLの並びは「文字→画像」なので order で入れ替える) */
+.GameCard {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
+    border-radius: var(--g-radius);
+    background: var(--g-card);
+    box-shadow: var(--g-shadow);
+    color: var(--g-text);
+    cursor: pointer;
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+.GameCard:hover {
+    box-shadow: var(--g-shadow-hover);
+    transform: translateY(-2px);
+}
+.GameCard:focus-visible {
+    outline: 3px solid var(--g-blue);
+    outline-offset: 2px;
+}
+
+.GameCard img {
+    order: -1;
     display: block;
-    transition: 0.4s;
     width: 100%;
     aspect-ratio: 16 / 9;
-    object-fit: cover;
-    cursor:pointer;
-    margin: 0 auto;
-    border: 2px solid #154261;
-}
-.GameCard img:hover{
-    transform: scale(1.1, 1.1);
-}
-.GameCard_title{
-    width: 100%;
-    height: auto;
-    margin-bottom: 20px;
+    object-fit: contain;
+    background: #000;
+    border: 0;
+    margin: 0;
 }
 
-/* カードは全体をクリックできる。長いタイトルは折り返す */
-.GameCard{
-    cursor: pointer;
+.GameCard_title {
+    padding: 10px 12px 12px;
+    min-width: 0;
 }
-#content-main.page .GameCard h2{
+#content-main.page .GameCard h2 {
+    display: block;
     float: none;
     width: auto;
-    margin: 0 0 6px 0;
+    margin: 0 0 4px;
     padding: 0;
+    border: 0;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--g-text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#content-main.page .GameCard p {
+    max-width: none;
+    margin: 0;
+}
+
+/* タグ(カードでもポップアップでも共通) */
+.Gtag {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin: 0;
+    font-size: 11px;
+}
+.GameCard .Gtag {
+    max-height: 22px;
+    overflow: hidden;
+}
+.Gtag_chip {
+    display: inline-block;
+    padding: 1px 8px;
+    border: 2px solid var(--g-blue);
+    border-radius: 10px;
+    background: #fff;
+    color: var(--g-text);
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+/* ----------------------------------------------------------------------------
+   詳細ポップアップ(上に画像、下に文字。縦長でも横長でも同じ並び)
+   背景の暗幕は box-shadow で作っているので、外側をクリックすると
+   今まで通り games.js が閉じてくれる。
+---------------------------------------------------------------------------- */
+.pop_mode {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 2000;
+    display: none;
+    transform: translate(-50%, -50%);
+    animation: pop_fade 0.2s ease-out;
+}
+@keyframes pop_fade {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.pop_box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: min(560px, 92vw);
+    max-height: 85vh;
+    overflow: hidden;
+    border-radius: var(--g-radius);
+    background: var(--g-card);
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.6), var(--g-shadow-hover);
+    color: var(--g-text);
+}
+
+.pop_close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.55);
+    color: #fff;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+}
+.pop_close:hover {
+    background: rgba(0, 0, 0, 0.75);
+}
+
+/* 画像スライダー(toppage.css の .slider より強く指定する) */
+.pop_box .slider {
+    flex: none;
+    width: 100%;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    transition: none;
+}
+.pop_box .slider .slick-slide {
+    margin: 0;
+}
+.pop_box .slider img,
+.pop_img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    max-height: none;
+    object-fit: contain;
+    background: #000;
+    border: 0;
+    border-radius: 0;
+}
+
+/* 矢印(円形。中の山形は疑似要素で描く) */
+.pop_box .slick-prev,
+.pop_box .slick-next {
+    position: absolute;
+    top: 50%;
+    z-index: 3;
+    width: 36px;
+    height: 36px;
+    margin-top: -18px;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.5);
+    transform: none;
+    cursor: pointer;
+}
+.pop_box .slick-prev { left: 8px; right: auto; }
+.pop_box .slick-next { right: 8px; left: auto; }
+.pop_box .slick-prev::before,
+.pop_box .slick-next::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 9px;
+    height: 9px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+}
+.pop_box .slick-prev::before { transform: translate(-30%, -50%) rotate(-135deg); }
+.pop_box .slick-next::before { transform: translate(-70%, -50%) rotate(45deg); }
+
+/* ドット(画像の下端に重ねる。押しやすいよう li に余白を持たせる) */
+.pop_box .slick-dots {
+    position: absolute;
+    bottom: 6px;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+.pop_box .slick-dots li {
+    margin: 0;
+    padding: 6px 4px;
+}
+.pop_box .slick-dots button {
+    display: block;
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    color: transparent;
+    font-size: 0;
+    cursor: pointer;
+}
+.pop_box .slick-dots .slick-active button {
+    background: var(--g-green);
+}
+
+/* 文字エリア: 画像の下の残りを使い、はみ出したらここだけスクロール */
+.pop_txt {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    min-height: 0;
+    padding: 16px 20px 20px;
+    overflow-y: auto;
+}
+.pop_title {
+    flex: none;
+    margin-bottom: 10px;
+}
+.pop_box .pop_title h1 {
+    margin: 0 0 8px;
+    padding: 0;
+    border: 0;
     text-align: left;
     font-size: 20px;
     font-weight: 700;
     line-height: 1.4;
-    color: #222;
-    border-bottom: 0;
+    color: var(--g-text);
 }
-#content-main.page .GameCard p{
-    max-width: none;
-    margin-left: 0;
-    margin-right: 0;
+.pop_box .pop_authors {
+    flex: none;
+    margin: 0 0 8px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--g-muted);
 }
-.GameCard_title{
-    margin-bottom: 12px;
-}
-
-/* ----------------------------------------------------------------------------
-   タグの表示(games.json の tags をそのまま表示)
----------------------------------------------------------------------------- */
-.Gtag{
-    margin: 0;
-    font-size: 100%;
-    color: #F0F0F0;
-    display: block;
-}
-.Gtag_chip{
-    display: inline-block;
-    margin: 0 4px 4px 0;
-    padding: 0 8px;
-    border-radius: 3px;
-    background-color: #154261;
-    color: #F0F0F0;
+.pop_box .pop_p {
+    flex: 0 1 auto;
+    margin: 0 0 14px;
     font-size: 14px;
-    font-weight: bold;
-    line-height: 1.6;
+    line-height: 1.7;
+    color: var(--g-muted);
+    white-space: pre-line; /* 説明文の改行をそのまま表示 */
+    overflow-wrap: anywhere;
 }
 
-/* ----------------------------------------------------------------------------
-   詳細ポップアップ(横長の画面は左右に並べ、縦長の画面は上下に並べる)
----------------------------------------------------------------------------- */
-.pop_mode{
-    z-index: 3;
-    position: fixed;
-    /* 画面の中心に表示 */
-    top: calc(50% + 30px);
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: none;
-    animation: pop_fade 0.2s ease-out;
-}
-@keyframes pop_fade{
-    from{ opacity: 0; }
-    to{ opacity: 1; }
-}
-.pop_box{
-    position: relative;
-    display: flex;
-    align-items: center;
-    width: 95vw;
-    height: 75vh;
-    background-color: #154261;
-    box-shadow: 4px 4px 4px black;
-    overflow: hidden;
-}
-.pop_close{
-    position: absolute;
-    top: 6px;
-    right: 14px;
-    z-index: 5;
-    background: transparent;
-    border: none;
-    color: #FFF;
-    font-size: 32px;
-    line-height: 1;
-    cursor: pointer;
-}
-.pop_close:hover{
-    color: #57A897;
-}
-.pop_box .slider{
-    display: block;
-    width: 48%;
-    height: auto;
-    margin: 0 auto;
-    transition: 0.4s;
-}
-.pop_box .slider:hover{
-    transform: scale(1.03, 1.03);
-}
-/* 右側(または下側)の文章エリア。タイトル→説明文→ボタンを縦に並べ、
-   説明文が余った高さを使ってスクロールすることで、ボタンが枠からはみ出さないようにする */
-.pop_txt{
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    width: 45%;
-    height: 100%;
-    margin-left: 1%;
-    padding: 12px 1% 12px 0;
-    overflow-y: auto; /* 画面が極端に低いときの保険 */
-}
-.pop_img{
-    display: block;
-    margin: 0 auto;
-    max-width: 100%;
-    max-height: 65vh;
-    object-fit: contain;
-}
-.pop_title{
-    flex: none;
-    width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-    padding-right: 36px; /* ×ボタンと重ならないように */
-    box-sizing: border-box;
-}
-.pop_title h1{
-    margin: 0;
-}
-.pop_txt p, .pop_title h1{
-    color: #FFF;
-}
-.pop_authors{
-    flex: none;
-    font-size: 100%;
-    margin: 0 0 8px 0;
-}
-.pop_p{
-    flex: 1 1 auto; /* 余った高さを使い、はみ出す分はスクロール */
-    min-height: 4em;
-    overflow: auto;
-    margin: 0 0 15px 0;
-    white-space: pre-line; /* 説明文の改行をそのまま表示 */
-}
-.pop_p::-webkit-scrollbar{
-    width: 0.5vw;
-    background-color: #154261;
-}
-.pop_p::-webkit-scrollbar-thumb{
-    border-radius: 2vw;
-    background-color: #57A897;
-}
-.pop_dlbutton{
+/* ボタン(ランチャーと同じ、白地に緑のふち) */
+.pop_dlbutton {
     flex: none;
     text-align: center;
 }
-.pop_dlbutton button{
-    width: 70%;
-    height: auto;
-    font-size: 20px;
-    background-color: #154261;
-    color: #F0F0F0;
-    border: 1px solid #F0F0F0;
+.pop_dlbutton button {
+    width: auto;
+    min-width: 200px;
+    max-width: 100%;
+    padding: 10px 24px;
+    border: 0;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: inset 0 0 0 2px var(--g-green);
+    color: var(--g-text);
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
 }
-.pop_dlbutton button:hover{
-    background-color: #57A897;
+.pop_dlbutton button:hover {
+    background: #f0fff0;
 }
 
-/* 縦長の画面(スマホなど): 上下に並べる。ダウンロード(exe)ボタンは隠す */
-@media (orientation: portrait){
-    .pop_box{
-        flex-direction: column;
-        align-items: stretch;
-        width: 80vw;
-        height: 85vh;
-        max-height: 1100px;
-    }
-    .pop_box .slider{
-        flex: none;
-        width: 80%;
-        padding-top: 20px;
-    }
-    .pop_txt{
-        flex: 1 1 0; /* 画像の下の残りを全部使う */
-        min-height: 0;
-        width: 95%;
-        height: auto;
-        margin: 3% auto 0 auto;
-        padding: 0 0 12px 0;
-    }
-    .pop_img{
-        max-height: 250px;
-    }
-    .pop_dlbutton.is-download{
+/* 縦長の画面(スマホなど): ダウンロード(exe)ボタンは隠す */
+@media (orientation: portrait) {
+    .pop_dlbutton.is-download {
         display: none;
     }
 }
 
+/* 狭い画面: 余白と文字を少し小さくする */
+@media (max-width: 544px) {
+    .Games {
+        gap: 16px;
+    }
+    .pop_txt {
+        padding: 14px 16px 16px;
+    }
+}
+
 /* ----------------------------------------------------------------------------
-   スライダーの矢印とドット
+   ランチャー配布バナー(ページ上部): 暗い背景+大きな緑のボタンで目立たせる
 ---------------------------------------------------------------------------- */
-.slick-prev, .slick-next{
-    position: absolute;
-    top: 43%;
-    cursor: pointer;/*マウスカーソルを指マークに*/
-    outline: none;/*クリックをしたら出てくる枠線を消す*/
-    border-top: 2px solid white;/*矢印の色*/
-    border-right: 2px solid white;/*矢印の色*/
-    height: 2vw;
-    width: 2vw;
+.launcher-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px 28px;
+    margin: 8px 0 24px;
+    padding: 22px 28px;
+    border-radius: var(--g-radius);
+    border-left: 8px solid #00bfff;
+    background: linear-gradient(135deg, #154261, #4e8ca0);
+    box-shadow: 0 6px 18px rgba(21, 66, 97, 0.28);
+    color: #fff;
 }
-
-.slick-prev{
-    left: 0%;
-    transform: rotate(-135deg);
+.launcher-banner__text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
 }
-
-.slick-next{
-    left: 100%;
-    transform: rotate(45deg);
+.launcher-banner__title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.3;
 }
-
-.slick-dots {
-    position: relative;
-    z-index: 3;
+.launcher-banner__desc {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #eaf4f7;
+}
+.launcher-banner__note {
+    font-size: 12px;
+    font-weight: 700;
+    color: #c3dbe3;
+}
+.launcher-banner .launcher-banner__btn {
+    display: inline-flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 32px;
+    border-radius: 32px;
+    background: #00bfff;
+    box-shadow: 0 0 0 0 rgba(0, 191, 255, 0.55);
+    color: #0d2c40;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.2;
     text-align: center;
-    left: -3%;
+    text-decoration: none;
+    white-space: nowrap;
+    animation: launcher_pulse 2.4s ease-out infinite;
+    transition: transform 0.15s ease;
+}
+.launcher-banner .launcher-banner__btn:hover {
+    transform: translateY(-2px);
+    background: #33ccff;
+}
+.launcher-banner .launcher-banner__btn:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 3px;
+}
+.launcher-banner__btn svg {
+    flex: none;
+}
+/* ボタンのまわりに、ゆっくり広がる光の輪(動きが苦手な人には止める) */
+@keyframes launcher_pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(0, 191, 255, 0.55); }
+    70%  { box-shadow: 0 0 0 14px rgba(0, 191, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 191, 255, 0); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .launcher-banner .launcher-banner__btn { animation: none; }
 }
 
-.slick-dots li {
-    display:inline-block;
-    margin: 1%;
-    margin-top: 2%;
-}
-
-.slick-dots button {
-    color: transparent;
-    outline: none;
-    width: 1vw;/*ドットボタンのサイズ*/
-    height: 1vw;/*ドットボタンのサイズ*/
-    display:block;
-    border-radius:100%;
-    background:white;/*ドットボタンの色*/
-    border: none;
-}
-
-.slick-dots .slick-active button{
-    background:#57A897;/*ドットボタンの現在地表示の色*/
+/* 狭い画面: 縦に積む(ボタンは横いっぱい) */
+@media (max-width: 544px) {
+    .launcher-banner {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 18px 18px 20px;
+        border-left-width: 6px;
+    }
+    .launcher-banner__title {
+        font-size: 21px;
+    }
 }

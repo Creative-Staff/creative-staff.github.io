@@ -1,0 +1,125 @@
+/* ---------------- 年表(ムサラボ風): 中央の線・年のバッジ・左右交互の吹き出し ----------------
+   画面の幅ではなく「枠の幅」で切り替える(エディターの狭いプレビューでもスマホ表示になる) */
+.hwrap {
+    container-type: inline-size;
+    padding: 16px 10px 28px;
+    border-radius: 12px;
+    background: #f5f7f9;
+}
+.tl {
+    position: relative;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 2px 0;
+}
+.tl::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 3px;
+    margin-left: -1.5px;
+    border-radius: 2px;
+    background: linear-gradient(#00bfff, #1aff1a, #ffd400, #ff8a1f);
+}
+.tl-empty {
+    position: relative;
+    margin: 0;
+    padding: 24px 0;
+    color: #6b6b6b;
+    text-align: center;
+    background: #f5f7f9;
+}
+
+/* 年のバッジ */
+.tl-year {
+    position: relative;
+    margin: 20px 0 6px;
+    text-align: center;
+}
+.tl-year:first-child {
+    margin-top: 8px;
+}
+.tl-year span {
+    display: inline-block;
+    padding: 1px 14px;
+    border-radius: 8px;
+    background: #00bfff;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.7;
+    letter-spacing: .04em;
+}
+
+/* 出来事の吹き出し: 左右に交互に並べる */
+.tl-item {
+    position: relative;
+    width: 50%;
+    margin: 0 0 6px;
+}
+.tl-item.l { margin-right: auto; padding-right: 26px; }
+.tl-item.r { margin-left: auto;  padding-left: 26px; }
+
+.tl-card {
+    position: relative;
+    padding: 7px 12px;
+    border: 1px solid #00bfff;
+    border-radius: 8px;
+    background: #fff;
+    color: #555;
+    font-size: 14px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+.tl-card::after {
+    content: "";
+    position: absolute;
+    top: 11px;
+    width: 9px;
+    height: 9px;
+    background: #fff;
+    border: 1px solid #00bfff;
+    transform: rotate(45deg);
+}
+.tl-item.l .tl-card::after { right: -6px; border-left: 0;  border-bottom: 0; }
+.tl-item.r .tl-card::after { left: -6px;  border-right: 0; border-top: 0; }
+
+.tl-date {
+    display: block;
+    color: #00bfff;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+.tl-card a {
+    color: #a855ff;
+    text-decoration: none;
+}
+.tl-card a:hover {
+    text-decoration: underline;
+}
+
+/* 枠が狭いとき: 線を左端に寄せ、吹き出しを全部右側に並べる */
+@container (max-width: 640px) {
+    .tl::before { left: 8px; }
+    .tl-year { text-align: left; }
+    .tl-year span { font-size: 15px; }
+    .tl-item,
+    .tl-item.l,
+    .tl-item.r {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0 0 0 24px;
+    }
+    .tl-item.l .tl-card::after,
+    .tl-item.r .tl-card::after {
+        right: auto;
+        left: -6px;
+        border: 1px solid #00bfff;
+        border-right: 0;
+        border-top: 0;
+    }
+}
