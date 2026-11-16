@@ -45,3 +45,167 @@
     padding: 10px;
     overflow: auto;
 }
+
+/* ---------------- 年間ロードマップ: 横一本の棒に、吹き出しで出来事を置く ---------------- */
+.rm-wrap{
+    margin-bottom: 48px;
+    padding: 8px 0 12px;
+}
+.rm{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);     /* 12か月ぶんの位置を決めるだけ(見えない) */
+    grid-template-rows: auto 64px auto;
+}
+.rm::before{
+    content: "";
+    grid-column: 1 / -1;
+    grid-row: 2;
+    align-self: center;
+    height: 10px;
+    border-radius: 5px;
+    background: #00bfff;
+}
+.rm-dot{
+    grid-column: var(--i);
+    grid-row: 2;
+    position: relative;
+    justify-self: center;
+    align-self: center;
+    z-index: 1;
+    width: 22px;
+    height: 22px;
+    border: 4px solid #00bfff;
+    border-radius: 50%;
+    background: #fff;
+}
+.rm-dot::before{                                /* 吹き出しへのつなぎ線 */
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 3px;
+    height: 32px;
+    margin-left: -1.5px;
+    background: #00bfff;
+}
+.rm-dot.up::before{ bottom: 100%; }
+.rm-dot.down::before{ top: 100%; }
+.rm-ev{
+    grid-column: var(--i);
+    width: max-content;
+    max-width: 13em;
+    padding: 10px 18px 12px;
+    border: 2px solid #00bfff;
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    color: #333;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+.rm-ev.up{ grid-row: 1; align-self: end; }
+.rm-ev.down{ grid-row: 3; align-self: start; }
+.rm-ev.c{ justify-self: center; }
+.rm-ev.s{ justify-self: start; }
+.rm-ev.e{ justify-self: end; }
+.rm-ev small{
+    display: block;
+    color: #00a3d9;
+    font-size: 14px;
+    font-weight: 800;
+}
+.rm-empty{
+    margin: 0;
+    padding: 24px 0;
+    color: #6b6b6b;
+    text-align: center;
+}
+
+/* 狭い画面: 棒が縦になり、吹き出しが下へ並ぶ */
+@media (max-width: 640px){
+    .rm{
+        display: block;
+        padding-left: 18px;
+        border-left: 8px solid #00bfff;
+        border-radius: 4px;
+    }
+    .rm::before,
+    .rm-dot{ display: none; }
+    .rm-ev,
+    .rm-ev.c,
+    .rm-ev.s,
+    .rm-ev.e{
+        width: auto;
+        max-width: none;
+        margin-bottom: 14px;
+        text-align: left;
+    }
+    .rm-ev:last-child{ margin-bottom: 0; }
+}
+
+/* ---------------- 協賛・提携ページ: 大きいカード(ロゴが上、文字が下。画面の広さによらず縦積み) ---------------- */
+.sp-grid{
+    display: grid;
+    grid-template-columns: 1fr;                 /* 常に1列。カードは縦に積む */
+    gap: 28px;
+    margin-bottom: 40px;
+}
+.sp-card{
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    color: #333;
+    text-decoration: none;
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+a.sp-card:hover{
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.16);
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+.sp-logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 220px;
+    background: #f5f7f9;
+}
+.sp-logo img{
+    width: auto;
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+}
+.sp-body{
+    flex: 1;
+    min-width: 0;
+    padding: 28px 32px 32px;
+}
+.sp-name{
+    display: block;
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+.sp-desc{
+    display: block;
+    margin-top: 10px;
+    color: #6b6b6b;
+    font-size: 17px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+.sp-empty{
+    margin: 0;
+    padding: 24px 0;
+    color: #6b6b6b;
+    text-align: center;
+}

@@ -1,5 +1,6 @@
 // 年表エディターが書き出した history.json を読んで、年表を描く
 // (描画のしかたは年表エディターのプレビューと同じ)
+// 左右は「年が変わってもリセットせず」通して交互にする
 
 (() => {
 const HISTORY_JSON = 'history/history.json';
@@ -31,7 +32,7 @@ function renderTimeline(list, box) {
     let n = 0;
     for (const e of list) {
         const y = e.date.slice(0, 4);
-        if (y !== year) { year = y; n = 0; html += `<div class="tl-year"><span>${esc(y)}</span></div>`; }
+        if (y !== year) { year = y; html += `<div class="tl-year"><span>${esc(y)}</span></div>`; }
         html += `<div class="tl-item ${n++ % 2 === 0 ? 'l' : 'r'}"><div class="tl-card">` +
                 `<span class="tl-date">${esc(dateLabel(e.date))}</span>${htmlText(e.text)}</div></div>`;
     }

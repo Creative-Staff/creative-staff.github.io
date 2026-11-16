@@ -3,27 +3,23 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>概要</title>
+        <title>概要・イベント</title>
         <link rel="icon" href="../cgls/favicon.ico" />
-        
-		
+
         <link rel="stylesheet" href="about.css">
         <link rel="stylesheet" href="../css/main.css" />
         <link rel="stylesheet" href="../css/toppage.css" />
-        
-        <!-- googleのフォントを使う -->
-		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-        
-        
-        <!-- jQueryのインクルード -->
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
         <!-- OGP -->
-        <meta name="description" content="クリエイティブスタッフは、東京工科大学所属の文化系公認サークルです。マルチメディアコンテンツの制作を通して技能の向上を目指し、ゲームプログラミングを中心とした創作活動を行っています。" />
+        <meta name="description" content="クリエイティブスタッフは、東京工科大学所属の文化系公認サークルです。活動概要、イベント、年間ロードマップを紹介します。" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="CreativeStaff" />
         <meta property="og:locale" content="ja_JP" />
-        <meta property="og:title" content="クリエイティブスタッフについて | CreativeStaff" />
-        <meta property="og:description" content="クリエイティブスタッフは、東京工科大学所属の文化系公認サークルです。マルチメディアコンテンツの制作を通して技能の向上を目指し、ゲームプログラミングを中心とした創作活動を行っています。" />
+        <meta property="og:title" content="概要・イベント | CreativeStaff" />
+        <meta property="og:description" content="クリエイティブスタッフは、東京工科大学所属の文化系公認サークルです。活動概要、イベント、年間ロードマップを紹介します。" />
         <meta property="og:url" content="https://www.creative-staff.com/about/about.html" />
         <meta property="og:image" content="https://www.creative-staff.com/cgls/ogp.png" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -31,54 +27,102 @@
         <link rel="canonical" href="https://www.creative-staff.com/about/about.html" />
     </head>
     <body>
-        <!-- ヘッダー -->
         <div id="header"></div>
-        
+
         <div id="content-main" class="page">
-			<div class="About">
-				<h1>クリエイティブスタッフについて</h1>
-				<p>
-					クリエイティブスタッフは、東京工科大学所属の文化系公認サークルです。<br>
-					マルチメディアコンテンツの制作を通して技能の向上を目指し、<br>
-					ゲームプログラミングを中心とした創作活動を行っています。
-				</p>
-			</div>
-			
-			<ul>
-				<li>
-					<div class="Rinen">
-						<h2>基本理念</h2>
-						<p>
-							<img src="cgls/Rinen.webp" alt="基本理念">
-						</p>
-					</div>
-				</li>
-				<li>
-        <div class="about_activity">
-            <h2>活動概要</h2>
-            <p>
-            みんなで、あるいは個人でゲームを作ります！
-			経験者の先輩方から作り方を教わる講習もあります
-            夏休み以降は、大学の文化祭である秋の紅華祭やコミケ、春の新入生歓迎会を目標に作品の制作に取り組みます
-            </p> 
-					</div>
-				</li>
-			
-			</ul>
-				
-        <h1>Twitter</h1>
-        <div class="twitter">
-            
-            <a class="twitter-timeline" href="https://twitter.com/creative_staff?ref_src=twsrc%5Etfw">Tweets by creative_staff</a> 
-            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        </div>
+            <div class="About">
+                <h1>クリエイティブスタッフについて</h1>
+                <p>
+                    クリエイティブスタッフは、東京工科大学所属の文化系公認サークルです。<br>
+                    マルチメディアコンテンツの制作を通して技能の向上を目指し、<br>
+                    ゲームプログラミングを中心とした創作活動を行っています。
+                </p>
+            </div>
+
+            <ul>
+                <li>
+                    <div class="Rinen">
+                        <h2>基本理念</h2>
+                        <p><img src="cgls/Rinen.webp" alt="基本理念"></p>
+                    </div>
+                </li>
+                <li>
+                    <div class="about_activity">
+                        <h2>活動概要</h2>
+                        <p>
+                            みんなで、あるいは個人でゲームを作ります！
+                            経験者の先輩方から作り方を教わる講習もあります
+                            夏休み以降は、大学の文化祭である秋の紅華祭やコミケ、春の新入生歓迎会を目標に作品の制作に取り組みます
+                        </p>
+                    </div>
+                </li>
+            </ul>
+
+            <h1>年間ロードマップ</h1>
+            <div class="rm-wrap">
+                <div id="roadmap" class="rm"><p class="rm-empty">読み込み中...</p></div>
+            </div>
+
+            <h1>イベント</h1>
+            <ul>
+                <li>
+                    <h2>夏コミ・冬コミ</h2>
+                    <p>
+                        コミケに参加しています！（8月、12月）<br>
+                        以前はCDを頒布していましたが、最近はゲームのダウンロードURLを記載した名刺を配ることが多いです
+                    </p>
+                </li>
+                <li>
+                    <h2>紅華祭</h2>
+                    <p>
+                        東京工科大学の文化祭です！（10月）<br>
+                        教室にてゲームを展示するほか、ついでに屋台で食べ物とかも売ります
+                    </p>
+                </li>
+                <li>
+                    <h2>交流サーバー</h2>
+                    <p>
+                        広島大GSD主宰の、他大学ゲームサークルとの交流サーバーに加入しています！（希望者は参加可能）<br>
+                        一週間ゲームジャムやみんなでメドレーを作るサウンドジャムなどが不定期に開催されます
+                    </p>
+                </li>
+            </ul>
+            <br>
+            <ul>
+                <li>
+                    <h2>講習</h2>
+                    <p>
+                        諸学者向けの講習を開いています！（5月ぐらい～）<br>
+                        教えられるメンバーによって微妙に変わりますが、「イラスト講習」「音楽講習」「Unity講習」「3DCG講習」「プランナー講習」が主になります
+                    </p>
+                </li>
+                <li>
+                    <h2>制作大会</h2>
+                    <p>
+                        新しく始める試みです！<br>
+                        みんなでお題を出し合って絵をかいたり、曲を作ったり……
+                    </p>
+                </li>
+                <li>
+                    <h2>共同制作</h2>
+                    <p>
+                        部員同士でチームを作ってゲーム制作します！<br>
+                        驚くほど高い蒸発率がウリです
+                    </p>
+                </li>
+            </ul>
+
+            <h1>Twitter</h1>
+            <div class="twitter">
+                <a class="twitter-timeline" href="https://twitter.com/creative_staff?ref_src=twsrc%5Etfw">Tweets by creative_staff</a>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
         </div>
 
-        <!-- フッター -->
         <div id="footer"></div>
 
         <script src="../js/main.js" charset="utf-8"></script>
         <script src="../js/cre_navigation.js" charset="utf-8"></script>
-		<script src="https://apis.google.com/js/platform.js" async defer></script>
+        <script src="about.js" charset="utf-8"></script>
     </body>
 </html>
