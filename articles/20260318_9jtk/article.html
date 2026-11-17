@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>【レポート】他大学のゲーム制作サークルとゲーム作った！</title>
+<link rel="icon" href="../../cgls/favicon.ico" />
+<link rel="stylesheet" href="../article.css">
+<link rel="stylesheet" href="../../css/main.css" />
+<link rel="stylesheet" href="../../css/toppage.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- OGP -->
+<meta name="description" content="こんにちは！ 東京工科大クリエイティブスタッフ、そして今は早稲田大WCE所属でもある安部葉月です！ 実は3/1～3/7の１週間、広島大GSD主催の１週間ゲームジャムに参加してました！ 企画内ではtea" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="CreativeStaff" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:title" content="【レポート】他大学のゲーム制作サークルとゲーム作った！ | CreativeStaff" />
+<meta property="og:description" content="こんにちは！ 東京工科大クリエイティブスタッフ、そして今は早稲田大WCE所属でもある安部葉月です！ 実は3/1～3/7の１週間、広島大GSD主催の１週間ゲームジャムに参加してました！ 企画内ではtea" />
+<meta property="og:url" content="https://www.creative-staff.com/articles/20260318_9jtk/article.html" />
+<meta property="og:image" content="https://www.creative-staff.com/articles/20260318_9jtk/1.webp" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@creative_staff" />
+<meta property="article:published_time" content="2026-03-18" />
+<link rel="canonical" href="https://www.creative-staff.com/articles/20260318_9jtk/article.html" />
+</head>
+<body>
+<div id="header"></div>
+
+<div id="content-main">
+    <article class="Article">
+        <img class="eyecatch" src="1.webp" alt="">
+        <h1>【レポート】他大学のゲーム制作サークルとゲーム作った！</h1>
+        <p class="date">2026年3月18日 / 執筆: <a href="../list.html?author=%E5%AE%89%E9%83%A8%E8%91%89%E6%9C%88">安部葉月</a></p>
+
+        <div class="Honbun">
+<p>こんにちは！<br>東京工科大クリエイティブスタッフ、そして今は早稲田大WCE所属でもある安部葉月です！</p>
+<p>実は3/1～3/7の１週間、広島大GSD主催の１週間ゲームジャムに参加してました！</p>
+<div class="embed embed--twitter" data-url="https://x.com/Hiroshima_GSD/status/2034122098525016145"><blockquote class="twitter-tweet" data-lang="ja"><a href="https://twitter.com/Hiroshima_GSD/status/2034122098525016145" target="_blank" rel="noopener">https://twitter.com/Hiroshima_GSD/status/2034122098525016145</a></blockquote></div>
+<p>　企画内ではteam-aからteam-iの９チームに分かれて制作したのですが、わたくし安部葉月はteam-f！<br>　早稲田WCEのRGB氏といっしょに「口を付けたなら最後まで！」の制作をしました！</p>
+<figure><img src="1.webp" alt="企画、プログラム、シナリオ、絵、SE、一部BGM：安部葉月 BGM：RGB で制作しましたよん"><figcaption>企画、プログラム、シナリオ、絵、SE、一部BGM：安部葉月<br>BGM：RGB<br>で制作しましたよん</figcaption></figure>
+<p>ダウンロードは<a href="https://cs-launcher-api.akane-minori-cslauncher.workers.dev/games/kuchitsuke/%E5%8F%A3%E3%82%92%E4%BB%98%E3%81%91%E3%81%9F%E3%81%AA%E3%82%89%E6%9C%80%E5%BE%8C%E3%81%BE%E3%81%A7%EF%BC%81.zip" target="_blank" rel="noopener">リンク</a>（もしくは配布しているゲームランチャー！）にあるよー</p>
+<p>いろいろ楽しかったので、ここに記録を残します</p>
+<nav class="toc"><div class="toc-title">目次</div><ul><li class="toc-h2"><a class="toc-link" href="#sec-1">開幕前</a></li><li class="toc-h2"><a class="toc-link" href="#sec-2">ゲームジャム中の雑記</a></li><li class="toc-h3"><a class="toc-link" href="#sec-3">１日目：開会式</a></li><li class="toc-h3"><a class="toc-link" href="#sec-4">２日目：文字送り実装</a></li><li class="toc-h3"><a class="toc-link" href="#sec-5">３日目：手帳、闇のトムブラウン</a></li><li class="toc-h3"><a class="toc-link" href="#sec-6">４日目：生活リズム崩壊</a></li><li class="toc-h3"><a class="toc-link" href="#sec-7">５日目：絵と音楽ができ始める</a></li><li class="toc-h3"><a class="toc-link" href="#sec-8">６日目：悶絶シナリオ地獄</a></li><li class="toc-h3"><a class="toc-link" href="#sec-9">７日目：発狂</a></li><li class="toc-h3"><a class="toc-link" href="#sec-10">救いの手</a></li><li class="toc-h3"><a class="toc-link" href="#sec-11">というわけで</a></li><li class="toc-h3"><a class="toc-link" href="#sec-12">７＋１日目：アディショナルタイム</a></li><li class="toc-h3"><a class="toc-link" href="#sec-13">７＋２日目：完成！！！！</a></li><li class="toc-h3"><a class="toc-link" href="#sec-14">最終調整</a></li><li class="toc-h2"><a class="toc-link" href="#sec-15">試遊会</a></li><li class="toc-h3"><a class="toc-link" href="#sec-16">ヘブンフォール</a></li><li class="toc-h2"><a class="toc-link" href="#sec-17">後記</a></li></ul></nav>
+<h2 id="sec-1">開幕前</h2>
+<p>　もしかしたら↑のツイートを見て、「広島大、早稲田、電通大、工科大て、なんでこんな雑多なの？広島大主催なら関西方面中心じゃないのん？」と思われるかもしれません<br>　このメンツは冬コミで近かったひとたちが集まっただけで、あんまり深い意味はないです</p>
+<div class="embed embed--twitter" data-url="https://x.com/creative_staff/status/2006153201444077600"><blockquote class="twitter-tweet" data-lang="ja"><a href="https://twitter.com/creative_staff/status/2006153201444077600" target="_blank" rel="noopener">https://twitter.com/creative_staff/status/2006153201444077600</a></blockquote></div>
+<p>↑これね<br>　右隣がGSDのスペース、そのもう一つ右隣が電通大のスペースでした！</p>
+<p>　というわけで、これら４サークルによるDiscordサーバーは１月ぐらいからあったので、ゲームジャム前から色々やってました<br>　みんなでゲームやったり……</p>
+<figure><img src="2.webp" alt="一人で雑談VCにこもる安部葉月の図 毎日アイマスの替え歌を添えながら入ってました ばか？"><figcaption>一人で雑談VCにこもる安部葉月の図<br>毎日アイマスの替え歌を添えながら入ってました<br>ばか？</figcaption></figure>
+<p>みんなで作業したり……</p>
+<figure><img src="3.webp" alt="作業の中で生まれた:oyasumi_gsd:絵文字（作：安部葉月） 非常に汎用性が高い ちなみにこのキャラはGSDのマスコット、なぎさちゃん"><figcaption>作業の中で生まれた:oyasumi_gsd:絵文字（作：安部葉月）<br>非常に汎用性が高い<br>ちなみにこのキャラはGSDのマスコット、なぎさちゃん</figcaption></figure>
+<p>なんでクリエイティブスタッフ所属がGSDの絵文字かいてるねん</p>
+<h2 id="sec-2">ゲームジャム中の雑記</h2>
+<h3 id="sec-3">１日目：開会式</h3>
+<p>　ゲームジャムは3/1の13:00に始まりました！<br>　試遊会の3/9までにゲームを完成させることを目標に、がんばるぞ！</p>
+<figure><img src="4.webp" alt="GSDのハヤシ先輩 とても感謝しております。"><figcaption>GSDのハヤシ先輩<br>とても感謝しております。</figcaption></figure>
+<p>　お題はGSD謹製のあみだくじソフトで決まり、つけるってどうしよう……と戸惑いながらのスタート。<br>　開会式終了後、うちのチームもRGBくんと会議で色々案を出し合いました</p>
+<figure><img src="5.webp" alt="会議してる様子"><figcaption>会議してる様子</figcaption></figure>
+<p>　「火を点ける」ってかっこいいし、それでいこう、とはなったんですが、あんまりピンとくるアイデアは出ず<br>　ちなみに「口を付けたなら最後まで！」、最初はローグライク（というかパワプロ、ウマ娘式）になりそうでしたが、工数的に断念しました<br>　まあ最終的に９チーム中２チームがローグライクだったので踏みとどまってよかったー！</p>
+<figure><img src="6.webp" alt="RGBさんの静止の言葉 マジでありがとう"><figcaption>RGBさんの静止の言葉<br>マジでありがとう</figcaption></figure>
+<p>　RGBくんは忙しかったのでこの日は途中で抜けたんですが、ちなみに自分はそのあと何をしていたかというと</p>
+<figure><img src="7.webp" alt=""></figure>
+<p>　SSを書いていました<br>　なにやっとんねん</p>
+<p>　いや！ちゃんと真面目なことも書いてました</p>
+<figure><img src="8.webp" alt="口を付けたなら最後まで！のD&amp;Dシステムの発端"><figcaption>口を付けたなら最後まで！のD&amp;Dシステムの発端</figcaption></figure>
+<figure><img src="9.webp" alt="ゲームフローの図 サブウィンドウとか、この時点でわりと完成形そのまんまではあった そもそも一週間しかなかったから拡張するのも一苦労だけどね！"><figcaption>ゲームフローの図<br>サブウィンドウとか、この時点でわりと完成形そのまんまではあった<br>そもそも一週間しかなかったから拡張するのも一苦労だけどね！</figcaption></figure>
+<figure><img src="10.webp" alt="まぬけ"><figcaption>まぬけ</figcaption></figure>
+<p>なにやっとんねん</p>
+<figure><img src="11.webp" alt="こいつ一人で喋りすぎや"><figcaption>こいつ一人で喋りすぎや</figcaption></figure>
+<p>久しぶりのプログラミングで半分発狂しながらも……</p>
+<figure><img src="12.webp" alt="よかったね ちなみに「ここからはだいぶ楽」というのは大嘘 最後までキツイよ"><figcaption>よかったね<br>ちなみに「ここからはだいぶ楽」というのは大嘘<br>最後までキツイよ</figcaption></figure>
+<p>とりあえず最初のコンパイルをして１日目は終了！</p>
+<figure><img src="13.webp" alt="１日目の進捗 あれをシナリオの進捗に含めるな！"><figcaption>１日目の進捗<br>あれをシナリオの進捗に含めるな！</figcaption></figure>
+<h3 id="sec-4">２日目：文字送り実装</h3>
+<p>　２日目。おはようございます<br>　ちなみにわたくし、この１週間ずっと暇でしたわ！（くらちなお嬢さま）なのでずっと作業してます</p>
+<p>　２日目に関しては黙々と作業してただけなのであんまり書くべきことは無い……</p>
+<figure><img src="14.webp" alt="他の班の進捗に戦々恐々とする様子"><figcaption>他の班の進捗に戦々恐々とする様子</figcaption></figure>
+<p>↑これはteam-cの「TUITO」のはなし</p>
+<a class="link-card" href="https://game-kyoso-studio.com/projects/c36b064d-8cdb-4c3c-9552-f81a46cbdb41" target="_blank" rel="noopener"><span class="link-card__img"><img src="https://tqligsvgwaojzblkofts.supabase.co/storage/v1/object/public/images/content/projects/9eb21116-1587-4a3c-a71a-6ed681148eb0.png" alt="" loading="lazy"></span><span class="link-card__body"><span class="link-card__title">TUITO | 早稲田ゲーム共創スタジオ</span><span class="link-card__desc">春休み1週間ゲームジャムで制作した作品。お題は「つける」。心優しいおばけのプレイヤーは、おばけパワーで街灯を点けたり消したりすることができます。夜道をひとり歩く女の子をお家まで無事に送り届けてあげましょう！ プレイ動画：https://dr</span><span class="link-card__site">game-kyoso-studio.com</span></span></a>
+<figure><img src="15.webp" alt="呪術の放送日を確認 次の回は虎杖vs日車の回　おもしろかった"><figcaption>呪術の放送日を確認<br>次の回は虎杖vs日車の回　おもしろかった</figcaption></figure>
+<p>言うほど黙々と作業してるか……？</p>
+<figure><img src="16.webp" alt="エクセルでシナリオを管理するシステムの構築 うちのゲームフォルダに入ってる「これを必ず同じ階層においてね.please」は実はcsvファイルです　開くとシナリオが読めるよ"><figcaption>エクセルでシナリオを管理するシステムの構築<br>うちのゲームフォルダに入ってる「これを必ず同じ階層においてね.please」は実はcsvファイルです　開くとシナリオが読めるよ</figcaption></figure>
+<figure><img src="17.webp" alt="D&amp;Dシステムが完成して大喜びしている図"><figcaption>D&amp;Dシステムが完成して大喜びしている図</figcaption></figure>
+<p>　この日はゲームの肝であるD&amp;Dシステムと文字送り部分が出来上がり、かなり進みました！</p>
+<figure><img src="18.webp" alt="でもこれは欺瞞 それでプログラム50%なわけないだろ！！！！ あとさらっとシナリオ進めんな！！"><figcaption>でもこれは欺瞞<br>それでプログラム50%なわけないだろ！！！！<br>あとさらっとシナリオ進めんな！！</figcaption></figure>
+<h3 id="sec-5">３日目：手帳、闇のトムブラウン</h3>
+<p>　３日目です<br>　ちなみに（千奈だけに）、ひなまつりでした</p>
+<figure><img src="19.webp" alt="伯方のちなまつり2026でひなまつりを自覚する安部葉月"><figcaption>伯方のちなまつり2026でひなまつりを自覚する安部葉月</figcaption></figure>
+<p>　この日は前日に基礎システムを作ったので、第二ウィンドウを作っていました！</p>
+<figure><img src="20.webp" alt="第二ウィンドウの報告 進捗報告してるよー！（チームチャンネルに垂れ流してるだけ）"><figcaption>第二ウィンドウの報告<br>進捗報告してるよー！（チームチャンネルに垂れ流してるだけ）</figcaption></figure>
+<p>　タイトル絵が未完成ですが、わりと完成版そのまんまのUIではないでしょうか<br>　そして、この日最大の思いつきがこれ↓</p>
+<figure><img src="21.webp" alt="あほ"><figcaption>あほ</figcaption></figure>
+<p>　このゲームの工数をおそらく倍ぐらいにした諸悪の根源である、闇のトムブラウンみちおです</p>
+<figure><img src="22.webp" alt="ダメーー"><figcaption>ダメーー</figcaption></figure>
+<p>　ダメー（布川）<br>　お前、最大は最大でも、タスクの量が最大になっちゃってんじゃねえか！<br>　ミスっちまったな</p>
+<p>　これのせいで安部葉月は試遊会直前までシナリオに追われます</p>
+<figure><img src="23.webp" alt="まいにちシナリオ"><figcaption>まいにちシナリオ</figcaption></figure>
+<p>考えたやつバーカ！（総統閣下）</p>
+<figure><img src="24.webp" alt="安部葉月は今すぐ「プログラム：70%」とかいう大本営発表をやめろ シナリオもこの時点では30%ぐらいとか思ってるが、まだ１%にも満たない"><figcaption>安部葉月は今すぐ「プログラム：70%」とかいう大本営発表をやめろ<br>シナリオもこの時点では30%ぐらいとか思ってるが、まだ１%にも満たない</figcaption></figure>
+<h3 id="sec-6">４日目：生活リズム崩壊</h3>
+<figure><img src="25.webp" alt="おはようございます"><figcaption>おはようございます</figcaption></figure>
+<p>　わりと10時前後の就寝を心がけてましたが、崩壊し始めます<br>　でもそれ以外はけっこういい日！</p>
+<figure><img src="26.webp" alt="ログ機能"><figcaption>ログ機能</figcaption></figure>
+<figure><img src="27.webp" alt="セーブ機能"><figcaption>セーブ機能</figcaption></figure>
+<p>　ログやセーブといったメニュー画面の諸機能が完成してきます！<br>　ここらへん興奮しすぎてヤバかった</p>
+<figure><img src="28.webp" alt="あ　風呂出たよ じゃないねん"><figcaption>あ　風呂出たよ<br>じゃないねん</figcaption></figure>
+<p>　はい。<br>　シナリオが手つかずです<br>　今から！？！？！？！？！？<br>　えっ！折り返し過ぎてからブレストを！？<br>　できらあ！（愚昧）</p>
+<p>　いいことを挙げると、RGBくんのBGMがあがってきました</p>
+<figure><img src="29.webp" alt="Sparking"><figcaption>Sparking</figcaption></figure>
+<p>　この曲は完成版の７日目（夏祭り）で使われてる曲なんですが、この時点では制作依頼しておいてどこで使うか考えてません！！！<br>　不義理にもほどがある</p>
+<figure><img src="30.webp" alt="いつもの大本営発表"><figcaption>いつもの大本営発表</figcaption></figure>
+<h3 id="sec-7">５日目：絵と音楽ができ始める</h3>
+<figure><img src="31.webp" alt="疎結合に驚く図"><figcaption>疎結合に驚く図</figcaption></figure>
+<p>　↑で言ってるteam-iは、なんとプログラマ２人という驚くべき体制でゲーム制作してるチームです<br>　ゲーム制作というかプログラミングしたことある人間なら、これがいかに高等な技術か分かると思います<br>　うちがクリエイティブスタッフで夏休みの時組んでたチームとか、プログラマ３人居たけど仕事割り振れなくて完全に爆散したからね！！！</p>
+<p>　というか、このゲームジャム、基本的に参加者のレベルが高かったです！<br>　GSDのふろしき先輩はめっちゃ音楽うまいし、WCEのシソゴジラ先輩はめっちゃドット絵上手いし！<br>　刺激がある</p>
+<figure><img src="32.webp" alt="Atmosphere 完成版ではタイトル画面で使われている 勿論この時点では頼んでおきながらどこで使うかなんて（以下略）"><figcaption>Atmosphere<br>完成版ではタイトル画面で使われている<br>勿論この時点では頼んでおきながらどこで使うかなんて（以下略）</figcaption></figure>
+<figure><img src="33.webp" alt="Daytime この曲マジでだいすきです これに関してはどこで使うか結構見当が付いてた（←見当を「付ける」！）"><figcaption>Daytime<br>この曲マジでだいすきです<br>これに関してはどこで使うか結構見当が付いてた（←見当を「付ける」！）</figcaption></figure>
+<p>　BGMができてきます<br>　RGBくんに頼んだ分はこれで完成しました　仕事早くてすごい<br>　最終的にゲーム内では、これをマスタリングしてちょっと端を切り落とした音源を使いました！</p>
+<figure><img src="34.webp" alt="絵の線画（日比さんの髪留めとか、マンチニールのリボンとか、まだない部分もある） この日から「つける」のついた言葉を探し始めたのもここに記しておく"><figcaption>絵の線画（日比さんの髪留めとか、マンチニールのリボンとか、まだない部分もある）<br>この日から「つける」のついた言葉を探し始めたのもここに記しておく</figcaption></figure>
+<figure><img src="35.webp" alt="立ち絵（最終的にはここからあと一つ差分を増やすことになる） 日比さんの白ニーソ、フェチすぎない？"><figcaption>立ち絵（最終的にはここからあと一つ差分を増やすことになる）<br>日比さんの白ニーソ、フェチすぎない？</figcaption></figure>
+<p>　立ち絵も完成！</p>
+<figure><img src="36.webp" alt="呪術みてんじゃねーよ"><figcaption>呪術みてんじゃねーよ</figcaption></figure>
+<h3 id="sec-8">６日目：悶絶シナリオ地獄</h3>
+<figure><img src="37.webp" alt="「不可能」の用例につかえます"><figcaption>「不可能」の用例につかえます</figcaption></figure>
+<p>　ほんとだよ<br>　誰が進捗にシナリオ：60%とか書いたんだろうね</p>
+<figure><img src="38.webp" alt="主犯"><figcaption>主犯</figcaption></figure>
+<figure><img src="39.webp" alt="３日前のトムブラウンに対する怨嗟の声"><figcaption>３日前のトムブラウンに対する怨嗟の声</figcaption></figure>
+<figure><img src="40.webp" alt="絵に描いた餅 まあ実現はしたんだけど！！！"><figcaption>絵に描いた餅<br>まあ実現はしたんだけど！！！</figcaption></figure>
+<p>　この日はほぼ進捗ゼロの状態から４日目の開幕イベントまで（日比さんと話し始める直前まで）書けました<br>　あとタイトルもこの日思い浮かんで、それに決定しました</p>
+<figure><img src="41.webp" alt="「口を付けたなら最後まで」 この時点では最後の「！」がない ちょっと淫靡かな……と思って後からつけ足したからです"><figcaption>「口を付けたなら最後まで」<br>この時点では最後の「！」がない<br>ちょっと淫靡かな……と思って後からつけ足したからです</figcaption></figure>
+<p>　タイトルが決まったのは、この会話を気に入ったからでした！</p>
+<figure><img src="42.webp" alt="この会話いいよね（琵琶湖で腹を下すマンチニール） 今でも気に入ってる"><figcaption>この会話いいよね（琵琶湖で腹を下すマンチニール）<br>今でも気に入ってる</figcaption></figure>
+<p>もう一つすごく関係のないことを言うと、金ローがありました</p>
+<figure><img src="43.webp" alt="感想垂れ流しやめてね"><figcaption>感想垂れ流しやめてね</figcaption></figure>
+<p>多分、これがなかったらあともう３会話ぐらい増やせた</p>
+<figure><img src="44.webp" alt="シナリオ：60%（迫真）"><figcaption>シナリオ：60%（迫真）</figcaption></figure>
+<h3 id="sec-9">７日目：発狂</h3>
+<p>　７日目はわりと浮かれたスタート！</p>
+<figure><img src="45.webp" alt="作業中ずっとこれと倉橋ヨエコの卵とじ聞いてた"><figcaption>作業中ずっとこれと倉橋ヨエコの卵とじ聞いてた</figcaption></figure>
+<figure><img src="46.webp" alt="マスタリング完了、BGM再生システムも作った"><figcaption>マスタリング完了、BGM再生システムも作った</figcaption></figure>
+<figure><img src="47.webp" alt="エンディングまで遊べるように（一応）"><figcaption>エンディングまで遊べるように（一応）</figcaption></figure>
+<p>しかしながら</p>
+<figure><img src="48.webp" alt="絶望"><figcaption>絶望</figcaption></figure>
+<figure><img src="49.webp" alt="崖っぷち"><figcaption>崖っぷち</figcaption></figure>
+<figure><img src="50.webp" alt="悲痛すぎる"><figcaption>悲痛すぎる</figcaption></figure>
+<p>時間が足りない！！！！！！</p>
+<h3 id="sec-10">救いの手</h3>
+<figure><img src="51.webp" alt="ほんとうにありがとうございます"><figcaption>ほんとうにありがとうございます</figcaption></figure>
+<p>やったああああああああああ！！！！！</p>
+<h3 id="sec-11">というわけで</h3>
+<figure><img src="52.webp" alt="こいつ情緒不安定すぎる"><figcaption>こいつ情緒不安定すぎる</figcaption></figure>
+<p>　７日目はもう完全に背景絵集めに奔走しました！<br>　実際には背景絵はほぼ写真ACの写真を使ったんですが、まあ気分転換にはなりました</p>
+<p>教訓：家にこもりきりでゲ制はしないほうがいい</p>
+<p>　あとteam-dが完成して提出したりもしました<br>　team-dはヘブンフォールのとこです　マジで面白いよ</p>
+<figure><img src="53.webp" alt="祝福"><figcaption>祝福</figcaption></figure>
+<p>締め切りは今日なので、一応うちも提出はしました</p>
+<figure><img src="54.webp" alt="タイトル絵"><figcaption>タイトル絵</figcaption></figure>
+<p>　深夜になってついにタイトル絵完成！<br>　こういう風景をかくのは何気に初めてでした</p>
+<h3 id="sec-12">７＋１日目：アディショナルタイム</h3>
+<p>　アディショナルタイム突入！<br>　まあでもこの日は予定があり、途中で離席</p>
+<figure><img src="55.webp" alt="りんご飴つくってる なぜ？"><figcaption>りんご飴つくってる<br>なぜ？</figcaption></figure>
+<p>　帰ってきたらりんご飴作りました<br>　日比さんに感化されちゃって……<br>　ちなみに昨日「３月はドンキに花火売ってないのか」とかほざいてましたが、普通に売ってたらしいというのをこの日知りました</p>
+<figure><img src="56.webp" alt="希望"><figcaption>希望</figcaption></figure>
+<figure><img src="57.webp" alt="もうそろ！！"><figcaption>もうそろ！！</figcaption></figure>
+<h3 id="sec-13">７＋２日目：完成！！！！</h3>
+<p>最後の直線に差し掛かりました！</p>
+<figure><img src="58.webp" alt="いけるか！？！？！？"><figcaption>いけるか！？！？！？</figcaption></figure>
+<figure><img src="59.webp" alt="やったあああああああああああああああああああああああああああああああ！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！"><figcaption>やったあああああああああああああああああああああああああああああああ！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！</figcaption></figure>
+<p>完成！！！！！！！！</p>
+<p>では、試遊会が始まる19時まで、最後の足搔きをします</p>
+<h3 id="sec-14">最終調整</h3>
+<figure><img src="60.webp" alt="作曲します"><figcaption>作曲します</figcaption></figure>
+<p>　真エンドの曲と、あと日常BGM2は完成直前に生まれました<br>　ほんとに直前！！</p>
+<figure><img src="61.webp" alt="りんご飴おいしかった"><figcaption>りんご飴おいしかった</figcaption></figure>
+<figure><img src="62.webp" alt="真エンドの曲"><figcaption>真エンドの曲</figcaption></figure>
+<p>　「真エンドの曲がそれまでのBGMのメドレーだったら美しいよねー」とか考えてたので、ピアノメドレーになりました<br>　なったんですが、３拍子の曲と４拍子の曲があってむずかった！</p>
+<figure><img src="63.webp" alt="最終調整"><figcaption>最終調整</figcaption></figure>
+<p>　あまりに激務だったので、真エンドみるとなんか泣いちゃうんです<br>　この辺のこととか思い出しちゃって<br>　あと自分のゲームなのに「もう終わりなのか……」とか考えちゃって！<br>　だれか口を付けたなら最後まで！２作ってくれーーーー！！！！</p>
+<p>　あと、RGBくんマジでありがとーーーーー！！！！！！めっちゃ曲良い！！！</p>
+<figure><img src="64.webp" alt="ほんとうにありがとう"><figcaption>ほんとうにありがとう</figcaption></figure>
+<p>　ちなみに自分は今はWCEの部員でもあります<br>　これがきっかけでつい入っちゃった</p>
+<h2 id="sec-15">試遊会</h2>
+<p>　試遊会はteam-aから順番に出来上がったゲームを遊んでいく感じになりました！</p>
+<p>　うちはDXライブラリで制作してたんですが、うち以外はUnityで作ってたので、いくつかはUnityroomで遊びました</p>
+<div class="embed embed--twitter" data-url="https://x.com/WCE_official/status/2034150760737566978"><blockquote class="twitter-tweet" data-lang="ja"><a href="https://twitter.com/WCE_official/status/2034150760737566978" target="_blank" rel="noopener">https://twitter.com/WCE_official/status/2034150760737566978</a></blockquote></div>
+<div class="embed embed--twitter" data-url="https://x.com/WCE_official/status/2034150911434760221"><blockquote class="twitter-tweet" data-lang="ja"><a href="https://twitter.com/WCE_official/status/2034150911434760221" target="_blank" rel="noopener">https://twitter.com/WCE_official/status/2034150911434760221</a></blockquote></div>
+<div class="embed embed--twitter" data-url="https://x.com/creative_staff/status/2033910934251725308"><blockquote class="twitter-tweet" data-lang="ja"><a href="https://twitter.com/creative_staff/status/2033910934251725308" target="_blank" rel="noopener">https://twitter.com/creative_staff/status/2033910934251725308</a></blockquote></div>
+<p>　重複ありますが、９つのゲームのDLリンク、unityroomリンクを載せておきます！</p>
+<p>　全部書くと記事が長くなっちゃうので（もう長いだろ）、ひとつだけイチオシゲームを紹介します</p>
+<h3 id="sec-16">ヘブンフォール</h3>
+<p>　team-dの作品です！</p>
+<p>・くり氏（GSD）：プログラム<br>・JP氏（クリエイティブスタッフ）：3Dモデル<br>・Bomo氏（WCE）：サウンド</p>
+<p>の体制で作られたゲームで、「剣にガラクタをくっつけて強化し、より奥に進んでいく」というのがめっちゃ面白かったです！<br>　基本操作がGetting Over Itリスペクトで、余計なものをくっつけすぎると移動が困難になる（引っかかって動けなくなる）ため、くっつける位置やガラクタをよく考えて選ばないといけないのが難しいんです</p>
+<figure><img src="65.webp" alt="目みたいなオブジェクトと黒い階段みたいなオブジェクトをくっつけた状態 すでにかなり移動しづらい"><figcaption>目みたいなオブジェクトと黒い階段みたいなオブジェクトをくっつけた状態<br>すでにかなり移動しづらい</figcaption></figure>
+<p>マジで面白いよーー！！</p>
+<h2 id="sec-17">後記</h2>
+<p>　ゲームジャムすごい楽しかったです！<br>　主催者のGSDハヤシさん、通話にめっちゃ来てくれたGSDのてーさんWCEのBomoさん、一緒のチームで作業してくれたRGBくん、ほんとにありがとーーーー！！！</p>
+<p>　また今度、２年生になってもやりたいなーー！</p>
+
+        </div>
+    </article>
+</div>
+
+<div id="footer"></div>
+
+<script type="text/markdown" id="source-md">こんにちは！
+東京工科大クリエイティブスタッフ、そして今は早稲田大WCE所属でもある安部葉月です！
+
+実は3/1～3/7の１週間、広島大GSD主催の１週間ゲームジャムに参加してました！
+
+https://x.com/Hiroshima_GSD/status/2034122098525016145
+
+　企画内ではteam-aからteam-iの９チームに分かれて制作したのですが、わたくし安部葉月はteam-f！
+　早稲田WCEのRGB氏といっしょに「口を付けたなら最後まで！」の制作をしました！
+
+
+
+![企画、プログラム、シナリオ、絵、SE、一部BGM：安部葉月
+BGM：RGB
+で制作しましたよん](1.webp)
+
+
+ダウンロードは[リンク](https://cs-launcher-api.akane-minori-cslauncher.workers.dev/games/kuchitsuke/口を付けたなら最後まで！.zip
+)（もしくは配布しているゲームランチャー！）にあるよー
+
+いろいろ楽しかったので、ここに記録を残します
+
+
+
+[目次]
+
+
+
+## 開幕前
+　もしかしたら↑のツイートを見て、「広島大、早稲田、電通大、工科大て、なんでこんな雑多なの？広島大主催なら関西方面中心じゃないのん？」と思われるかもしれません
+　このメンツは冬コミで近かったひとたちが集まっただけで、あんまり深い意味はないです
+
+https://x.com/creative_staff/status/2006153201444077600
+
+↑これね
+　右隣がGSDのスペース、そのもう一つ右隣が電通大のスペースでした！
+
+　というわけで、これら４サークルによるDiscordサーバーは１月ぐらいからあったので、ゲームジャム前から色々やってました
+　みんなでゲームやったり……
+
+
+
+![一人で雑談VCにこもる安部葉月の図
+毎日アイマスの替え歌を添えながら入ってました
+ばか？](2.webp)
+
+みんなで作業したり……
+
+
+
+![作業の中で生まれた:oyasumi_gsd:絵文字（作：安部葉月）
+非常に汎用性が高い
+ちなみにこのキャラはGSDのマスコット、なぎさちゃん](3.webp)
+
+なんでクリエイティブスタッフ所属がGSDの絵文字かいてるねん
+
+
+## ゲームジャム中の雑記
+### １日目：開会式
+　ゲームジャムは3/1の13:00に始まりました！
+　試遊会の3/9までにゲームを完成させることを目標に、がんばるぞ！
+
+
+
+![GSDのハヤシ先輩
+とても感謝しております。](4.webp)
+
+　お題はGSD謹製のあみだくじソフトで決まり、つけるってどうしよう……と戸惑いながらのスタート。
+　開会式終了後、うちのチームもRGBくんと会議で色々案を出し合いました
+
+
+
+![会議してる様子](5.webp)
+
+　「火を点ける」ってかっこいいし、それでいこう、とはなったんですが、あんまりピンとくるアイデアは出ず
+　ちなみに「口を付けたなら最後まで！」、最初はローグライク（というかパワプロ、ウマ娘式）になりそうでしたが、工数的に断念しました
+　まあ最終的に９チーム中２チームがローグライクだったので踏みとどまってよかったー！
+
+
+
+
+![RGBさんの静止の言葉
+マジでありがとう](6.webp)
+
+
+　RGBくんは忙しかったのでこの日は途中で抜けたんですが、ちなみに自分はそのあと何をしていたかというと
+
+
+
+![](7.webp)
+
+　SSを書いていました
+　なにやっとんねん
+
+　いや！ちゃんと真面目なことも書いてました
+
+![口を付けたなら最後まで！のD&Dシステムの発端](8.webp)
+
+![ゲームフローの図
+サブウィンドウとか、この時点でわりと完成形そのまんまではあった
+そもそも一週間しかなかったから拡張するのも一苦労だけどね！](9.webp)
+
+![まぬけ](10.webp)
+
+なにやっとんねん
+
+![こいつ一人で喋りすぎや](11.webp)
+
+久しぶりのプログラミングで半分発狂しながらも……
+
+![よかったね
+ちなみに「ここからはだいぶ楽」というのは大嘘
+最後までキツイよ](12.webp)
+
+とりあえず最初のコンパイルをして１日目は終了！
+
+
+
+![１日目の進捗
+あれをシナリオの進捗に含めるな！](13.webp)
+
+### ２日目：文字送り実装
+　２日目。おはようございます
+　ちなみにわたくし、この１週間ずっと暇でしたわ！（くらちなお嬢さま）なのでずっと作業してます
+
+　２日目に関しては黙々と作業してただけなのであんまり書くべきことは無い……
+
+
+
+![他の班の進捗に戦々恐々とする様子](14.webp)
+
+↑これはteam-cの「TUITO」のはなし
+
+https://game-kyoso-studio.com/projects/c36b064d-8cdb-4c3c-9552-f81a46cbdb41
+
+
+
+![呪術の放送日を確認
+次の回は虎杖vs日車の回　おもしろかった](15.webp)
+
+言うほど黙々と作業してるか……？
+
+
+
+![エクセルでシナリオを管理するシステムの構築
+うちのゲームフォルダに入ってる「これを必ず同じ階層においてね.please」は実はcsvファイルです　開くとシナリオが読めるよ](16.webp)
+
+
+![D&Dシステムが完成して大喜びしている図](17.webp)
+
+　この日はゲームの肝であるD&Dシステムと文字送り部分が出来上がり、かなり進みました！
+
+![でもこれは欺瞞
+それでプログラム50%なわけないだろ！！！！
+あとさらっとシナリオ進めんな！！](18.webp)
+
+### ３日目：手帳、闇のトムブラウン
+　３日目です
+　ちなみに（千奈だけに）、ひなまつりでした
+
+![伯方のちなまつり2026でひなまつりを自覚する安部葉月](19.webp)
+
+　この日は前日に基礎システムを作ったので、第二ウィンドウを作っていました！
+
+![第二ウィンドウの報告
+進捗報告してるよー！（チームチャンネルに垂れ流してるだけ）](20.webp)
+
+　タイトル絵が未完成ですが、わりと完成版そのまんまのUIではないでしょうか
+　そして、この日最大の思いつきがこれ↓
+
+![あほ](21.webp)
+
+　このゲームの工数をおそらく倍ぐらいにした諸悪の根源である、闇のトムブラウンみちおです
+
+![ダメーー](22.webp)
+
+　ダメー（布川）
+　お前、最大は最大でも、タスクの量が最大になっちゃってんじゃねえか！
+　ミスっちまったな
+
+　これのせいで安部葉月は試遊会直前までシナリオに追われます
+
+![まいにちシナリオ](23.webp)
+
+考えたやつバーカ！（総統閣下）
+
+![安部葉月は今すぐ「プログラム：70%」とかいう大本営発表をやめろ
+シナリオもこの時点では30%ぐらいとか思ってるが、まだ１%にも満たない](24.webp)
+
+### ４日目：生活リズム崩壊
+
+![おはようございます](25.webp)
+
+　わりと10時前後の就寝を心がけてましたが、崩壊し始めます
+　でもそれ以外はけっこういい日！
+
+![ログ機能](26.webp)
+
+![セーブ機能](27.webp)
+
+　ログやセーブといったメニュー画面の諸機能が完成してきます！
+　ここらへん興奮しすぎてヤバかった
+
+![あ　風呂出たよ
+じゃないねん](28.webp)
+
+　はい。
+　シナリオが手つかずです
+　今から！？！？！？！？！？
+　えっ！折り返し過ぎてからブレストを！？
+　できらあ！（愚昧）
+
+　いいことを挙げると、RGBくんのBGMがあがってきました
+
+![Sparking](29.webp)
+
+　この曲は完成版の７日目（夏祭り）で使われてる曲なんですが、この時点では制作依頼しておいてどこで使うか考えてません！！！
+　不義理にもほどがある
+
+![いつもの大本営発表](30.webp)
+
+### ５日目：絵と音楽ができ始める
+
+![疎結合に驚く図](31.webp)
+
+　↑で言ってるteam-iは、なんとプログラマ２人という驚くべき体制でゲーム制作してるチームです
+　ゲーム制作というかプログラミングしたことある人間なら、これがいかに高等な技術か分かると思います
+　うちがクリエイティブスタッフで夏休みの時組んでたチームとか、プログラマ３人居たけど仕事割り振れなくて完全に爆散したからね！！！
+
+　というか、このゲームジャム、基本的に参加者のレベルが高かったです！
+　GSDのふろしき先輩はめっちゃ音楽うまいし、WCEのシソゴジラ先輩はめっちゃドット絵上手いし！
+　刺激がある
+
+![Atmosphere
+完成版ではタイトル画面で使われている
+勿論この時点では頼んでおきながらどこで使うかなんて（以下略）](32.webp)
+
+![Daytime
+この曲マジでだいすきです
+これに関してはどこで使うか結構見当が付いてた（←見当を「付ける」！）](33.webp)
+
+　BGMができてきます
+　RGBくんに頼んだ分はこれで完成しました　仕事早くてすごい
+　最終的にゲーム内では、これをマスタリングしてちょっと端を切り落とした音源を使いました！
+
+![絵の線画（日比さんの髪留めとか、マンチニールのリボンとか、まだない部分もある）
+この日から「つける」のついた言葉を探し始めたのもここに記しておく](34.webp)
+
+![立ち絵（最終的にはここからあと一つ差分を増やすことになる）
+日比さんの白ニーソ、フェチすぎない？](35.webp)
+
+　立ち絵も完成！
+
+![呪術みてんじゃねーよ](36.webp)
+
+### ６日目：悶絶シナリオ地獄
+
+![「不可能」の用例につかえます](37.webp)
+
+　ほんとだよ
+　誰が進捗にシナリオ：60%とか書いたんだろうね
+
+![主犯](38.webp)
+
+![３日前のトムブラウンに対する怨嗟の声](39.webp)
+
+![絵に描いた餅
+まあ実現はしたんだけど！！！](40.webp)
+
+　この日はほぼ進捗ゼロの状態から４日目の開幕イベントまで（日比さんと話し始める直前まで）書けました
+　あとタイトルもこの日思い浮かんで、それに決定しました
+
+![「口を付けたなら最後まで」
+この時点では最後の「！」がない
+ちょっと淫靡かな……と思って後からつけ足したからです](41.webp)
+
+　タイトルが決まったのは、この会話を気に入ったからでした！
+
+![この会話いいよね（琵琶湖で腹を下すマンチニール）
+今でも気に入ってる](42.webp)
+
+もう一つすごく関係のないことを言うと、金ローがありました
+
+![感想垂れ流しやめてね](43.webp)
+
+多分、これがなかったらあともう３会話ぐらい増やせた
+
+![シナリオ：60%（迫真）](44.webp)
+
+### ７日目：発狂
+
+　７日目はわりと浮かれたスタート！
+
+![作業中ずっとこれと倉橋ヨエコの卵とじ聞いてた](45.webp)
+
+![マスタリング完了、BGM再生システムも作った](46.webp)
+
+![エンディングまで遊べるように（一応）](47.webp)
+
+しかしながら
+
+![絶望](48.webp)
+
+![崖っぷち](49.webp)
+
+![悲痛すぎる](50.webp)
+
+時間が足りない！！！！！！
+
+### 救いの手
+
+![ほんとうにありがとうございます](51.webp)
+
+やったああああああああああ！！！！！
+
+### というわけで
+
+![こいつ情緒不安定すぎる](52.webp)
+
+　７日目はもう完全に背景絵集めに奔走しました！
+　実際には背景絵はほぼ写真ACの写真を使ったんですが、まあ気分転換にはなりました
+
+教訓：家にこもりきりでゲ制はしないほうがいい
+
+　あとteam-dが完成して提出したりもしました
+　team-dはヘブンフォールのとこです　マジで面白いよ
+
+![祝福](53.webp)
+
+締め切りは今日なので、一応うちも提出はしました
+
+![タイトル絵](54.webp)
+
+　深夜になってついにタイトル絵完成！
+　こういう風景をかくのは何気に初めてでした
+
+### ７＋１日目：アディショナルタイム
+　アディショナルタイム突入！
+　まあでもこの日は予定があり、途中で離席
+
+![りんご飴つくってる
+なぜ？](55.webp)
+
+　帰ってきたらりんご飴作りました
+　日比さんに感化されちゃって……
+　ちなみに昨日「３月はドンキに花火売ってないのか」とかほざいてましたが、普通に売ってたらしいというのをこの日知りました
+
+![希望](56.webp)
+
+![もうそろ！！](57.webp)
+
+### ７＋２日目：完成！！！！
+最後の直線に差し掛かりました！
+
+![いけるか！？！？！？](58.webp)
+
+
+![やったあああああああああああああああああああああああああああああああ！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！](59.webp)
+
+完成！！！！！！！！
+
+では、試遊会が始まる19時まで、最後の足搔きをします
+
+### 最終調整
+
+![作曲します](60.webp)
+
+　真エンドの曲と、あと日常BGM2は完成直前に生まれました
+　ほんとに直前！！
+
+![りんご飴おいしかった](61.webp)
+
+![真エンドの曲](62.webp)
+
+　「真エンドの曲がそれまでのBGMのメドレーだったら美しいよねー」とか考えてたので、ピアノメドレーになりました
+　なったんですが、３拍子の曲と４拍子の曲があってむずかった！
+
+![最終調整](63.webp)
+
+　あまりに激務だったので、真エンドみるとなんか泣いちゃうんです
+　この辺のこととか思い出しちゃって
+　あと自分のゲームなのに「もう終わりなのか……」とか考えちゃって！
+　だれか口を付けたなら最後まで！２作ってくれーーーー！！！！
+
+　あと、RGBくんマジでありがとーーーーー！！！！！！めっちゃ曲良い！！！
+
+![ほんとうにありがとう](64.webp)
+
+　ちなみに自分は今はWCEの部員でもあります
+　これがきっかけでつい入っちゃった
+
+
+
+## 試遊会
+　試遊会はteam-aから順番に出来上がったゲームを遊んでいく感じになりました！
+
+　うちはDXライブラリで制作してたんですが、うち以外はUnityで作ってたので、いくつかはUnityroomで遊びました
+
+https://x.com/WCE_official/status/2034150760737566978
+
+https://x.com/WCE_official/status/2034150911434760221
+
+https://x.com/creative_staff/status/2033910934251725308
+
+　重複ありますが、９つのゲームのDLリンク、unityroomリンクを載せておきます！
+
+　全部書くと記事が長くなっちゃうので（もう長いだろ）、ひとつだけイチオシゲームを紹介します
+
+### ヘブンフォール
+　team-dの作品です！
+
+・くり氏（GSD）：プログラム
+・JP氏（クリエイティブスタッフ）：3Dモデル
+・Bomo氏（WCE）：サウンド
+
+の体制で作られたゲームで、「剣にガラクタをくっつけて強化し、より奥に進んでいく」というのがめっちゃ面白かったです！
+　基本操作がGetting Over Itリスペクトで、余計なものをくっつけすぎると移動が困難になる（引っかかって動けなくなる）ため、くっつける位置やガラクタをよく考えて選ばないといけないのが難しいんです
+
+![目みたいなオブジェクトと黒い階段みたいなオブジェクトをくっつけた状態
+すでにかなり移動しづらい](65.webp)
+
+マジで面白いよーー！！
+
+
+
+## 後記
+　ゲームジャムすごい楽しかったです！
+　主催者のGSDハヤシさん、通話にめっちゃ来てくれたGSDのてーさんWCEのBomoさん、一緒のチームで作業してくれたRGBくん、ほんとにありがとーーーー！！！
+
+　また今度、２年生になってもやりたいなーー！
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+<script type="application/json" id="link-meta">{"https://game-kyoso-studio.com/projects/c36b064d-8cdb-4c3c-9552-f81a46cbdb41":{"title":"TUITO | 早稲田ゲーム共創スタジオ","desc":"春休み1週間ゲームジャムで制作した作品。お題は「つける」。心優しいおばけのプレイヤーは、おばけパワーで街灯を点けたり消したりすることができます。夜道をひとり歩く女の子をお家まで無事に送り届けてあげましょう！ プレイ動画：https://dr","image":"https://tqligsvgwaojzblkofts.supabase.co/storage/v1/object/public/images/content/projects/9eb21116-1587-4a3c-a71a-6ed681148eb0.png","site":"game-kyoso-studio.com"}}</script>
+<script src="../../js/main.js" charset="utf-8"></script>
+<script src="../../js/cre_navigation.js" charset="utf-8"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</body>
+</html>

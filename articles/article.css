@@ -132,6 +132,149 @@
     color: #555;
 }
 
+/* ---------------- 埋め込み(Twitter・YouTube・ニコニコ動画) ----------------
+   本文にURLだけの行を書くと、エディターが書き出す */
+.Honbun .embed {
+    margin: 2em 0;
+}
+
+.Honbun .embed--video {
+    position: relative;
+    aspect-ratio: 16 / 9;
+}
+
+.Honbun .embed--video iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 8px;
+}
+
+.Honbun .embed--twitter {
+    display: flex;
+    justify-content: center;
+}
+
+/* 読み込み前の仮表示が、引用の線で飾られないようにする */
+.Honbun .embed--twitter blockquote {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+/* ---------------- 目次(本文に [目次] と書いた位置に出る) ---------------- */
+.Honbun h2,
+.Honbun h3 {
+    scroll-margin-top: 80px;   /* 目次から飛んだとき、固定ヘッダーに隠れないようにする */
+}
+
+.Honbun .toc {
+    margin: 2em 0;
+    padding: 16px 22px;
+    border: 2px solid #e1e5e9;
+    border-radius: 8px;
+    background: #f5f7f9;
+}
+
+.Honbun .toc-title {
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.Honbun .toc ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.Honbun .toc li {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.Honbun .toc-h3 {
+    padding-left: 1.2em;
+}
+
+.Honbun .toc a {
+    text-decoration: none;
+}
+
+.Honbun .toc a:hover {
+    text-decoration: underline;
+}
+
+/* ---------------- リンクカード(URLだけの行から、エディターが書き出す) ---------------- */
+.Honbun a.link-card {
+    display: flex;
+    margin: 2em 0;
+    overflow: hidden;
+    border: 1px solid #e1e5e9;
+    border-radius: 8px;
+    background: #fff;
+    color: #222;
+    text-decoration: none;
+}
+
+.Honbun a.link-card:hover {
+    background: #f5f7f9;
+}
+
+.Honbun .link-card__img {
+    flex: none;
+    width: 160px;
+    background: #e9edf0;
+}
+
+.Honbun .link-card__img img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.Honbun .link-card__body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+    padding: 12px 16px;
+}
+
+.Honbun .link-card__title {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.Honbun .link-card__desc {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    color: #555;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.Honbun .link-card__site {
+    overflow: hidden;
+    color: #888;
+    font-size: 12px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 /* ---------------- 独自タグ ---------------- */
 red {
     color: #e0245e;
@@ -149,6 +292,10 @@ big-font {
 @media screen and (max-width: 544px) {
     .Article h1 {
         font-size: 26px;
+    }
+
+    .Honbun .link-card__img {
+        width: 96px;
     }
 
     .Honbun {
