@@ -3,7 +3,7 @@
 // 左右は「年が変わってもリセットせず」通して交互にする
 
 (() => {
-const HISTORY_JSON = 'history/history.json';
+const HISTORY_JSON = 'json/history.json';
 
 function esc(s) {
     return s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));

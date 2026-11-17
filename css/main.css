@@ -1,5 +1,6 @@
 @import url(header.css);
 @import url(footer.css);
+@import url(pager.css);
 
 /* ===== Bootstrap撤去に伴う最小リセット ===== */
 *,*::before,*::after{box-sizing:border-box}
@@ -132,3 +133,4 @@ a:hover{
     margin-left: 0;
     margin-right: 0;
 }
+

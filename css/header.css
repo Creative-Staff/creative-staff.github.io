@@ -17,7 +17,7 @@
 -----------------------------------------*/
 
 #header{
-    z-index: 1; /* z-indexの値を扱う際は、マイナスで指定しても良いが、hoverはz-indexが負の値に対して働かない為、ヘッダーのz-indexを1とする */
+    z-index: 100; /* z-indexの値を扱う際は、マイナスで指定しても良いが、hoverはz-indexが負の値に対して働かない為、ヘッダーのz-indexを1とする */
     top: 0px;
     position: fixed;
     justify-content: center;

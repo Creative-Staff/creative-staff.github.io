@@ -7,7 +7,10 @@ fetch('articles/articles.json')
 
     items.sort((a, b) => b.date.localeCompare(a.date));
 
-    list.replaceChildren(...items.map(a => {
+    // トップには最新の一定件数だけ出す(全部は「記事一覧」で見られる)
+    const TOP_COUNT = 20;
+
+    list.replaceChildren(...items.slice(0, TOP_COUNT).map(a => {
       const li = document.createElement('li');
       li.className = 'item';
 
@@ -38,3 +41,4 @@ fetch('articles/articles.json')
     }));
   })
   .catch(console.error);
+

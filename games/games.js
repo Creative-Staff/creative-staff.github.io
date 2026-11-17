@@ -7,6 +7,10 @@ const API_BASE = 'https://cs-launcher-api.akane-minori-cslauncher.workers.dev';
 
 let games = [];
 
+// ページ送り(部品は js/pager.js)
+const PER_PAGE = 24;   // 1ページの件数
+let page = 1;
+
 // ----------------------------------------------------------------------------
 // 共通の小さな関数
 // ----------------------------------------------------------------------------
@@ -43,6 +47,7 @@ async function loadGames() {
         return;
     }
     renderFilter();
+    bindGridEvents();
     renderGrid();
 }
 
@@ -50,21 +55,49 @@ async function loadGames() {
 // ゲームカードの表示
 // ----------------------------------------------------------------------------
 
+/** チェックされたタグを全て持つゲームの番号(games 内の位置)を返す。何も選ばなければ全部 */
+function filteredIndexes() {
+    const active = [...document.querySelectorAll('.filter-checkbox:checked')].map((box) => box.value);
+    const out = [];
+    games.forEach((game, i) => {
+        if (active.every((tag) => game.tags.includes(tag))) out.push(i);
+    });
+    return out;
+}
+
+/** 絞り込み結果のうち、今のページ分だけをカードにして並べる */
 function renderGrid() {
     const grid = document.getElementById('games-grid');
-    grid.innerHTML = games
-        .map(
-            (game, i) => `
+    const indexes = filteredIndexes();
+    page = Pager.clamp(page, indexes.length, PER_PAGE);
+    const slice = indexes.slice((page - 1) * PER_PAGE, page * PER_PAGE);
+
+    grid.innerHTML = slice
+        .map((i) => {
+            const game = games[i];
+            return `
         <div class="GameCard" data-index="${i}" tabindex="0" role="button">
             <div class="GameCard_title">
                 <h2>${escapeHtml(game.title)}</h2>
                 <p class="Gtag">${tagChipsHtml(game)}</p>
             </div>
             <img src="${assetUrl(game.id, game.thumbnail_path)}" alt="${escapeHtml(game.title)}" loading="lazy">
-        </div>`
-        )
+        </div>`;
+        })
         .join('');
 
+    document.getElementById('games-empty').hidden = indexes.length > 0;
+    Pager.render(document.getElementById('games-pager'), {
+        page,
+        total: indexes.length,
+        perPage: PER_PAGE,
+        onChange: (n) => { page = n; renderGrid(); window.scrollTo({ top: 0, behavior: 'smooth' }); },
+    });
+}
+
+/** カードのクリック・Enter は、グリッド全体で1回だけ受ける(描き直してもそのまま使える) */
+function bindGridEvents() {
+    const grid = document.getElementById('games-grid');
     grid.addEventListener('click', (e) => {
         const card = e.target.closest('.GameCard');
         if (card) openModal(games[Number(card.dataset.index)]);
@@ -103,19 +136,10 @@ function renderFilter() {
     });
 }
 
-/** チェックされたタグを全て持つゲームだけを表示する(何も選ばなければ全部表示) */
+/** 絞り込みが変わったら、1ページ目に戻して描き直す */
 function updateDisplay() {
-    const active = [...document.querySelectorAll('.filter-checkbox:checked')].map((box) => box.value);
-    let visibleCount = 0;
-
-    document.querySelectorAll('.GameCard').forEach((card) => {
-        const game = games[Number(card.dataset.index)];
-        const show = active.every((tag) => game.tags.includes(tag));
-        card.style.display = show ? '' : 'none';
-        if (show) visibleCount++;
-    });
-
-    document.getElementById('games-empty').hidden = visibleCount > 0;
+    page = 1;
+    renderGrid();
 }
 
 // ----------------------------------------------------------------------------
@@ -201,3 +225,4 @@ document.addEventListener('keydown', (e) => {
 // ----------------------------------------------------------------------------
 
 document.addEventListener('DOMContentLoaded', loadGames);
+
