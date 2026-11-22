@@ -303,3 +303,99 @@ big-font {
     }
 }
 
+/* ---------------- 追加の書式(エディターの書式ボタン用) ---------------- */
+.Honbun blue {
+    color: #1976d2;
+}
+
+.Honbun small-font {
+    font-size: 80%;
+}
+
+.Honbun mark {
+    padding: 0 .15em;
+    background: linear-gradient(transparent 55%, #fff176 55%);
+    color: inherit;
+}
+
+.Honbun align-center {
+    display: block;
+    text-align: center;
+}
+
+.Honbun align-right {
+    display: block;
+    text-align: right;
+}
+
+/* 囲み枠(ポイント・注意) */
+.Honbun box-point,
+.Honbun box-warn {
+    display: block;
+    margin: 1.4em 0;
+    padding: 14px 18px;
+    border-radius: 8px;
+    line-height: 1.8;
+}
+
+.Honbun box-point {
+    border: 2px solid #19c8ff;
+    background: #e6f7fe;
+}
+
+.Honbun box-warn {
+    border: 2px solid #ff8a1f;
+    background: #fff4e8;
+}
+
+/* 表 */
+.Honbun table {
+    width: 100%;
+    margin: 1.8em 0;
+    border-collapse: collapse;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.Honbun th,
+.Honbun td {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+.Honbun th {
+    background: #f5f7f9;
+    font-weight: 700;
+}
+
+/* 折りたたみ */
+.Honbun details {
+    margin: 1.6em 0;
+    border: 1px solid #e1e5e9;
+    border-radius: 8px;
+}
+
+.Honbun summary {
+    padding: 10px 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.Honbun details[open] summary {
+    border-bottom: 1px solid #e1e5e9;
+}
+
+.Honbun details > :not(summary) {
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+/* 画像の幅(大 = 指定なし = 全幅) */
+.Honbun figure.w-s img {
+    width: 40%;
+}
+
+.Honbun figure.w-m img {
+    width: 70%;
+}
