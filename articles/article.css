@@ -393,9 +393,9 @@ big-font {
 
 /* 画像の幅(大 = 指定なし = 全幅) */
 .Honbun figure.w-s img {
-    width: 40%;
+    max-width: 40%;
 }
 
 .Honbun figure.w-m img {
-    width: 70%;
+    max-width: 70%;
 }
